@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+    --color-hot-sauce: #D33B0D;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-crema: #EBE9DC;
+    --color-sky: #B8DFDB;
+    --color-citrus: #D55C0C;
+    --color-ocean: #1D8782;
+    --color-ink: #202020;
+    --color-tortilla: #DBD6C0;
+    --color-peach: #FAB7A4;
+    --color-aioli: #FACBA4;
+
+    --max-content-width: 1220px;
+    --font-futura: 'Futura Now Headline', sans-serif;
+    --font-geist: 'Geist Mono', monospace;
+    --font-holiday: 'Holiday', cursive;
+}
+
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+@font-face {
+    font-family: 'Futura Now Headline';
+    src: url('/fonts/futura_now_headline/futura-now-headline-condensed-blk.otf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('/fonts/Geist_Mono/static/GeistMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Holiday';
+    src: url('/fonts/Holiday2_Regular/Holiday_New_Style.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: flex;
+    height: 44px;
+    padding: 8px 20px;
+    align-items: center;
+    gap: 8.877px;
+    font-family: var(--font-geist);
+    font-size: 14.203px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+}
+
+.btn-primary {
+    color: var(--color-crema);
+    background: var(--color-hot-sauce);
+}
+
+.btn-secondary {
+    color: var(--color-hot-sauce);
+    background: var(--color-crema);
+}
+
+.text-ocean {
+    color: var(--color-ocean);
+}
+
+.text-citrus {
+    color: var(--color-citrus);
+}
