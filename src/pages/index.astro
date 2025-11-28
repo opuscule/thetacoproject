@@ -1,524 +1,345 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>The Taco Project</title>
-  </head>
-  <body>
-    <a href="#" class="btn btn-primary">Primary</a>
-    <a href="#" class="btn btn-secondary">Secondary</a>
-
+<BaseLayout>
     <!-- Press Ticker -->
     <section class="bg-hot-sauce py-6 overflow-hidden">
-      <div class="flex gap-[72px] items-center px-[72px]">
-        <!-- CT Insider -->
-        <img
-          src="http://localhost:3845/assets/8abb6736f52ebc8c35ba1832bd91c09f36326968.png"
-          alt="CT Insider"
-          class="h-[32.596px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- News 12 -->
-        <img
-          src="http://localhost:3845/assets/2c4dad31ff9580221a49e2f210486c40c13ecea7.png"
-          alt="News 12"
-          class="h-[23.885px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- Westchester Magazine -->
-        <img
-          src="http://localhost:3845/assets/045eb066596e4c37941a9ab34f42e0235f0e4e56.png"
-          alt="Westchester Magazine"
-          class="h-[35.703px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- Patch -->
-        <img
-          src="http://localhost:3845/assets/7ac7e8e6698cbe254713512c9dadd43bd95a649e.png"
-          alt="Patch"
-          class="h-[25.688px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- CT Bites -->
-        <img
-          src="http://localhost:3845/assets/15a0a4615f47046b90e48af7cc8328869b0327d7.png"
-          alt="CT Bites"
-          class="h-[35.703px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- Greenwich Lifestyle -->
-        <img
-          src="http://localhost:3845/assets/fc48f6201217962afc4b9c521af39d1d74f5d668.png"
-          alt="Greenwich Lifestyle"
-          class="h-[35.703px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- Daily Voice -->
-        <img
-          src="http://localhost:3845/assets/91a192428e2dd400b69b47c65f1cc99963a7e80e.png"
-          alt="Daily Voice"
-          class="h-[35.703px] w-[112.399px] object-cover shrink-0"
-        />
-        <!-- Stamford Advocate -->
-        <img
-          src="http://localhost:3845/assets/dfe6b7544c5ac12173ea0311083bcbce12623819.png"
-          alt="Stamford Advocate"
-          class="h-[35.703px] w-[112.399px] object-cover shrink-0"
-        />
-      </div>
+        <div class="flex gap-[72px] items-center px-[72px]">
+            <!-- CT Insider -->
+            <img src="ticker-ct-insider.png" alt="CT Insider" class="shrink-0" width="113" height="33" />
+            <!-- News 12 -->
+            <img src="ticker-news12.png" alt="News 12" class="shrink-0" width="113" height="24" />
+            <!-- Westchester Magazine -->
+            <img src="ticker-westchester-mag.png" alt="Westchester Magazine" class="shrink-0" width="113" height="36" />
+            <!-- Patch -->
+            <img src="ticker-patch.png" alt="Patch" class="shrink-0" width="113" height="26" />
+            <!-- CT Bites -->
+            <img src="ticker-ct-bites.png" alt="CT Bites" class="shrink-0" width="113" height="36" />
+            <!-- Greenwich Lifestyle -->
+            <img src="ticker-greenwich-lifestyle.png" alt="Greenwich Lifestyle" class="shrink-0" width="113" height="36" />
+            <!-- Daily Voice -->
+            <img src="ticker-daily-voice.png" alt="Daily Voice" class="shrink-0" width="113" height="36" />
+            <!-- Stamford Advocate -->
+            <img src="ticker-stamford-advocate.png" alt="Stamford Advocate" class="shrink-0" width="113" height="36" />
+        </div>
     </section>
 
     <!-- CATERING CTA -->
 
     <section>
-      <div class="flex">
-        <div class="w-[65%]">
-          <img
-            src="/catering-taco-project.webp"
-            alt="Catering"
-            class="w-full h-auto object-cover"
-          />
-        </div>
-        <div class="w-[35%] bg-sky">
-          <div
-            class="px-6"
-            style="width: calc(var(--max-content-width) * 0.35);"
-          >
-            <h2
-              class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase"
-              style="text-wrap:balance;"
-            >
-              We'll Come to You
-            </h2>
-            <div class="bottom-wrapper">
-              <div
-                class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]"
-              >
-                We cater!
-              </div>
-              <p
-                class="font-geist text-ink text-[14px] leading-[1.4] lowercase"
-              >
-                Whether you're hosting a corporate event, birthday party, or
-                family gathering, The Taco Project makes it easy. Choose from
-                our curated catering packages or build your own taco bar. We
-                provide everything you need—from fresh ingredients to serving
-                utensils—so you can focus on enjoying delicious tacos with all
-                the provided fixings.
-              </p>
-              <div class="flex items-center justify-between">
-                <h2
-                  class="font-futura text-ocean text-[56px] leading-[0.9] uppercase tracking-[-2.8px]"
-                >
-                  catering
-                </h2>
-                <a
-                  href="#"
-                  class="flex items-center gap-2 text-ocean font-geist text-[14px] uppercase hover:opacity-80 transition-opacity"
-                >
-                  details
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 12.427 12.427"
-                    class="size-[12.427px]"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M3.5 3.5h5.427v5.427"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      d="M8.927 3.5L3.5 8.927"></path>
-                  </svg>
-                </a>
-              </div>
+        <div class="flex">
+            <div class="w-[65%]">
+                <img src="/catering-taco-project.webp" alt="Catering" class="w-full h-auto object-cover" />
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stress Free Catering Section -->
-      <section class="bg-crema py-[100px] px-5 overflow-hidden">
-        <div class="max-w-[1150px] mx-auto relative">
-          <div class="flex flex-col lg:flex-row gap-20">
-            <!-- Left Content -->
-            <div class="flex-1 flex flex-col gap-8">
-              <h2
-                class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight"
-              >
-                stress-free<br />catering
-              </h2>
-              <p
-                class="font-geist text-ink text-[14px] leading-[1.4] max-w-[440px]"
-              >
-                From our Build-Your-Own Taco Bar to boxed lunches to beverages,
-                we've got you covered. Oh - and don't forget the guacamole.
-                Contact us to customize your taco party packages for guests of
-                all ages!
-              </p>
-            </div>
-
-            <!-- Right Content - Event Types -->
-            <div class="flex-1 relative mt-10 lg:mt-0">
-              <p
-                class="font-holiday text-ink text-[40px] leading-none whitespace-nowrap -rotate-4 mb-4"
-              >
-                We cater a variety of event types
-              </p>
-
-              <ul
-                class="font-futura text-citrus text-[40px] leading-none tracking-tight list-none space-y-2"
-              >
-                <li class="mb-0">Corporate Lunches</li>
-                <li class="mb-0">Anniversary Parties</li>
-                <li class="mb-0">Fundraiser Dinners</li>
-                <li class="mb-0">Birthday Parties</li>
-                <li class="mb-0">Game Night</li>
-                <li class="mb-0">Company Picnics</li>
-                <li class="mb-0">Holiday Gatherings</li>
-                <li class="mb-0">Graduations</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="font-holiday text-citrus text-[64px] font-normal -rotate-4 ms-36"
-          >
-            How it Works
-          </div>
-
-          <div class="max-w-[1150px] mx-auto mt-8">
-            <!-- Steps -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <!-- Step 1 -->
-              <div class="flex flex-col gap-4">
-                <div class="aspect-[1/1] w-full overflow-hidden">
-                  <img
-                    src="/catering-guest-list.webp"
-                    alt="Prepare the Guest List"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decode="async"
-                  />
-                </div>
-                <h3
-                  class="font-futura text-citrus text-[32px] leading-none tracking-tight"
-                >
-                  Prepare the Guest List
-                </h3>
-                <p class="font-geist text-ink text-[14px] leading-[1.4]">
-                  We'll need to know: when, and how many. And if there are any
-                  allergies or dietary restrictions, let's note those, too.
-                </p>
-              </div>
-              <!-- Step 2 -->
-              <div class="flex flex-col gap-4">
-                <div class="aspect-[1/1] w-full overflow-hidden">
-                  <img
-                    src="catering-ordering.webp"
-                    alt="Order Online"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decode="async"
-                  />
-                </div>
-                <h3
-                  class="font-futura text-citrus text-[32px] leading-none tracking-tight"
-                >
-                  Order your Package
-                </h3>
-                <p class="font-geist text-ink text-[14px] leading-[1.4]">
-                  We offer two convenient packages with all the proteins, all
-                  the fixins, and utensils if you need them. Add on drinks,
-                  desserts, and more.
-                </p>
-              </div>
-              <!-- Step 3 -->
-              <div class="flex flex-col gap-4">
-                <div class="aspect-[1/1] w-full overflow-hidden">
-                  <img
-                    src="catering-enjoy.webp"
-                    alt="Enjoy your delicious taco bar"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decode="async"
-                  />
-                </div>
-                <h3
-                  class="font-futura text-citrus text-[32px] leading-none tracking-tight"
-                >
-                  Enjoy!
-                </h3>
-                <p class="font-geist text-ink text-[14px] leading-[1.4]">
-                  Swing by the location you ordered from and pick up your order:
-                  portioned, hot, and ready to serve.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Catering FAQ Section -->
-        <section class="flex flex-col md:flex-row">
-          <!-- On Ordering -->
-          <div
-            class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10"
-          >
-            <h2
-              class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]"
-            >
-              on Ordering
-            </h2>
-            <div
-              class="w-full max-w-[512px] flex flex-col border-t border-ink"
-              id="ordering-faq"
-            >
-              {
-                [
-                  {
-                    q: "Is there a minimum order for catering?",
-                    a: "Yes. 10 people.",
-                  },
-                  {
-                    q: "How many tacos will I get per person with my order?",
-                    a: "Our Taco Packages accommodate three soft tortilla tacos per person. We also offer hard shells, if you would like hard shells, please notate this on your order or mention it when speaking with a catering representative.",
-                  },
-                  {
-                    q: "How far in advance should I order?",
-                    a: "A 24-hour advance is ideal, but please call the store if your order is last minute and we will always do our best to accommodate your needs.",
-                  },
-                  {
-                    q: "Do you offer alcohol?",
-                    a: "Yes, we do. We have a great selection of wine, beer, margaritas and sangria.",
-                  },
-                  {
-                    q: "Is gratuity included in my bill?",
-                    a: "No. Please feel free to leave gratuity separately to our amazing team!",
-                  },
-                  {
-                    q: "Who do I contact if I have any questions about my order or need to make a change?",
-                    a: "Please call the store you ordered from directly.",
-                  },
-                  {
-                    q: "Can I make up my own menu or make changes to your menu?",
-                    a: "Our chefs are specifically trained to our own menu, so unfortunately we cannot accommodate requests outside of what we currently offer.",
-                  },
-                  {
-                    q: "What is your Cancellation/Refund Policy?",
-                    a: "Orders cancelled within 24 hours of your pick up time will be fully refunded. If cancelled less than 24 hours, you will be charged 1/2 your bill.",
-                  },
-                ].map((faq, index) => (
-                  <div class="border-b border-ink">
-                    <button
-                      class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group"
-                      aria-expanded="false"
-                      aria-controls={`faq-answer-${index}`}
-                    >
-                      <span class="font-geist text-ink text-[16px] leading-[1.4]">
-                        {faq.q}
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                        />
-                      </svg>
-                    </button>
-                    <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
-                      <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">
-                        {faq.a}
-                      </p>
+            <div class="w-[35%] bg-sky">
+                <div class="px-6" style="width: calc(var(--max-content-width) * 0.35);">
+                    <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase" style="text-wrap:balance;">We'll Come to You</h2>
+                    <div class="bottom-wrapper">
+                        <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4] lowercase">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
+                        <div class="flex items-center justify-between">
+                            <h2 class="font-futura text-ocean text-[56px] leading-[0.9] uppercase tracking-[-2.8px]">catering</h2>
+                            <a href="#" class="flex items-center gap-2 text-ocean font-geist text-[14px] uppercase hover:opacity-80 transition-opacity">
+                                details
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.427 12.427" class="size-[12.427px]">
+                                    <path fill="currentColor" d="M3.5 3.5h5.427v5.427" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.927 3.5L3.5 8.927"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                  </div>
-                ))
-              }
+                </div>
             </div>
+        </div>
 
-            <script>
-              document.querySelectorAll(".faq-toggle").forEach((button) => {
-                button.addEventListener("click", () => {
-                  const isExpanded =
-                    button.getAttribute("aria-expanded") === "true";
-                  button.setAttribute(
-                    "aria-expanded",
-                    (!isExpanded).toString()
-                  );
-
-                  const answerId = button.getAttribute("aria-controls");
-                  if (answerId) {
-                    const answer = document.getElementById(answerId);
-                    if (answer) {
-                      answer.classList.toggle("hidden");
-                    }
-                  }
-                });
-              });
-            </script>
-          </div>
-
-          <!-- On Delivery/Pickup -->
-          <div
-            class="flex-1 bg-sky py-[80px] px-5 flex flex-col items-center gap-10"
-          >
-            <h2
-              class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]"
-            >
-              on Delivery/Pickup
-            </h2>
-            <div
-              class="w-full max-w-[512px] flex flex-col border-t border-ink"
-              id="delivery-faq"
-            >
-              {
-                [
-                  {
-                    q: "Do you provide plates/napkins and utensils?",
-                    a: "Yes, we do! They are provided complimentary with your order.",
-                  },
-                  {
-                    q: "Does The Taco Project do corporate catering?",
-                    a: "Yes. Please contact our catering specialist, catering@thetacoproject.com.",
-                  },
-                  {
-                    q: "Will my food be hot when I pick it up?",
-                    a: "Yes. Your food will be fresh and hot when you pick it up and will be packed in foil pans to keep them warm.",
-                  },
-                  {
-                    q: "Can I reheat or keep food hot in the oven?",
-                    a: "Yes. You can keep your food hot or reheat it in the oven only. Our foil pans are non-microwavable.",
-                  },
-                  {
-                    q: "Do you have staff that could help at my event?",
-                    a: "Yes. We can provide Taco Project trained staff at an hourly rate of $30 with a 3 hour minimum. A 24 hour advance on hiring our staff is required.",
-                  },
-                  {
-                    q: "Can my order be delivered?",
-                    a: "Delivery from online catering orders will be provided via Uber and will be a direct drop off. Unboxing and setup will not be included by the driver.",
-                  },
-                  {
-                    q: "Is there a fee for delivery?",
-                    a: "Yes. It is $18.00",
-                  },
-                ].map((faq, index) => (
-                  <div class="border-b border-ink">
-                    <button
-                      class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group"
-                      aria-expanded="false"
-                      aria-controls={`delivery-faq-answer-${index}`}
-                    >
-                      <span class="font-geist text-ink text-[16px] leading-[1.4]">
-                        {faq.q}
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      id={`delivery-faq-answer-${index}`}
-                      class="hidden px-10 pb-5"
-                    >
-                      <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">
-                        {faq.a}
-                      </p>
+        <!-- Stress Free Catering Section -->
+        <section class="bg-crema py-[100px] px-5 overflow-hidden">
+            <div class="max-w-[1150px] mx-auto relative">
+                <div class="flex flex-col lg:flex-row gap-20">
+                    <!-- Left Content -->
+                    <div class="flex-1 flex flex-col gap-8">
+                        <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">
+                            stress-free<br />catering
+                        </h2>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
                     </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </section>
 
-        <!-- Testimonial -->
-        <section class="bg-hot-sauce py-[100px] px-5">
-          <div
-            class="max-w-[760px] mx-auto flex flex-col items-start gap-[22px]"
-          >
-            <div class="flex gap-1">
-              <!-- 5 Stars -->
-              {
-                [...Array(5)].map(() => (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="size-5 text-crema"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                ))
-              }
-            </div>
-            <p
-              class="font-geist text-crema text-[24px] leading-[1.4] font-normal"
-            >
-              Had an amazing time at The Taco Project in Tarrytown! Everything
-              was so good — from the Palomas and Mojitos to the Spicy Mango and
-              Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna
-              Tostadas, and Nachos. The tacos were the best — Birria, El Pastor,
-              and Shrimp, full of flavor. Finished with Flan and one of the best
-              Tres Leches ever. Big thanks to Julian for being so friendly and
-              helping us with the menu!
-            </p>
-            <p
-              class="font-geist text-crema text-[14px] leading-[1.4] font-normal"
-            >
-              — Anju Kapoor
-            </p>
-          </div>
-        </section>
+                    <!-- Right Content - Event Types -->
+                    <div class="flex-1 relative mt-10 lg:mt-0">
+                        <p class="font-holiday text-ink text-[40px] leading-none whitespace-nowrap -rotate-4 mb-4">We cater a variety of event types</p>
 
-        <!-- footer -->
-        <footer id="footer" class="bg-ink">
-          <!-- content wrapper with --max-content-width -->
-          <div class="container">
-            <!-- content wide logo -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              fill="none"
-              viewBox="0 0 1214 142"
-              ><g fill="#dbd6c0" clip-path="url(#a)"
-                ><path
-                  d="M801.827.092c-26.081 0-47.309 21.228-47.309 47.31 0 26.08 21.228 47.308 47.309 47.308s47.309-21.227 47.309-47.309c0-26.08-21.216-47.309-47.309-47.309m0 59.316c-6.621 0-12.006-5.385-12.006-12.007s5.385-12.006 12.006-12.006 12.007 5.385 12.007 12.006-5.385 12.007-12.007 12.007M458.773 0c-26.081 0-47.309 21.228-47.309 47.31 0 26.08 21.228 47.308 47.309 47.308s47.309-21.228 47.309-47.309S484.866 0 458.773 0m0 59.315c-6.621 0-12.006-5.384-12.006-12.006s5.385-12.006 12.006-12.006 12.006 5.385 12.006 12.006-5.385 12.006-12.006 12.006M502.153 100.881h-86.749v37.013h86.749zM845.103 100.881h-86.748v37.013h86.748zM1127.18 3.698v36.978h24.89v97.218h36.98V40.676h24.88V3.698zM940.149 137.894l78.581-.058v-36.978h-41.603v-11.59H1009V52.289h-31.873V40.687h41.603V3.71l-78.581-.058zM201.427 3.698h-86.748v36.978h24.891v97.23h36.978v-97.23h24.879zM602.006 3.79l-50.568-.139v134.243h36.978v-36.747h13.59c24.741 0 43.08-23.944 43.08-47.702v-1.953c0-23.758-19.321-47.702-43.08-47.702m-6.182 63.845h-7.419V38.457h7.419c8.042 0 14.583 6.54 14.583 14.583s-6.541 14.584-14.583 14.584zM230.733 3.663l-38.446 134.243h36.065l4.183-14.63h37.707l4.183 14.63h36.065L272.033 3.663zm11.729 84.946 8.921-31.154 8.921 31.154zM744.811 46.916c0-23.782-19.344-43.195-43.114-43.195l-47.656-.058v134.243h36.979V96.721l18.789 41.185h40.642l-25.076-54.97c11.706-7.72 19.448-20.974 19.448-36.008zm-47.459 21.378h-6.344V37.937h6.344c8.378 0 15.184 6.795 15.184 15.185 0 8.389-6.794 15.184-15.184 15.184zM890.355 3.698h-31.004V40.71h31.12l.092 30.876c0 17.207-14.005 29.294-31.212 29.294v38.897c37.603 0 68.191-30.588 68.191-68.19V3.65h-37.187zM304.897 70.582c0 38.469 31.293 69.762 69.762 69.762 8.551 0 16.756-1.56 24.336-4.391v-46.28c-5.673 7.21-14.467 11.855-24.336 11.855-17.068 0-30.946-13.89-30.946-30.946s13.89-30.946 30.946-30.946c9.869 0 18.663 4.645 24.336 11.856V5.212A69.4 69.4 0 0 0 374.659.82c-38.469 0-69.762 31.293-69.762 69.762M1022.19 71.715c0 38.469 31.3 69.762 69.77 69.762 8.55 0 16.75-1.56 24.32-4.391V90.805c-5.67 7.21-14.47 11.856-24.32 11.856-17.07 0-30.95-13.89-30.95-30.946s13.88-30.946 30.95-30.946c9.86 0 18.66 4.645 24.32 11.856V6.345a69.4 69.4 0 0 0-24.32-4.392c-38.47 0-69.77 31.293-69.77 69.762M72.859 97.322c.323 1.387 1.074 2.67 2.403 3.709 5.582 4.368 15.543.22 31.258-15.438 1.526-1.525-.485-4.368-2.334-2.693-5.489 4.68-11.197 9.384-17.726 12.827-2.577 1.306-6.044 2.704-8.655 2.647-.232-.093.069-1.48.22-2.173.172-.474.334-1.051.612-1.652 5.073-.22 14.028-2.219 12.815-7.072-.624-2.543-3.097-4.53-5.64-4.935-2.934-.474-5.823.971-8.007 2.866-.128.081-.243.185-.37.312a3 3 0 0 1-.197.208c-.104.104-.22.197-.312.3-.289.301-.566.625-.843.96-2.346 2.53-4.83 5.038-7.419 7.314-1.757 1.549-3.837 3.248-5.997 4.172.15-2.739 1.34-5.362 1.479-8.205.058-2.611-.775-5.015-3.074-6.344-2.889-1.606-5.085.104-7.28 1.815-3.12 2.496-5.628 5.489-8.008 8.586a78 78 0 0 1 1.04-4.98c2.762-11.788 7.245-23.09 12.11-34.09 1.225.104 2.438.3 3.582.647.116-.012.232.092.474.173-.092.231-.162.59-.266.705a5.1 5.1 0 0 1-1.155 1.826c-1.49 1.86 3.224 5.65 4.715 3.79 2.091-2.611 2.565-5.489.138-8.054-2.68-2.762-6.83-3.444-10.585-3.594-11.844-.624-24.197 2.427-35.326 6.263-6.98 2.462-13.786 5.478-19.887 9.66-2.219 1.492 2.196 5.536 3.987 4.323 8.62-6.044 18.847-9.892 29.108-12.377-4.552 10.123-7.534 21.101-9.972 31.906-1.225 5.338-2.311 10.897-2.716 16.49-.277 3.651-.508 7.754 1.33 11.07 1.155 2.253 6.124 3.178 4.148-.347-1.144-2.137-.45-7.199-.185-9.949.635-5.512 1.745-10.955 3.062-16.42 2.415-10.008 5.12-20.385 9.522-29.814.543-1.19-1.225-2.924-2.877-3.536 5.073-1.237 10.18-2.138 15.346-2.589.37-.035.75-.058 1.132-.08-4.865 11.046-9.117 22.487-11.532 34.297-.775 4.275-3.051 12.457 1.906 15.311.613.381 2.138.901 2.739.15 4.01-5.766 7.569-11.475 13.22-15.727-.208 1.155-.544 2.322-.867 3.49-.45 2.091-.89 4.287-.208 6.367 1.34 3.929 4.31 5.188 7.87 3.547 2.888-1.363 5.119-3.281 7.233-5.673zm9.707-8.193c1.144-.924 3.848-2.126 3.755-1.883-.37.716-1.098 1.363-1.722 1.883-1.04.797-2.346 1.283-3.686 1.537.624-.52 1.133-1.028 1.641-1.537zM63.58 56.553l-.128-.103c.116-.012.128.103.128.103m-.648-.727v-.116c.104-.012-.011 0 0 .115"
-                ></path></g
-              ><defs
-                ><clipPath id="a"
-                  ><path fill="#fff" d="M0 0h1213.93v141.476H0z"
-                  ></path></clipPath
-                ></defs
-              ></svg
-            >
-          </div>
-        </footer>
-      </section>
+                        <ul class="font-futura text-citrus text-[40px] leading-none tracking-tight list-none space-y-2">
+                            <li class="mb-0">Corporate Lunches</li>
+                            <li class="mb-0">Anniversary Parties</li>
+                            <li class="mb-0">Fundraiser Dinners</li>
+                            <li class="mb-0">Birthday Parties</li>
+                            <li class="mb-0">Game Night</li>
+                            <li class="mb-0">Company Picnics</li>
+                            <li class="mb-0">Holiday Gatherings</li>
+                            <li class="mb-0">Graduations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="font-holiday text-citrus text-[64px] font-normal -rotate-4 ms-36">How it Works</div>
+
+                <div class="max-w-[1150px] mx-auto mt-8">
+                    <!-- Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col gap-4">
+                            <div class="aspect-[1/1] w-full overflow-hidden">
+                                <img src="/catering-guest-list.webp" alt="Prepare the Guest List" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                            </div>
+                            <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Prepare the Guest List</h3>
+                            <p class="font-geist text-ink text-[14px] leading-[1.4]">We'll need to know: when, and how many. And if there are any allergies or dietary restrictions, let's note those, too.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col gap-4">
+                            <div class="aspect-[1/1] w-full overflow-hidden">
+                                <img src="catering-ordering.webp" alt="Order Online" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                            </div>
+                            <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Order your Package</h3>
+                            <p class="font-geist text-ink text-[14px] leading-[1.4]">We offer two convenient packages with all the proteins, all the fixins, and utensils if you need them. Add on drinks, desserts, and more.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col gap-4">
+                            <div class="aspect-[1/1] w-full overflow-hidden">
+                                <img src="catering-enjoy.webp" alt="Enjoy your delicious taco bar" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                            </div>
+                            <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Enjoy!</h3>
+                            <p class="font-geist text-ink text-[14px] leading-[1.4]">Swing by the location you ordered from and pick up your order: portioned, hot, and ready to serve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catering FAQ Section -->
+            <section class="flex flex-col md:flex-row">
+                <!-- On Ordering -->
+                <div class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10">
+                    <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Ordering</h2>
+                    <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="ordering-faq">
+                        {
+                            [
+                                {
+                                    q: "Is there a minimum order for catering?",
+                                    a: "Yes. 10 people.",
+                                },
+                                {
+                                    q: "How many tacos will I get per person with my order?",
+                                    a: "Our Taco Packages accommodate three soft tortilla tacos per person. We also offer hard shells, if you would like hard shells, please notate this on your order or mention it when speaking with a catering representative.",
+                                },
+                                {
+                                    q: "How far in advance should I order?",
+                                    a: "A 24-hour advance is ideal, but please call the store if your order is last minute and we will always do our best to accommodate your needs.",
+                                },
+                                {
+                                    q: "Do you offer alcohol?",
+                                    a: "Yes, we do. We have a great selection of wine, beer, margaritas and sangria.",
+                                },
+                                {
+                                    q: "Is gratuity included in my bill?",
+                                    a: "No. Please feel free to leave gratuity separately to our amazing team!",
+                                },
+                                {
+                                    q: "Who do I contact if I have any questions about my order or need to make a change?",
+                                    a: "Please call the store you ordered from directly.",
+                                },
+                                {
+                                    q: "Can I make up my own menu or make changes to your menu?",
+                                    a: "Our chefs are specifically trained to our own menu, so unfortunately we cannot accommodate requests outside of what we currently offer.",
+                                },
+                                {
+                                    q: "What is your Cancellation/Refund Policy?",
+                                    a: "Orders cancelled within 24 hours of your pick up time will be fully refunded. If cancelled less than 24 hours, you will be charged 1/2 your bill.",
+                                },
+                            ].map((faq, index) => (
+                                <div class="border-b border-ink">
+                                    <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+                                        <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
+                                        <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <script>
+                        document.querySelectorAll(".faq-toggle").forEach((button) => {
+                            button.addEventListener("click", () => {
+                                const isExpanded = button.getAttribute("aria-expanded") === "true";
+                                button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+                                const answerId = button.getAttribute("aria-controls");
+                                if (answerId) {
+                                    const answer = document.getElementById(answerId);
+                                    if (answer) {
+                                        answer.classList.toggle("hidden");
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+
+                <!-- On Delivery/Pickup -->
+                <div class="flex-1 bg-sky py-[80px] px-5 flex flex-col items-center gap-10">
+                    <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Delivery/Pickup</h2>
+                    <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="delivery-faq">
+                        {
+                            [
+                                {
+                                    q: "Do you provide plates/napkins and utensils?",
+                                    a: "Yes, we do! They are provided complimentary with your order.",
+                                },
+                                {
+                                    q: "Does The Taco Project do corporate catering?",
+                                    a: "Yes. Please contact our catering specialist, catering@thetacoproject.com.",
+                                },
+                                {
+                                    q: "Will my food be hot when I pick it up?",
+                                    a: "Yes. Your food will be fresh and hot when you pick it up and will be packed in foil pans to keep them warm.",
+                                },
+                                {
+                                    q: "Can I reheat or keep food hot in the oven?",
+                                    a: "Yes. You can keep your food hot or reheat it in the oven only. Our foil pans are non-microwavable.",
+                                },
+                                {
+                                    q: "Do you have staff that could help at my event?",
+                                    a: "Yes. We can provide Taco Project trained staff at an hourly rate of $30 with a 3 hour minimum. A 24 hour advance on hiring our staff is required.",
+                                },
+                                {
+                                    q: "Can my order be delivered?",
+                                    a: "Delivery from online catering orders will be provided via Uber and will be a direct drop off. Unboxing and setup will not be included by the driver.",
+                                },
+                                {
+                                    q: "Is there a fee for delivery?",
+                                    a: "Yes. It is $18.00",
+                                },
+                            ].map((faq, index) => (
+                                <div class="border-b border-ink">
+                                    <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`delivery-faq-answer-${index}`}>
+                                        <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <div id={`delivery-faq-answer-${index}`} class="hidden px-10 pb-5">
+                                        <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonial -->
+            <section class="bg-hot-sauce py-[100px] px-5">
+                <div class="max-w-[760px] mx-auto flex flex-col items-start gap-[22px]">
+                    <div class="flex gap-1">
+                        <!-- 5 Stars -->
+                        {
+                            [...Array(5)].map(() => (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
+                                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                                </svg>
+                            ))
+                        }
+                    </div>
+                    <p class="font-geist text-crema text-[24px] leading-[1.4] font-normal">
+                        Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!
+                    </p>
+                    <p class="font-geist text-crema text-[14px] leading-[1.4] font-normal">— Anju Kapoor</p>
+                </div>
+            </section>
+        </section>
     </section>
-  </body>
-</html>
+
+    <!-- ORDER FROM ANY OF OUR LOCATIONS -->
+    <section id="locations-list" class="bg-crema py-16 relative">
+        <div class="container">
+            <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Order from any of our locations</h2>
+
+            <!-- Location Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                <!-- Bronxville Location -->
+                <div class="flex items-stretch">
+                    <div class="w-34">
+                        <img src="bronxville-catering_tn.webp" alt="Bronxville Location" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="flex-1 bg-tortilla px-9 py-8 flex flex-col gap-6 h-fit">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Bronxville, NY</h3>
+                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">65 Pondfield Rd.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarrytown Location -->
+                <div class="flex items-stretch">
+                    <div class="w-34">
+                        <img src="tarrytown-catering_tn.webp" alt="Tarrytown Location" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="flex-1 bg-tortilla px-9 py-8 flex flex-col gap-6 h-fit">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Tarrytown, NY</h3>
+                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">18 Main St.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
