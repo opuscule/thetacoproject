@@ -3,506 +3,286 @@ import "../styles/global.css";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Menu | The Taco Project</title>
-  </head>
-  <body>
-    <!-- FOOD & DRINK -->
-    <section class="bg-crema py-16 relative">
-      <div class="container">
-        <h2
-          class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12"
-        >
-          Food &amp; Drink
-        </h2>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Menu | The Taco Project</title>
+    </head>
+    <body>
+        <!-- FOOD & DRINK -->
+        <section class="bg-crema py-16 relative">
+            <div class="container">
+                <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Food &amp; Drink</h2>
 
-        <!-- HOUSE STARTERS -->
-        <div class="mb-12">
-          <div class="flex items-center justify-start mb-6">
-            <p
-              class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]"
-            >
-              House Starters
-            </p>
-          </div>
+                <!-- HOUSE STARTERS -->
+                <div class="mb-12">
+                    <div class="flex items-center justify-start mb-6">
+                        <p class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]">House Starters</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+                        <ul class="flex flex-col gap-y-4">
+                            <!-- Guacamole -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Guacamole</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">with House-Made Yellow Corn Tortilla Chips</p>
+                            </li>
 
-          <!-- two columns for house starters -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-            <div class="flex flex-col gap-y-8">
-              <!-- Guacamole -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Guacamole
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  with House-Made Yellow Corn Tortilla Chips
-                </p>
-              </div>
+                            <!-- Mexican Corn -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Mexican Corn</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">On the Cob with Cotija, Mayo, Sour Cream, Lemon, Chili Pepper</p>
+                            </li>
 
-              <!-- Mexican Corn -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Mexican Corn
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  On the Cob with Cotija, Mayo, Sour Cream, Lemon, Chili Pepper
-                </p>
-              </div>
+                            <!-- Rice and Beans -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Rice and Beans</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Spiced Mexican Rice and Black Beans Served with Queso Fresco, Sour Cream, Radish, and Cilantro</p>
+                            </li>
 
-              <!-- Rice and Beans -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Rice and Beans
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Spiced Mexican Rice and Black Beans Served with Queso Fresco,
-                  Sour Cream, Radish, and Cilantro
-                </p>
-              </div>
+                            <!-- Sweet Fried Plantains -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Sweet Fried Plantains</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Lightly Fried and Sliced Plantains with Sour Cream and Queso Fresco</p>
+                            </li>
+                        </ul>
 
-              <!-- Sweet Fried Plantains -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Sweet Fried Plantains
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Lightly Fried and Sliced Plantains with Sour Cream and Queso
-                  Fresco
-                </p>
-              </div>
+                        <ul class="flex flex-col gap-y-4">
+                            <!-- Taco Project Fire Roasted Salsa -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Taco Project Fire Roasted Salsa</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">with House made Yellow Corn Tortilla Chips</p>
+                            </li>
+
+                            <!-- Sidewinders Fries -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Sidewinders Fries</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Sidewinder Cut Potatoes created with Craft Beer Batter and Served with Chipotle Aioli and Jalapeño Ketchup</p>
+                            </li>
+
+                            <!-- Taco Project Wings -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Taco Project Wings</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Premium Chicken Wings brined overnight and Fried to order in our Buffalo Sauce then topped with Scallions. Served with house-made Ranch and Celery. Order 6, 12, or 30 wings.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TACOS -->
+                <div class="mb-12">
+                    <div class="flex flex-col mb-6">
+                        <div class="flex items-center justify-start">
+                            <p class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]">Tacos</p>
+                        </div>
+                        <p class="font-geist text-citrus text-[14px] leading-[1.4] lowercase">All tacos are two-to-an-order, and served on Yellow Corn Tortillas</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+                        <ul class="flex flex-col gap-y-4">
+                            <!-- Taco of the Month -->
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Taco of the Month</p>
+                                <p class="font-geist text-citrus text-[14px] leading-[1.4] lowercase">chef's culinary mexican creation</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Chicken</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Free Range Chicken Rolled in Chipotle topped with Chipotle Aioli, Cilantro, Jicama, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Steak</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Skirt Steak Topped with Guaca Salsa, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">BBQ Pulled Pork</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Slow Cooked Pork Shoulder marinated in House Made BBQ sauce with Caramelized Onion, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Pork Belly</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Braised Pork Belly topped with Pineapple Glaze, Pineapple Salsa, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Classic Beef</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Seasoned Ground Beef topped with Cheddar Cheese, Pico de Gallo, Lettuce, and Sour Cream. Served on a hard shell corn tortilla</p>
+                            </li>
+                        </ul>
+
+                        <ul class="flex flex-col gap-y-4">
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Chorizo</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Homemade Mexican Sausage topped with White Onions, Potatoes, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Shrimp</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Tempura Battered Shrimp topped with Mango Salsa, Tomatillo Sauce, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Cajun Salmon</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Topped with House Made Wasabi Slaw, Chipotle Aioli, Cilantro, and Radish</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Fish</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Atlantic Cod topped with Red Cabbage Slaw, Guaca Salsa, Cilantro, and Radish. Your Choice of Sautéed or Battered</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Vegetable</p>
+                                <p class="font-geist text-citrus text-[14px] leading-5 lowercase">Rice, Black Beans, Guacamole, Salsa, Lettuce, Jicama, Red Cabbage, Grilled Corn, Radish, and Cilantro</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+                        <div>
+                            <div class="flex items-center justify-start">
+                                <p class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]">Birria</p>
+                            </div>
+                            <ul class="flex flex-col gap-y-4">
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Birria Tacos</p>
+                                    <p class="font-geist text-citrus text-[14px] leading-[1.4] lowercase">3 Tacos, Slow Cooked Beef Brisket, with Melted Oaxaca Cheese, White Onion, and Cilantro, served on Corn Tortillas dipped in Consume and grilled pressed</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Birria Quesadilla</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Birria Burrito</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Birria Bowl</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <div class="flex flex-col gap-1 items-center justify-start">
+                                <p class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]">Burritos</p>
+                                <p class="font-geist text-citrus text-[14px] leading-[1.4] lowercase">All Burritos are filled to order, in a Flour Tortilla, and served with Rice, Beans, Cotija Cheese, Sour Cream, and your Favorite Protein.</p>
+                            </div>
+                            <ul class="flex flex-col gap-y-4">
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Steak</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Chicken</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Battered Shrimp</p>
+                                </li>
+                                <li class="flex flex-col gap-1">
+                                    <p class="font-futura text-citrus text-4xl tracking-tight leading-10 mb-1">Vegetable</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="flex flex-col gap-y-8">
-              <!-- Taco Project Fire Roasted Salsa -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Taco Project Fire Roasted Salsa
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  with House made Yellow Corn Tortilla Chips
-                </p>
-              </div>
+        <!-- Brunch -->
+        <section class="bg-sky py-16 relative">
+            <div class="container">
+                <h2 class="font-futura text-ocean text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Brunch</h2>
 
-              <!-- Sidewinders Fries -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Sidewinders Fries
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Sidewinder Cut Potatoes created with Craft Beer Batter and
-                  Served with Chipotle Aioli and Jalapeño Ketchup
-                </p>
-              </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 mb-12">
+                    <!-- Avocado Toast -->
+                    <div class="flex flex-col gap-1">
+                        <p class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Avocado Toast</p>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Served with Smashed Avocado, citrus, served on a buttered locally sourced artisan slice and topped with cherry tomatoes, onion, pickled jalapeño, cilantro, balsamic glaze.</p>
+                    </div>
 
-              <!-- Taco Project Wings -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Taco Project Wings
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Premium Chicken Wings brined overnight and Fried to order in
-                  our Buffalo Sauce then topped with Scallions. Served with
-                  house-made Ranch and Celery. Order 6, 12, or 30 wings.
-                </p>
-              </div>
+                    <!-- Breakfast Burrito -->
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Breakfast Burrito</h3>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Scrambled eggs, chorizo, black beans, cheese, avocado, pico de gallo, wrapped in a flour tortilla.</p>
+                    </div>
+
+                    <!-- Huevos Rancheros -->
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Huevos Rancheros</h3>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Two fried eggs on corn tortillas, topped with ranchero sauce, black beans, avocado, queso fresco, cilantro.</p>
+                    </div>
+
+                    <!-- Chilaquiles -->
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Chilaquiles</h3>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Crispy tortilla chips tossed in salsa verde or roja, topped with fried eggs, crema, queso fresco, onion, cilantro.</p>
+                    </div>
+
+                    <!-- Breakfast Tacos -->
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Breakfast Tacos</h3>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Three soft tacos with scrambled eggs, choice of bacon, chorizo, or potato, topped with cheese, pico de gallo, avocado.</p>
+                    </div>
+
+                    <!-- Churro French Toast -->
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Churro French Toast</h3>
+                        <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">Thick-cut brioche dipped in cinnamon sugar batter, served with dulce de leche, fresh berries, whipped cream.</p>
+                    </div>
+                </div>
+
+                <!-- brunch beverages -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-start mb-6">
+                        <p class="font-holiday text-ocean text-[48px] leading-[1.3] rotate-[358deg]">Beverages</p>
+                    </div>
+
+                    <!-- two columns -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8">
+                        <!-- Non-Alcoholic -->
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Non-Alcoholic</h3>
+                            <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">
+                                Mexican Coke<br />
+                                Jarritos (Lime, Tamarind, Mandarin)<br />
+                                Fresh Squeezed Orange Juice<br />
+                                Horchata<br />
+                                Jamaica (Hibiscus Tea)<br />
+                                Coffee<br />
+                                Hot Chocolate
+                            </p>
+                        </div>
+
+                        <!-- Mimosas -->
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Mimosas</h3>
+                            <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">
+                                Classic Orange<br />
+                                Mango<br />
+                                Passion Fruit<br />
+                                Strawberry ƒ
+                            </p>
+                        </div>
+
+                        <!-- Bloody Marys -->
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Bloody Marys</h3>
+                            <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">
+                                Classic<br />
+                                Spicy Jalapeño<br />
+                                Michelada Style
+                            </p>
+                        </div>
+
+                        <!-- Wine -->
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Wine</h3>
+                            <p class="font-geist text-ocean text-[14px] leading-[1.4] lowercase">
+                                Malbec<br />
+                                Rose<br />
+                                Pinot Grigio
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="flex justify-center mt-16">
+                    <p class="font-holiday text-ocean text-[48px] leading-[1.3] rotate-[359deg] whitespace-nowrap">Saturdays & Sundays 11am to 3pm</p>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <!-- TACOS -->
-        <div class="mb-12">
-          <div class="flex flex-col mb-6">
-            <div class="flex items-center justify-start">
-              <p
-                class="font-holiday text-citrus text-[48px] leading-[1.3] rotate-[358deg]"
-              >
-                Tacos
-              </p>
-            </div>
-            <p
-              class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-            >
-              All tacos are two-to-an-order, and served on Yellow Corn Tortillas
-            </p>
-          </div>
-
-          <!-- two columns -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-            <div class="flex flex-col gap-y-8">
-              <!-- Taco of the Month -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Taco of the Month
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Ask your server for details
-                </p>
-              </div>
-
-              <!-- Birria -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Birria
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Slow-cooked Beef, Onion, Cilantro, Lime, served with Consommé
-                </p>
-              </div>
-
-              <!-- Al Pastor -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Al Pastor
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Marinated Pork, Pineapple, Onion, Cilantro
-                </p>
-              </div>
-
-              <!-- Carnitas -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Carnitas
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Slow-cooked Pork, Onion, Cilantro, Lime
-                </p>
-              </div>
-
-              <!-- Carne Asada -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Carne Asada
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Grilled Steak, Onion, Cilantro, Lime
-                </p>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-y-8">
-              <!-- Pollo Asado -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Pollo Asado
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Grilled Chicken, Onion, Cilantro, Lime
-                </p>
-              </div>
-
-              <!-- Baja Fish -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Baja Fish
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Beer-battered Cod, Cabbage Slaw, Pico de Gallo, Chipotle Aioli
-                </p>
-              </div>
-
-              <!-- Shrimp -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Shrimp
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Grilled or Fried Shrimp, Cabbage Slaw, Pico de Gallo, Chipotle
-                  Aioli
-                </p>
-              </div>
-
-              <!-- Cauliflower -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Cauliflower
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Roasted Cauliflower, Pickled Onion, Cilantro, Lime
-                </p>
-              </div>
-
-              <!-- Veggie Bowl -->
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-futura text-citrus text-[40px] leading-none tracking-[-2px]"
-                >
-                  Veggie Bowl
-                </h3>
-                <p
-                  class="font-geist text-citrus text-[14px] leading-[1.4] lowercase"
-                >
-                  Rice, Black Beans, Guacamole, Salsa, Lettuce, Jicama, Red
-                  Cabbage, Grilled Corn, Radish, and Cilantro
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Brunch -->
-    <section class="bg-sky py-16 relative">
-      <div class="container">
-        <h2
-          class="font-futura text-ocean text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12"
-        >
-          Brunch
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 mb-12">
-          <!-- Avocado Toast -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Avocado Toast
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Served with Smashed Avocado, citrus, served on a buttered locally
-              sourced artisan slice and topped with cherry tomatoes, onion,
-              pickled jalapeño, cilantro, balsamic glaze.
-            </p>
-          </div>
-
-          <!-- Breakfast Burrito -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Breakfast Burrito
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Scrambled eggs, chorizo, black beans, cheese, avocado, pico de
-              gallo, wrapped in a flour tortilla.
-            </p>
-          </div>
-
-          <!-- Huevos Rancheros -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Huevos Rancheros
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Two fried eggs on corn tortillas, topped with ranchero sauce,
-              black beans, avocado, queso fresco, cilantro.
-            </p>
-          </div>
-
-          <!-- Chilaquiles -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Chilaquiles
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Crispy tortilla chips tossed in salsa verde or roja, topped with
-              fried eggs, crema, queso fresco, onion, cilantro.
-            </p>
-          </div>
-
-          <!-- Breakfast Tacos -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Breakfast Tacos
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Three soft tacos with scrambled eggs, choice of bacon, chorizo, or
-              potato, topped with cheese, pico de gallo, avocado.
-            </p>
-          </div>
-
-          <!-- Churro French Toast -->
-          <div class="flex flex-col gap-1">
-            <h3
-              class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-            >
-              Churro French Toast
-            </h3>
-            <p
-              class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-            >
-              Thick-cut brioche dipped in cinnamon sugar batter, served with
-              dulce de leche, fresh berries, whipped cream.
-            </p>
-          </div>
-        </div>
-
-        <!-- brunch beverages -->
-        <div class="mb-8">
-          <div class="flex items-center justify-start mb-6">
-            <p
-              class="font-holiday text-ocean text-[48px] leading-[1.3] rotate-[358deg]"
-            >
-              Beverages
-            </p>
-          </div>
-
-          <!-- two columns -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8">
-            <!-- Non-Alcoholic -->
-            <div class="flex flex-col gap-1">
-              <h3
-                class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-              >
-                Non-Alcoholic
-              </h3>
-              <p
-                class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-              >
-                Mexican Coke<br />
-                Jarritos (Lime, Tamarind, Mandarin)<br />
-                Fresh Squeezed Orange Juice<br />
-                Horchata<br />
-                Jamaica (Hibiscus Tea)<br />
-                Coffee<br />
-                Hot Chocolate
-              </p>
-            </div>
-
-            <!-- Mimosas -->
-            <div class="flex flex-col gap-1">
-              <h3
-                class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-              >
-                Mimosas
-              </h3>
-              <p
-                class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-              >
-                Classic Orange<br />
-                Mango<br />
-                Passion Fruit<br />
-                Strawberry
-              </p>
-            </div>
-
-            <!-- Bloody Marys -->
-            <div class="flex flex-col gap-1">
-              <h3
-                class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-              >
-                Bloody Marys
-              </h3>
-              <p
-                class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-              >
-                Classic<br />
-                Spicy Jalapeño<br />
-                Michelada Style
-              </p>
-            </div>
-
-            <!-- Wine -->
-            <div class="flex flex-col gap-1">
-              <h3
-                class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]"
-              >
-                Wine
-              </h3>
-              <p
-                class="font-geist text-ocean text-[14px] leading-[1.4] lowercase"
-              >
-                Malbec<br />
-                Rose<br />
-                Pinot Grigio
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hours -->
-        <div class="flex justify-center mt-16">
-          <p
-            class="font-holiday text-ocean text-[48px] leading-[1.3] rotate-[359deg] whitespace-nowrap"
-          >
-            Saturdays & Sundays 11am to 3pm
-          </p>
-        </div>
-      </div>
-    </section>
-  </body>
+        </section>
+    </body>
 </html>

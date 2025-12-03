@@ -1,0 +1,249 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Careers | The Taco Project">
+   
+
+    <section class="bg-crema">
+        <div class="flex">
+            <div class="w-[60%]">
+                <div class="w-[60%] flex justify-end">
+                    <h1 class="font-futura font-black text-8xl leading-24 tracking-tight uppercase text-citrus mb-8">Join the Taco Project Team</h1>
+                </div>
+                    <div class="md:flex md:gap-8">
+                        <div class="md:w-2/5">
+                            <img src="careers-banner-tn.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="md:w-3/5">
+                            <p class="font-geist text-ink text-[14px] leading-[1.4] text-pretty">The Taco Project restaurants are Mexican-inspired, polished casual / quick service taquerias, located in Westchester County, NY, and Fairfield County, CT. If you've got a passion for food and love working alongside vibrant, growth-minded humans, you'll fit right in.</p>
+                            <div class="">
+                                <a href="" class="">
+                                    JOIN us
+                                    Apply Today
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[40%] bg-sky">
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <section id="working_with_us" class="bg-crema py-[72px] px-[72px] flex flex-col gap-[22px] items-center">
+        <div class="flex justify-center items-center mb-12">
+            <h2 class="font-holiday text-citrus text-[64px] leading-[1.3] rotate-[-2deg]">Why you'll love working with us</h2>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-[27px] justify-center items-start">
+            <div class="flex flex-col gap-[14px] w-full">
+                <div class="w-full overflow-hidden relative">
+                    <img src="careers-grid-1.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Good energy, every shift</h3>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4]">Work in a place where the vibes are high, the playlists are good, and the people actually like being here.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-[14px] w-full">
+                <div class="w-full overflow-hidden relative">
+                    <img src="careers-grid-2.webp" alt="Flexible Schedule at The Taco Project" class="w-full h-full object-cover" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Fuel for your future</h3>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4]">Competitive pay, flexible schedules, and room to grow, because your goals matter.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-[14px] w-full">
+                <div class="w-full overflow-hidden relative">
+                    <img src="careers-grid-3.webp" alt="Feels like fam at The Taco Project" class="w-full h-full object-cover" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Feels like fam</h3>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4]">We've built something real: a crew that's supportive, collaborative, and always up for a post-shift taco (or two).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers_form" class="bg-sky py-[72px] px-5 lg:px-[72px] relative overflow-hidden">
+        <div class="container mx-auto">
+            <div class="flex flex-col gap-[20px] items-start text-ink mb-[52px]">
+                <h2 class="font-futura text-[64px] lg:text-[104px] leading-[0.88] tracking-[-5px] uppercase text-ink">Apply Today</h2>
+                <p class="font-geist font-normal text-[14px] leading-[1.4]">We are currently hiring for all positions.</p>
+            </div>
+
+            <form class="max-w-[1136px] mx-auto flex flex-col gap-[30px]">
+                <!-- Row 1 -->
+                <div class="flex flex-col lg:flex-row gap-[22px] w-full">
+                    <div class="flex-1 flex flex-col gap-[14px]">
+                        <label for="first_name" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">First Name*</label>
+                        <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-[14px]">
+                        <label for="last_name" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Last Name*</label>
+                        <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="flex flex-col lg:flex-row gap-[22px] w-full">
+                    <div class="flex-1 flex flex-col gap-[14px]">
+                        <label for="email" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Email*</label>
+                        <input type="email" id="email" name="email" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-[14px]">
+                        <label for="phone" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                </div>
+
+                <!-- Row 3: Position -->
+                <div class="flex flex-col gap-[14px] w-full">
+                    <label for="position" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Position you are applying for*</label>
+                    <div class="relative">
+                        <select id="position" name="position" required class="bg-crema rounded-[8px] px-[24px] py-[18px] w-full font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer">
+                            <option value="" disabled selected>Select a position</option>
+                            <option value="server">Server</option>
+                            <option value="cook">Line Cook</option>
+                            <option value="bartender">Bartender</option>
+                            <option value="manager">Manager</option>
+                        </select>
+                        <div class="absolute right-[24px] top-1/2 -translate-y-1/2 pointer-events-none">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Resume -->
+                <div class="flex flex-col gap-[14px] w-full">
+                    <label class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Upload Resume*</label>
+                    <div class="relative">
+                        <input type="file" id="resume" name="resume" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                        <div class="bg-crema rounded-[8px] px-[24px] py-[18px] w-full flex justify-between items-center border border-dashed border-ink/20">
+                            <span class="font-geist text-ink/50 text-[14px]">Choose file...</span>
+                            <span class="font-geist text-ink text-[14px] underline">Browse</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5: Cover Letter -->
+                <div class="flex flex-col gap-[14px] w-full">
+                    <label for="cover_letter" class="font-geist font-normal text-[14px] leading-[1.4] text-ink">Cover Letter</label>
+                    <textarea id="cover_letter" name="cover_letter" rows="4" class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-[14px] leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-hot-sauce text-crema rounded-[8px] px-[20px] py-[8px] font-geist font-normal text-[14.2px] leading-[1.4] uppercase hover:opacity-90 transition-opacity">Submit Form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="store_slider" class="bg-crema py-[96px] overflow-hidden relative">
+        <div class="container relative">
+            <h2 class="font-futura text-citrus text-[64px] lg:text-[92px] leading-[0.88] uppercase tracking-[-4.4px] text-center mb-16 max-w-[800px] mx-auto">Wherever you are, we got you.</h2>
+
+            <div class="absolute top-[80px] right-[100px] hidden lg:block rotate-[5deg]">
+                <p class="font-holiday text-ocean text-5xl leading-[1.3]">Apply to a store near you</p>
+            </div>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="flex gap-6 overflow-x-auto pb-8 px-5 no-scrollbar snap-x snap-mandatory">
+            <!-- Tarrytown -->
+            <a href="/tarrytown/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-tarrytown.webp" alt="The Taco Project in Tarrytown, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Tarrytown, NY</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Bronxville -->
+            <a href="/bronxville/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-bronxville.webp" alt="The Taco Project in Bronxville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Bronxville, NY</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Stamford -->
+            <a href="/stamford/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-stamford.webp" alt="The Taco Project in Stamford, CT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Stamford, CT</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Yonkers -->
+            <a href="/yonkers/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-yonkers.webp" alt="The Taco Project in Yonkers, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Yonkers, NY</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Pleasantville -->
+            <a href="/pleasantville/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-pleasantville.webp" alt="The Taco Project in Pleasantville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Pleasantville, NY</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- New Rochelle -->
+            <a href="/new-rochelle/" class="flex-none snap-center group cursor-pointer">
+                <div class="overflow-hidden h-[300px] relative">
+                    <img src="location-tn-new-rochelle.webp" alt="The Taco Project in New Rochelle, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
+                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">New Rochelle, NY</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean transition-transform group-hover:translate-x-1">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
+</BaseLayout>

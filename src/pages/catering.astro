@@ -1,0 +1,426 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Catering | The Taco Project">
+    
+    <!-- Intro Section -->
+    <section>
+        <div class="flex">
+            <div class="w-[65%]">
+                <img src="/catering-taco-project.webp" alt="Catering" class="w-full h-auto object-cover" />
+            </div>
+            <div class="w-[35%] bg-sky">
+                <div class="px-6 py-16" style="width: calc(var(--max-content-width) * 0.35);">
+                    <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase mb-8" style="text-wrap:balance;">We'll Come to You</h2>
+                    <div class="flex flex-col gap-6">
+                        <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Types & How It Works -->
+    <section class="bg-crema py-[100px] px-5 overflow-hidden">
+        <div class="max-w-[1150px] mx-auto relative">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <!-- Left Content -->
+                <div class="flex-1 flex flex-col gap-8">
+                    <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">
+                        stress-free<br />catering
+                    </h2>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
+                </div>
+
+                <!-- Right Content - Event Types -->
+                <div class="flex-1 relative mt-10 lg:mt-0">
+                    <p class="font-holiday text-ink text-[40px] leading-none whitespace-nowrap -rotate-4 mb-4">We cater a variety of event types</p>
+
+                    <ul class="font-futura text-citrus text-[40px] leading-none tracking-tight list-none space-y-2">
+                        <li class="mb-0">Corporate Lunches</li>
+                        <li class="mb-0">Anniversary Parties</li>
+                        <li class="mb-0">Fundraiser Dinners</li>
+                        <li class="mb-0">Birthday Parties</li>
+                        <li class="mb-0">Game Night</li>
+                        <li class="mb-0">Company Picnics</li>
+                        <li class="mb-0">Holiday Gatherings</li>
+                        <li class="mb-0">Graduations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="font-holiday text-citrus text-[64px] font-normal -rotate-4 ms-36 mt-16">How it Works</div>
+
+            <div class="max-w-[1150px] mx-auto mt-8">
+                <!-- Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[1/1] w-full overflow-hidden">
+                            <img src="/catering-guest-list.webp" alt="Prepare the Guest List" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                        </div>
+                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Prepare the Guest List</h3>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We'll need to know: when, and how many. And if there are any allergies or dietary restrictions, let's note those, too.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[1/1] w-full overflow-hidden">
+                            <img src="/catering-ordering.webp" alt="Order Online" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                        </div>
+                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Order your Package</h3>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We offer two convenient packages with all the proteins, all the fixins, and utensils if you need them. Add on drinks, desserts, and more.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[1/1] w-full overflow-hidden">
+                            <img src="/catering-enjoy.webp" alt="Enjoy your delicious taco bar" class="w-full h-full object-cover" loading="lazy" decode="async" />
+                        </div>
+                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Enjoy!</h3>
+                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Swing by the location you ordered from and pick up your order: portioned, hot, and ready to serve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- Order from Locations -->
+    <section id="locations-list" class="bg-crema py-16 relative">
+        <div class="container">
+            <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Order from any of our locations</h2>
+
+            <!-- Location Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                <!-- Bronxville Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('bronxville-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Bronxville, NY</h3>
+                                <a href="/bronxville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">65 Pondfield Rd.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarrytown Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('tarrytown-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Tarrytown, NY</h3>
+                                <a href="/tarrytown" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">18 Main St.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Rochelle Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('new-rochelle-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">New Rochelle, NY</h3>
+                                <a href="/new-rochelle" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">596 North Ave.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19147297949">(914) 729-7949</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yonkers Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('yonkers-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Yonkers, NY</h3>
+                                <a href="/yonkers" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">1086 N. Broadway</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143754000">(914) 375-4000</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stamford Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('stamford-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Stamford, CT</h3>
+                                <a href="/stamford" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">1111 High Ridge Rd.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+12037039495">(203) 703-9495</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pleasantville Location -->
+                <div class="grid grid-cols-[136px_1fr]">
+                    <div class="bg-cover bg-center" style="background-image: url('pleasantville-catering_tn.webp');"></div>
+
+                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Pleasantville, NY</h3>
+                                <a href="/pleasantville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <p class="font-geist text-ink text-[14px] leading-4">465 Bedford Rd.</p>
+                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
+                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19144228111">(914) 422-8111</a></p>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+<!-- Catering FAQ Section -->
+<section class="flex flex-col md:flex-row mt-20">
+        <!-- On Ordering -->
+        <div class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10">
+            <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Ordering</h2>
+            <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="ordering-faq">
+                {
+                    [
+                        {
+                            q: "Is there a minimum order for catering?",
+                            a: "Yes. 10 people.",
+                        },
+                        {
+                            q: "How many tacos will I get per person with my order?",
+                            a: "Our Taco Packages accommodate three soft tortilla tacos per person. We also offer hard shells, if you would like hard shells, please notate this on your order or mention it when speaking with a catering representative.",
+                        },
+                        {
+                            q: "How far in advance should I order?",
+                            a: "A 24-hour advance is ideal, but please call the store if your order is last minute and we will always do our best to accommodate your needs.",
+                        },
+                        {
+                            q: "Do you offer alcohol?",
+                            a: "Yes, we do. We have a great selection of wine, beer, margaritas and sangria.",
+                        },
+                        {
+                            q: "Is gratuity included in my bill?",
+                            a: "No. Please feel free to leave gratuity separately to our amazing team!",
+                        },
+                        {
+                            q: "Who do I contact if I have any questions about my order or need to make a change?",
+                            a: "Please call the store you ordered from directly.",
+                        },
+                        {
+                            q: "Can I make up my own menu or make changes to your menu?",
+                            a: "Our chefs are specifically trained to our own menu, so unfortunately we cannot accommodate requests outside of what we currently offer.",
+                        },
+                        {
+                            q: "What is your Cancellation/Refund Policy?",
+                            a: "Orders cancelled within 24 hours of your pick up time will be fully refunded. If cancelled less than 24 hours, you will be charged 1/2 your bill.",
+                        },
+                    ].map((faq, index) => (
+                        <div class="border-b border-ink">
+                            <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+                                <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
+                                <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        
+
+        <!-- On Delivery/Pickup -->
+        <div class="flex-1 bg-sky py-[80px] px-5 flex flex-col items-center gap-10">
+            <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Delivery/Pickup</h2>
+            <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="delivery-faq">
+                {
+                    [
+                        {
+                            q: "Do you provide plates/napkins and utensils?",
+                            a: "Yes, we do! They are provided complimentary with your order.",
+                        },
+                        {
+                            q: "Does The Taco Project do corporate catering?",
+                            a: "Yes. Please contact our catering specialist, catering@thetacoproject.com.",
+                        },
+                        {
+                            q: "Will my food be hot when I pick it up?",
+                            a: "Yes. Your food will be fresh and hot when you pick it up and will be packed in foil pans to keep them warm.",
+                        },
+                        {
+                            q: "Can I reheat or keep food hot in the oven?",
+                            a: "Yes. You can keep your food hot or reheat it in the oven only. Our foil pans are non-microwavable.",
+                        },
+                        {
+                            q: "Do you have staff that could help at my event?",
+                            a: "Yes. We can provide Taco Project trained staff at an hourly rate of $30 with a 3 hour minimum. A 24 hour advance on hiring our staff is required.",
+                        },
+                        {
+                            q: "Can my order be delivered?",
+                            a: "Delivery from online catering orders will be provided via Uber and will be a direct drop off. Unboxing and setup will not be included by the driver.",
+                        },
+                        {
+                            q: "Is there a fee for delivery?",
+                            a: "Yes. It is $18.00",
+                        },
+                    ].map((faq, index) => (
+                        <div class="border-b border-ink">
+                            <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`delivery-faq-answer-${index}`}>
+                                <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div id={`delivery-faq-answer-${index}`} class="hidden px-10 pb-5">
+                                <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        document.querySelectorAll(".faq-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const isExpanded = button.getAttribute("aria-expanded") === "true";
+                button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+                const answerId = button.getAttribute("aria-controls");
+                if (answerId) {
+                    const answer = document.getElementById(answerId);
+                    if (answer) {
+                        answer.classList.toggle("hidden");
+                    }
+                }
+            });
+        });
+    </script>
+</BaseLayout>

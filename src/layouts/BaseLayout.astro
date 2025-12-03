@@ -14,6 +14,16 @@ const { title = "The Taco Project" } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>{title}</title>
+
+        <link rel="icon" type="image/png" sizes="16x16" href="/the-taco-project-favicon-16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/the-taco-project-favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/the-taco-project-favicon-96.png" />
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/the-taco-project-favicon-180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/the-taco-project-favicon-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/the-taco-project-favicon-512.png" />
+
+        <!-- Google Maps API -->
+        <script src={`https://maps.googleapis.com/maps/api/js?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY}`} async defer></script>
     </head>
     <body>
         <!-- SVG Sprite Definitions -->
@@ -22,6 +32,60 @@ const { title = "The Taco Project" } = Astro.props;
                 <path d="M5.12622 2.95166H2.95142C2.35086 2.95166 1.86401 3.43851 1.86401 4.03906V9.47607C1.86401 10.0766 2.35086 10.5635 2.95142 10.5635H8.38843C8.98898 10.5635 9.47583 10.0766 9.47583 9.47607V7.30127M7.30102 1.86426H10.5632M10.5632 1.86426V5.12646M10.5632 1.86426L5.12622 7.30127" stroke="currentColor" stroke-width="0.887675" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
             </symbol>
         </svg>
+
+        
+
+        <!-- Header -->
+        <header class="bg-ink py-6 border-b border-white/10 sticky top-0 z-50">
+            <div class="container flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="text-crema font-futura font-black text-3xl lg:text-4xl tracking-tighter uppercase leading-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 43" class="w-12 h-12" >
+                        <path fill="#ebe9dc" d="M42.87 21.435q-.001-.184-.005-.368L33.5 19.032l8.046-5.027a21 21 0 0 0-.248-.637l-12.819 1.706 5.655-5.655.434 3.42 3.008-7.161a23 23 0 0 0-.386-.386l-7.16 3.01 3.422.434-5.658 5.658L29.5 1.572q-.315-.13-.637-.249l-5.028 8.05L21.803.004Q21.619 0 21.435 0q-.184.001-.368.005L19.032 9.37l-5.028-8.048q-.32.119-.638.249l1.707 12.818-5.655-5.655 3.42-.433-7.162-3.009q-.195.19-.386.386l3.01 7.16.435-3.421 5.655 5.655-12.821-1.705q-.13.315-.249.637l8.05 5.027-9.365 2.035Q0 21.251 0 21.435q.001.184.005.368l9.367 2.035-8.049 5.026q.119.321.249.638l12.82-1.705-2.394 2.395-4.541.683-.913.913H10.4l-4.504.648-.91.91h3.856l-4.504.648-.934.934 3.83.026-1.249 1.25.683.682 1.248-1.248.025 3.83.947-.947.648-4.501v3.853l.91-.91.648-4.501v3.853l.9-.9.767-4.621 2.31-2.311-1.705 12.815q.315.13.638.248l5.027-8.048 2.036 9.367q.184.004.368.005.184-.001.368-.005l2.035-9.367 5.026 8.049q.321-.12.638-.249l-1.705-12.82 2.31 2.31.77 4.626.913.913v-3.856l.648 4.505.91.91v-3.857l.648 4.504.934.935.026-3.831 1.249 1.25.683-.684-1.248-1.247 3.83-.026-.947-.946-4.501-.648h3.853l-.91-.91-4.501-.648h3.853l-.901-.901-4.65-.797-2.283-2.283 12.818 1.706q.13-.315.248-.637l-8.048-5.028 9.367-2.035q.004-.184.005-.368zm-29.189 0c0-1.965.736-3.76 1.946-5.128l3.596 3.596.683-.683-3.596-3.596a7.72 7.72 0 0 1 5.123-1.943c1.963 0 3.76.736 5.129 1.946L15.624 26.565a7.74 7.74 0 0 1-1.943-5.132zm13.563 5.124-3.603-3.604-.683.683 3.604 3.605a7.72 7.72 0 0 1-5.129 1.946 7.72 7.72 0 0 1-5.126-1.94l10.936-10.936a7.72 7.72 0 0 1 1.943 5.123 7.7 7.7 0 0 1-1.943 5.124z"/>
+                    </svg>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <div class="flex items-center gap-8">
+                        <a href="/locations" class="group flex items-center gap-2 text-crema hover:text-hot-sauce font-futura font-bold text-xl uppercase tracking-tight transition-colors">
+                            Locations
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:text-hot-sauce transition-colors">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="/menus" class="group flex items-center gap-2 text-crema hover:text-hot-sauce font-futura font-bold text-xl uppercase tracking-tight transition-colors">
+                            Menus
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:text-hot-sauce transition-colors">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="/more" class="group flex items-center gap-2 text-crema hover:text-hot-sauce font-futura font-bold text-xl uppercase tracking-tight transition-colors">
+                            More
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:text-hot-sauce transition-colors">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2">
+                        Order Online
+                        <svg class="w-4 h-4" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.12622 2.95166H2.95142C2.35086 2.95166 1.86401 3.43851 1.86401 4.03906V9.47607C1.86401 10.0766 2.35086 10.5635 2.95142 10.5635H8.38843C8.98898 10.5635 9.47583 10.0766 9.47583 9.47607V7.30127M7.30102 1.86426H10.5632M10.5632 1.86426V5.12646M10.5632 1.86426L5.12622 7.30127" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="lg:hidden text-crema hover:text-hot-sauce transition-colors">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
 
         <!-- Page Content -->
         <slot />
