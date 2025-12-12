@@ -1,104 +1,54 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Tarrytown, NY | The Taco Project</title>
-    </head>
-    <body>
-        <!-- Banner Section -->
-        <section class="bg-crema relative h-[554px] overflow-hidden">
-            <!-- Left Column: Background Image -->
-            <div
-                class="absolute left-0 top-0 bottom-0 w-[610px] bg-crema overflow-hidden"
-            >
-                <img
-                    src="http://localhost:3845/assets/ce89716d11af8d9e6eb7576386d7603370f9a199.png"
-                    alt="Tarrytown Location"
-                    class="absolute top-0 left-1/2 -translate-x-1/2 translate-x-[10px] w-[830.594px] h-[554px] object-cover"
-                />
-            </div>
+<BaseLayout title="Menu | The Taco Project">
+    <!-- Banner Section -->
+    <section class="bg-crema relative h-[554px] overflow-hidden">
+        <!-- Left Column: Background Image -->
+        <div class="absolute left-0 top-0 bottom-0 w-[610px] bg-crema overflow-hidden">
+            <img src="http://localhost:3845/assets/ce89716d11af8d9e6eb7576386d7603370f9a199.png" alt="Tarrytown Location" class="absolute top-0 left-1/2 -translate-x-1/2 translate-x-[10px] w-[830.594px] h-[554px] object-cover" />
+        </div>
 
-            <!-- Right Column: Text Content -->
-            <div
-                class="absolute left-[664px] bottom-[54px] w-[303px] flex flex-col gap-[34px]"
-            >
-                <!-- Address & Hours -->
-                <div class="flex flex-col gap-[14px]">
-                    <!-- Address -->
-                    <div class="flex flex-col gap-[2px]">
-                        <p
-                            class="font-geist text-ink text-[14px] leading-[1.4] uppercase"
-                        >
-                            Address
-                        </p>
-                        <p
-                            class="font-geist text-ink text-[14px] leading-[1.4] lowercase"
-                        >
-                            62 Main St<br />
-                            Tarrytown, NY 10591
-                        </p>
-                    </div>
-
-                    <!-- Hours -->
-                    <div class="flex flex-col gap-[2px]">
-                        <p
-                            class="font-geist text-ink text-[14px] leading-[1.4] uppercase"
-                        >
-                            Hours
-                        </p>
-                        <p
-                            class="font-geist text-ink text-[14px] leading-[1.4] lowercase"
-                        >
-                            Mon - Thurs: 11:30am - 9pm<br />
-                            Fri - Sat: 11:30am - 10pm<br />
-                            Sun: 11:30am - 9pm
-                        </p>
-                    </div>
+        <!-- Right Column: Text Content -->
+        <div class="absolute left-[664px] bottom-[54px] w-[303px] flex flex-col gap-[34px]">
+            <!-- Address & Hours -->
+            <div class="flex flex-col gap-[14px]">
+                <!-- Address -->
+                <div class="flex flex-col gap-[2px]">
+                    <p class="font-geist text-ink text-[14px] leading-[1.4] uppercase">Address</p>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4] lowercase">
+                        62 Main St<br />
+                        Tarrytown, NY 10591
+                    </p>
                 </div>
 
-                <!-- CTA Button -->
-                <a
-                    href="#"
-                    class="inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-[14px] uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit"
-                >
-                    Order online
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 12.427 12.427"
-                        class="size-[12.427px]"
-                    >
-                        <path
-                            fill="currentColor"
-                            d="M3.5 3.5h5.427v5.427"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                        <path
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            d="M8.927 3.5L3.5 8.927"></path>
-                    </svg>
-                </a>
+                <!-- Hours -->
+                <div class="flex flex-col gap-[2px]">
+                    <p class="font-geist text-ink text-[14px] leading-[1.4] uppercase">Hours</p>
+                    <p class="font-geist text-ink text-[14px] leading-[1.4] lowercase">
+                        Mon - Thurs: 11:30am - 9pm<br />
+                        Fri - Sat: 11:30am - 10pm<br />
+                        Sun: 11:30am - 9pm
+                    </p>
+                </div>
             </div>
 
-            <!-- Title (positioned on the right) -->
-            <div
-                class="absolute top-[36px] right-[619px] translate-x-full w-[572px]"
-            >
-                <h1
-                    class="font-futura text-ink text-[96px] leading-[0.88] uppercase tracking-[-4.8px]"
-                >
-                    Tarrytown,<br />New york
-                </h1>
-            </div>
-        </section>
-    </body>
-</html>
+            <!-- CTA Button -->
+            <a href="#" class="inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-[14px] uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                Order online
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.427 12.427" class="size-[12.427px]">
+                    <path fill="currentColor" d="M3.5 3.5h5.427v5.427" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.927 3.5L3.5 8.927"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Title (positioned on the right) -->
+        <div class="absolute top-[36px] right-[619px] translate-x-full w-[572px]">
+            <h1 class="font-futura text-ink text-[96px] leading-[0.88] uppercase tracking-[-4.8px]">
+                Tarrytown,<br />New york
+            </h1>
+        </div>
+    </section>
+</BaseLayout>

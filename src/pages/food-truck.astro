@@ -2,30 +2,27 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Book The Taco Project Food Truck | Taco Catering for Events">
-    
+<BaseLayout title="Book The Taco Project Food Truck | Taco Catering for Events" description="Bring the flavors of The Taco Project to your event with our taco truck! Serving freshly made tacos and more. Perfect for private parties and corporate events—book today!" ogImage="/food-truck-hero-the-taco-project.webp" ogUrl="https://thetacoproject.com/food-truck" ogType="restaurant">
     <style>
         #hero:after {
             position: absolute;
             content: "";
             top: 0;
             right: 0;
-            width: calc( ((100vw - var(--max-content-width)) ) + (var(--max-content-width) - 60%));
+            width: calc(((100vw - var(--max-content-width))) + (var(--max-content-width) - 60%));
             height: 100%;
-            background: url('/food-truck-hero-the-taco-project.webp') no-repeat center center;
+            background: url("/food-truck-hero-the-taco-project.webp") no-repeat center center;
             background-size: cover;
             z-index: 1;
         }
     </style>
 
-
-    <section id="hero" class="bg-crema relative">
-
-        <div class="container">
-            <div class="w-[60%]">
-                <h1 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight mb-8">Vote Best Food Truck in NY</h1>
+    <section id="hero" class="bg-crema relative md:min-h-[800px]">
+        <div class="container h-full">
+            <div class="w-[60%] flex flex-col justify-stretch h-full">
+                <h1 class="font-futura text-hot-sauce text-6xl md:text-8xl leading-[0.88] uppercase tracking-tight mb-8">Vote Best Food Truck in NY</h1>
                 <div class="flex gap-4">
-                    <img src="/food-truck-banner-tn.webp" class="flex-shrink-0" style="max-width: 300px;" alt="The Taco Project Food Truck" width="" height="" />
+                    <img src="/food-truck-banner-tn.webp" class="flex-shrink-0" style="max-width: 233px;" alt="The Taco Project Food Truck" width="" height="" />
                     <div class="flex flex-col gap-4">
                         <p class="font-geist text-ink text-[14px] leading-[1.4]">Starting from Pleasantville, NY, our truck is available to book for events within a 20-mile radius—and beyond. Get ready for a fun, fresh, and flavorful experience, with customizable menu options, self-serve stations, and a team dedicated to making your event unforgettable!</p>
                         <a href="https://www.toasttab.com/invoice/lead?rx=eb727eba-109b-4380-81dc-864212560986&ot=f8bf34b6-e937-475e-9591-b8e0836a9b23" target="_blank" class="flex mt-8" rel="noopener noreferrer">
@@ -38,14 +35,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
-
-
-
-
-
     <!-- Food Truck Details Gallery -->
     <section id="food-truck-details" class="bg-tortilla relative py-16">
-
         <div class="container mb-14">
             <div class="max-w-lg">
                 <p class="font-geist text-ink text-[14px] leading-[1.4]">Our signature tacos are hitting the road! Whether you’re hosting a private party, corporate event, or special celebration, The Taco Project’s brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
@@ -58,11 +49,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <img src="http://localhost:3845/assets/82b64146797a71d33929a33ca9cc661472425091.png" alt="Food Truck" class="w-full" />
                 <img src="http://localhost:3845/assets/b9133c36a4bc2591c90896820ea7af052f3c6043.png" alt="Food Truck" class="w-full" />
                 <img src="http://localhost:3845/assets/88d6c183f4264c1ca9cd5b1d62cbc09342441199.png" alt="Food Truck" class="w-full" />
-            <img src="http://localhost:3845/assets/a128727c06fe5d1a44d14e057dd1ab1d865a91c8.png" alt="Food Truck" class="w-full" />
+                <img src="http://localhost:3845/assets/a128727c06fe5d1a44d14e057dd1ab1d865a91c8.png" alt="Food Truck" class="w-full" />
             </div>
         </div>
-
-        
     </section>
-
 </BaseLayout>

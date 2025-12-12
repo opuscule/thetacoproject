@@ -1,29 +1,189 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import StoreLocator from "../components/StoreLocator.astro";
+import LocationsList from "../components/LocationsList.astro";
+
+// Fetch Instagram posts from Behold
+const beholdFeedUrl = "https://feeds.behold.so/2GXViHq88dWJYl2lDbPb";
+let instagramPosts: Array<{ permalink: string; mediaUrl: string; caption: string }> = [];
+
+try {
+    const response = await fetch(beholdFeedUrl);
+    const data = await response.json();
+    // Get the first 6 posts with medium size images
+    instagramPosts = data.posts.slice(0, 6).map((post: any) => ({
+        permalink: post.permalink,
+        mediaUrl: post.sizes.medium.mediaUrl,
+        caption: post.prunedCaption || post.caption || "Instagram post",
+    }));
+} catch (error) {
+    console.error("Error fetching Behold feed:", error);
+}
 ---
 
 <BaseLayout>
+    <section id="video_banner" class="relative w-full h-screen overflow-hidden">
+        <!-- Background Video -->
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
+            <source src="/video-placeholder-v2.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Horizontal Scanlines Overlay -->
+        <div class="absolute inset-0 pointer-events-none scanlines"></div>
+
+        <!-- Logo Animation Container - Centered on video -->
+        <div id="logo_video" class="logo-container absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="logo-inner">
+                <div class="logo-row logo-row-1 w-full max-w-[161px]">
+                    <div class="logo-group logo-the"><img src="/video/The.svg" alt="The" class="w-full" /></div>
+                </div>
+                <div class="logo-row logo-row-2 w-full max-w-[823px] items-center justify-center gap-2">
+                    <div class="logo-group logo-20 w-full max-w-[63px]"><img src="/video/20.svg" alt="20" class="w-full" /></div>
+                    <div class="logo-group logo-taco w-full max-w-[486px]"><img src="/video/taco.svg" alt="TACO" class="w-full" /></div>
+                    <div class="logo-group logo-14 w-full max-w-[64px]"><img src="/video/14.svg" alt="14" class="w-full" /></div>
+                </div>
+                <div class="logo-row logo-row-3 w-full max-w-[823px]">
+                    <div class="logo-group logo-project w-full max-w-[823px]"><img src="/video/project.svg" alt="PROJECT" class="w-full" /></div>
+                </div>
+                <div class="logo-row logo-row-4 w-full max-w-[471px]">
+                    <div class="logo-group logo-made-by-friends w-full max-w-[471px]"><img src="/video/made-by-friends.svg" alt="Made by Friends" class="w-full" /></div>
+                </div>
+                <div class="logo-row logo-row-5 w-full max-w-[349px]">
+                    <div class="logo-group logo-for-friends w-full max-w-[349px]"><img src="/video/for-friends.svg" alt="For Friends" class="w-full" /></div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .scanlines {
+                background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+            }
+
+            /* Logo container layout */
+            .logo-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
+
+            .logo-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
+
+            .logo-row {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            /* Each group clips its content */
+            .logo-group {
+                overflow: hidden;
+            }
+
+            /* Images slide up from below */
+            .logo-group img {
+                display: block;
+                transform: translateY(100%);
+                animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(100%);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            /* Wave 1: The, TACO, PROJECT */
+            .logo-the img {
+                animation-delay: 0.2s;
+            }
+
+            .logo-taco img {
+                animation-delay: 0.4s;
+            }
+
+            .logo-project img {
+                animation-delay: 0.6s;
+            }
+
+            /* Wave 2: MADE BY FRIENDS, FOR FRIENDS (after pause) */
+            .logo-made-by-friends img {
+                animation-delay: 1.4s;
+            }
+
+            .logo-for-friends img {
+                animation-delay: 1.6s;
+            }
+
+            /* Wave 3: 20, 14 (after pause) */
+            .logo-20 img {
+                animation-delay: 2.4s;
+            }
+
+            .logo-14 img {
+                animation-delay: 2.6s;
+            }
+        </style>
+    </section>
+
     <!-- Press Ticker -->
     <section class="bg-hot-sauce py-6 overflow-hidden">
-        <div class="flex gap-[72px] items-center px-[72px]">
-            <!-- CT Insider -->
-            <img src="ticker-ct-insider.png" alt="CT Insider" class="shrink-0" width="113" height="33" />
-            <!-- News 12 -->
-            <img src="ticker-news12.png" alt="News 12" class="shrink-0" width="113" height="24" />
-            <!-- Westchester Magazine -->
-            <img src="ticker-westchester-mag.png" alt="Westchester Magazine" class="shrink-0" width="113" height="36" />
-            <!-- Patch -->
-            <img src="ticker-patch.png" alt="Patch" class="shrink-0" width="113" height="26" />
-            <!-- CT Bites -->
-            <img src="ticker-ct-bites.png" alt="CT Bites" class="shrink-0" width="113" height="36" />
-            <!-- Greenwich Lifestyle -->
-            <img src="ticker-greenwich-lifestyle.png" alt="Greenwich Lifestyle" class="shrink-0" width="113" height="36" />
-            <!-- Daily Voice -->
-            <img src="ticker-daily-voice.png" alt="Daily Voice" class="shrink-0" width="113" height="36" />
-            <!-- Stamford Advocate -->
-            <img src="ticker-stamford-advocate.png" alt="Stamford Advocate" class="shrink-0" width="113" height="36" />
+        <div class="flex animate-scroll">
+            <!-- First set of logos -->
+            <div class="flex gap-18 items-center shrink-0">
+                <img src="ticker-ct-insider.webp" alt="CT Insider" class="shrink-0 w-28" width="300" height="87" loading="lazy" decoding="async" />
+                <img src="ticker-news12.webp" alt="News 12" class="shrink-0 w-28" width="300" height="24" loading="lazy" decoding="async" />
+                <img src="ticker-fox5.webp" alt="Fox 5" class="shrink-0 w-20" width="300" height="24" loading="lazy" decoding="async" />
+                <img src="ticker-westchester-mag.webp" alt="Westchester Magazine" class="shrink-0 w-30" width="300" height="59" loading="lazy" decoding="async" />
+                <img src="ticker-patch.webp" alt="Patch" class="shrink-0 w-24" width="300" height="94" loading="lazy" decoding="async" />
+                <img src="ticker-ct-bites.webp" alt="CT Bites" class="shrink-0 w-24" width="300" height="73" loading="lazy" decoding="async" />
+                <img src="ticker-greenwich-lifestyle.webp" alt="Greenwich Lifestyle" class="shrink-0 w-28" width="300" height="103" loading="lazy" decoding="async" />
+                <img src="ticker-daily-voice.webp" alt="Daily Voice" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
+                <img src="ticker-pix11.svg" alt="PIX 11" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
+                <img src="ticker-stamford-advocate.webp" alt="Stamford Advocate" class="shrink-0 w-28" width="300" height="82" loading="lazy" decoding="async" />
+                <img src="ticker-stamford-mag.webp" alt="Stamford Magazine" class="shrink-0 w-28 mr-18" width="300" height="66" loading="lazy" decoding="async" />
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="flex gap-18 items-center shrink-0" aria-hidden="true">
+                <img src="ticker-ct-insider.webp" alt="" class="shrink-0 w-28" width="300" height="87" loading="lazy" decoding="async" />
+                <img src="ticker-news12.webp" alt="" class="shrink-0 w-28" width="300" height="24" loading="lazy" decoding="async" />
+                <img src="ticker-fox5.webp" alt="" class="shrink-0 w-20" width="300" height="24" loading="lazy" decoding="async" />
+                <img src="ticker-westchester-mag.webp" alt="" class="shrink-0 w-30" width="300" height="59" loading="lazy" decoding="async" />
+                <img src="ticker-patch.webp" alt="" class="shrink-0 w-24" width="300" height="94" loading="lazy" decoding="async" />
+                <img src="ticker-ct-bites.webp" alt="" class="shrink-0 w-24" width="300" height="73" loading="lazy" decoding="async" />
+                <img src="ticker-greenwich-lifestyle.webp" alt="" class="shrink-0 w-28" width="300" height="103" loading="lazy" decoding="async" />
+                <img src="ticker-daily-voice.webp" alt="" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
+                <img src="ticker-pix11.svg" alt="" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
+                <img src="ticker-stamford-advocate.webp" alt="" class="shrink-0 w-28" width="300" height="82" loading="lazy" decoding="async" />
+                <img src="ticker-stamford-mag.webp" alt="" class="shrink-0 w-28" width="300" height="66" loading="lazy" decoding="async" />
+            </div>
         </div>
     </section>
+
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+    </style>
 
     <!-- CATERING CTA -->
 
@@ -54,696 +214,115 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
-    <section id="created-for-you">
-        <div class="flex bg-crema">
-            <div class="w-[35%] flex justify-end">
-                <div class="px-6" style="width: calc(var(--max-content-width) * 0.35);">
-                    <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">Created For You</h2>
-                    <div>
-                        <img src="/ttp-created-menu.webp" alt="Created Menu" class="w-full h-auto object-cover" />
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
-                        <div class="">
-                            <a href="#">MENU VIEW - arrow</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-[65%]">
-                <img src="/ttp-created.webp" alt="Welcome to The Taco Project" class="w-full h-auto object-cover" />
-            </div>
+    <!-- CREATED FOR YOU -->
+    <section id="created_for_you" class="bg-crema grid grid-cols-[auto_1fr] items-stretch">
+        <div class="flex flex-col gap-6 p-8 max-w-[500px]">
+            <h2 class="font-futura text-citrus text-[96px] font-[950] leading-[0.88] tracking-[-4.8px] uppercase">Created for you</h2>
+            <img src="creating-for-you-tn.webp" alt="Created for you" class="w-full max-w-[352px] h-auto" width="800" height="610" />
+            <p class="font-geist text-ink text-[14px] font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
+            <a href="/menu/" class="flex gap-2">
+                <span class="font-futura text-citrus text-6xl font-bold tracking-tight uppercase">Menu</span>
+                <span class="flex items-center gap-2 font-geist text-citrus text-[14px]">
+                    View
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
+                        <use href="#icon-external-link"></use>
+                    </svg>
+                </span>
+            </a>
         </div>
+        <div class="bg-cover bg-center bg-[url('/created-you.webp')] min-h-[400px]"></div>
     </section>
 
-    <!-- Stress Free Catering Section -->
-    <section class="bg-crema py-[100px] px-5 overflow-hidden">
-        <div class="max-w-[1150px] mx-auto relative">
-            <div class="flex flex-col lg:flex-row gap-20">
-                <!-- Left Content -->
-                <div class="flex-1 flex flex-col gap-8">
-                    <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">
-                        stress-free<br />catering
-                    </h2>
-                    <p class="font-geist text-ink text-[14px] leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
-                </div>
-
-                <!-- Right Content - Event Types -->
-                <div class="flex-1 relative mt-10 lg:mt-0">
-                    <p class="font-holiday text-ink text-[40px] leading-none whitespace-nowrap -rotate-4 mb-4">We cater a variety of event types</p>
-
-                    <ul class="font-futura text-citrus text-[40px] leading-none tracking-tight list-none space-y-2">
-                        <li class="mb-0">Corporate Lunches</li>
-                        <li class="mb-0">Anniversary Parties</li>
-                        <li class="mb-0">Fundraiser Dinners</li>
-                        <li class="mb-0">Birthday Parties</li>
-                        <li class="mb-0">Game Night</li>
-                        <li class="mb-0">Company Picnics</li>
-                        <li class="mb-0">Holiday Gatherings</li>
-                        <li class="mb-0">Graduations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="font-holiday text-citrus text-[64px] font-normal -rotate-4 ms-36">How it Works</div>
-
-            <div class="max-w-[1150px] mx-auto mt-8">
-                <!-- Steps -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Step 1 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
-                            <img src="/catering-guest-list.webp" alt="Prepare the Guest List" class="w-full h-full object-cover" loading="lazy" decode="async" />
-                        </div>
-                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Prepare the Guest List</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We'll need to know: when, and how many. And if there are any allergies or dietary restrictions, let's note those, too.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
-                            <img src="catering-ordering.webp" alt="Order Online" class="w-full h-full object-cover" loading="lazy" decode="async" />
-                        </div>
-                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Order your Package</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We offer two convenient packages with all the proteins, all the fixins, and utensils if you need them. Add on drinks, desserts, and more.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
-                            <img src="catering-enjoy.webp" alt="Enjoy your delicious taco bar" class="w-full h-full object-cover" loading="lazy" decode="async" />
-                        </div>
-                        <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Enjoy!</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Swing by the location you ordered from and pick up your order: portioned, hot, and ready to serve.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Catering FAQ Section -->
-        <section class="flex flex-col md:flex-row">
-            <!-- On Ordering -->
-            <div class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10">
-                <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Ordering</h2>
-                <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="ordering-faq">
-                    {
-                        [
-                            {
-                                q: "Is there a minimum order for catering?",
-                                a: "Yes. 10 people.",
-                            },
-                            {
-                                q: "How many tacos will I get per person with my order?",
-                                a: "Our Taco Packages accommodate three soft tortilla tacos per person. We also offer hard shells, if you would like hard shells, please notate this on your order or mention it when speaking with a catering representative.",
-                            },
-                            {
-                                q: "How far in advance should I order?",
-                                a: "A 24-hour advance is ideal, but please call the store if your order is last minute and we will always do our best to accommodate your needs.",
-                            },
-                            {
-                                q: "Do you offer alcohol?",
-                                a: "Yes, we do. We have a great selection of wine, beer, margaritas and sangria.",
-                            },
-                            {
-                                q: "Is gratuity included in my bill?",
-                                a: "No. Please feel free to leave gratuity separately to our amazing team!",
-                            },
-                            {
-                                q: "Who do I contact if I have any questions about my order or need to make a change?",
-                                a: "Please call the store you ordered from directly.",
-                            },
-                            {
-                                q: "Can I make up my own menu or make changes to your menu?",
-                                a: "Our chefs are specifically trained to our own menu, so unfortunately we cannot accommodate requests outside of what we currently offer.",
-                            },
-                            {
-                                q: "What is your Cancellation/Refund Policy?",
-                                a: "Orders cancelled within 24 hours of your pick up time will be fully refunded. If cancelled less than 24 hours, you will be charged 1/2 your bill.",
-                            },
-                        ].map((faq, index) => (
-                            <div class="border-b border-ink">
-                                <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
-                                    <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
-                                    <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-
-                <script>
-                    document.querySelectorAll(".faq-toggle").forEach((button) => {
-                        button.addEventListener("click", () => {
-                            const isExpanded = button.getAttribute("aria-expanded") === "true";
-                            button.setAttribute("aria-expanded", (!isExpanded).toString());
-
-                            const answerId = button.getAttribute("aria-controls");
-                            if (answerId) {
-                                const answer = document.getElementById(answerId);
-                                if (answer) {
-                                    answer.classList.toggle("hidden");
-                                }
-                            }
-                        });
-                    });
-                </script>
-            </div>
-
-            <!-- On Delivery/Pickup -->
-            <div class="flex-1 bg-sky py-[80px] px-5 flex flex-col items-center gap-10">
-                <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Delivery/Pickup</h2>
-                <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="delivery-faq">
-                    {
-                        [
-                            {
-                                q: "Do you provide plates/napkins and utensils?",
-                                a: "Yes, we do! They are provided complimentary with your order.",
-                            },
-                            {
-                                q: "Does The Taco Project do corporate catering?",
-                                a: "Yes. Please contact our catering specialist, catering@thetacoproject.com.",
-                            },
-                            {
-                                q: "Will my food be hot when I pick it up?",
-                                a: "Yes. Your food will be fresh and hot when you pick it up and will be packed in foil pans to keep them warm.",
-                            },
-                            {
-                                q: "Can I reheat or keep food hot in the oven?",
-                                a: "Yes. You can keep your food hot or reheat it in the oven only. Our foil pans are non-microwavable.",
-                            },
-                            {
-                                q: "Do you have staff that could help at my event?",
-                                a: "Yes. We can provide Taco Project trained staff at an hourly rate of $30 with a 3 hour minimum. A 24 hour advance on hiring our staff is required.",
-                            },
-                            {
-                                q: "Can my order be delivered?",
-                                a: "Delivery from online catering orders will be provided via Uber and will be a direct drop off. Unboxing and setup will not be included by the driver.",
-                            },
-                            {
-                                q: "Is there a fee for delivery?",
-                                a: "Yes. It is $18.00",
-                            },
-                        ].map((faq, index) => (
-                            <div class="border-b border-ink">
-                                <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`delivery-faq-answer-${index}`}>
-                                    <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg>
-                                </button>
-                                <div id={`delivery-faq-answer-${index}`} class="hidden px-10 pb-5">
-                                    <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonial -->
-        <section class="bg-hot-sauce py-[100px] px-5">
-            <div class="max-w-[760px] mx-auto flex flex-col items-start gap-[22px]">
-                <div class="flex gap-1">
-                    <!-- 5 Stars -->
-                    {
-                        [...Array(5)].map(() => (
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
-                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
-                            </svg>
-                        ))
-                    }
-                </div>
-                <p class="font-geist text-crema text-[24px] leading-[1.4] font-normal">
-                    Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!
-                </p>
-                <p class="font-geist text-crema text-[14px] leading-[1.4] font-normal">— Anju Kapoor</p>
-            </div>
-        </section>
-    </section>
-
-    <!-- STORE LOCATOR MAP -->
-    <section id="store_locator" class="bg-crema py-16">
-        <div class="flex flex-col lg:flex-row h-[600px]">
-            <!-- Map Container -->
-            <div id="map" class="w-full lg:w-[70%] h-full"></div>
-
-            <!-- Location Sidebar -->
-            <div class="w-full lg:w-[30%] bg-white overflow-y-auto">
-                <div class="p-8">
-                    <h2 class="font-futura text-hot-sauce text-[64px] leading-[0.9] uppercase tracking-tight mb-8">Find Us</h2>
-
-                    <!-- Location Cards -->
-                    <div class="flex flex-col gap-6">
-                        <!-- Tarrytown -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="tarrytown">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">Tarrytown, NY</h3>
-                                <a href="/tarrytown" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">18 Main St. / (914) 909-4455</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-
-                        <!-- Yonkers -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="yonkers">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">Yonkers, NY</h3>
-                                <a href="/yonkers" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">1086 N Broadway. / (914) 375-4000</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-
-                        <!-- Pleasantville -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="pleasantville">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">Pleasantville, NY</h3>
-                                <a href="/pleasantville" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">465 Bedford Rd. / (914) 422-8111</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-
-                        <!-- Bronxville -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="bronxville">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">Bronxville, NY</h3>
-                                <a href="/bronxville" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">65 Pondfield Rd. / (914) 356-8226</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-
-                        <!-- New Rochelle -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="new-rochelle">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">New Rochelle, NY</h3>
-                                <a href="/new-rochelle" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">596 North Ave. / (914) 909-4455</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-
-                        <!-- Stamford -->
-                        <div class="location-card cursor-pointer border-b border-ink/10 pb-6" data-location="stamford">
-                            <div class="flex items-start justify-between mb-2">
-                                <h3 class="font-futura text-hot-sauce text-2xl uppercase tracking-tight">Stamford, CT</h3>
-                                <a href="/stamford" class="text-hot-sauce hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-[12px] uppercase">About Store →</span>
-                                </a>
-                            </div>
-                            <p class="font-geist text-ink text-[14px] leading-[1.4] mb-1">1111 High Ridge Rd. / (203) 504-4000</p>
-                            <div class="flex gap-3 mt-4">
-                                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs">Order Online</a>
-                                <a href="#" class="btn btn-secondary text-xs">Order Catering</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Location data
-        const locations = {
-            'tarrytown': { lat: 41.0763606, lng: -73.8591884, name: 'Tarrytown, NY', address: '18 Main St.' },
-            'yonkers': { lat: 40.9720459, lng: -73.8820079, name: 'Yonkers, NY', address: '1086 N Broadway' },
-            'pleasantville': { lat: 41.1334438, lng: -73.7926226, name: 'Pleasantville, NY', address: '465 Bedford Rd.' },
-            'bronxville': { lat: 40.9408163, lng: -73.8332937, name: 'Bronxville, NY', address: '65 Pondfield Rd.' },
-            'new-rochelle': { lat: 40.9223308, lng: -73.7883121, name: 'New Rochelle, NY', address: '596 North Ave.' },
-            'stamford': { lat: 41.1084596, lng: -73.5467485, name: 'Stamford, CT', address: '1111 High Ridge Rd.' }
-        };
-
-        let map;
-        let markers = {};
-        let selectedMarker = null;
-
-        // Initialize map when Google Maps API is loaded
-        function initMap() {
-            // Center map on all locations
-            const bounds = new google.maps.LatLngBounds();
-            
-            // Create map
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: { lat: 41.0, lng: -73.7 },
-                styles: [
-                    {
-                        "featureType": "all",
-                        "elementType": "geometry",
-                        "stylers": [{ "color": "#EBE9DC" }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{ "color": "#B8DFDB" }]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [{ "color": "#ffffff" }]
-                    }
-                ]
-            });
-
-            // Create custom marker icon (SVG)
-            const markerIcon = {
-                path: 'M12 0C7.58 0 4 3.58 4 8c0 5.25 8 13 8 13s8-7.75 8-13c0-4.42-3.58-8-8-8z',
-                fillColor: '#D33B0D',
-                fillOpacity: 1,
-                strokeColor: '#ffffff',
-                strokeWeight: 2,
-                scale: 1.5,
-                anchor: new google.maps.Point(12, 24)
-            };
-
-            const markerIconSelected = {
-                path: 'M12 0C7.58 0 4 3.58 4 8c0 5.25 8 13 8 13s8-7.75 8-13c0-4.42-3.58-8-8-8z',
-                fillColor: '#D33B0D',
-                fillOpacity: 1,
-                strokeColor: '#ffffff',
-                strokeWeight: 2,
-                scale: 2,
-                anchor: new google.maps.Point(12, 24)
-            };
-
-            // Add markers for each location
-            Object.keys(locations).forEach(key => {
-                const location = locations[key];
-                const position = { lat: location.lat, lng: location.lng };
-                
-                const marker = new google.maps.Marker({
-                    position: position,
-                    map: map,
-                    title: location.name,
-                    icon: markerIcon,
-                    animation: google.maps.Animation.DROP
-                });
-
-                // Store marker reference
-                markers[key] = { marker, icon: markerIcon, iconSelected: markerIconSelected };
-
-                // Add info window
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `<div style="font-family: 'Geist Mono', monospace; padding: 8px;">
-                        <h3 style="font-family: 'Futura Now Headline', sans-serif; color: #D33B0D; margin: 0 0 8px 0; font-size: 18px;">${location.name}</h3>
-                        <p style="margin: 0; font-size: 14px; color: #202020;">${location.address}</p>
-                    </div>`
-                });
-
-                // Click marker to show info
-                marker.addListener('click', () => {
-                    infoWindow.open(map, marker);
-                });
-
-                bounds.extend(position);
-            });
-
-            // Fit map to show all markers
-            map.fitBounds(bounds);
-
-            // Add click handlers to location cards
-            document.querySelectorAll('.location-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    // Don't trigger if clicking on a link
-                    if (e.target.tagName === 'A' || e.target.closest('a')) return;
-                    
-                    const locationKey = card.dataset.location;
-                    selectLocation(locationKey);
-                });
-            });
-        }
-
-        function selectLocation(locationKey) {
-            const location = locations[locationKey];
-            const markerData = markers[locationKey];
-
-            // Reset previously selected marker
-            if (selectedMarker && selectedMarker !== locationKey) {
-                const prevMarkerData = markers[selectedMarker];
-                prevMarkerData.marker.setIcon(prevMarkerData.icon);
-            }
-
-            // Highlight new marker
-            markerData.marker.setIcon(markerData.iconSelected);
-            selectedMarker = locationKey;
-
-            // Pan and zoom to location
-            map.panTo({ lat: location.lat, lng: location.lng });
-            map.setZoom(14);
-
-            // Bounce animation
-            markerData.marker.setAnimation(google.maps.Animation.BOUNCE);
-            setTimeout(() => {
-                markerData.marker.setAnimation(null);
-            }, 1400);
-        }
-
-        // Wait for Google Maps API to load
-        if (typeof google !== 'undefined' && google.maps) {
-            initMap();
-        } else {
-            window.addEventListener('load', () => {
-                if (typeof google !== 'undefined' && google.maps) {
-                    initMap();
+    <!-- Testimonial -->
+    <section class="bg-hot-sauce py-[100px] px-5">
+        <div class="max-w-[760px] mx-auto flex flex-col items-start gap-[22px]">
+            <div class="flex gap-1">
+                <!-- 5 Stars -->
+                {
+                    [...Array(5)].map(() => (
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                        </svg>
+                    ))
                 }
-            });
-        }
-    </script>
+            </div>
+            <p class="font-geist text-crema text-[24px] leading-[1.4] font-normal">
+                Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!
+            </p>
+            <p class="font-geist text-crema text-[14px] leading-[1.4] font-normal">— Anju Kapoor</p>
+        </div>
+    </section>
 
-    <!-- ORDER FROM ANY OF OUR LOCATIONS -->
-    <section id="locations-list" class="bg-crema py-16 relative">
+    <StoreLocator />
+
+    <LocationsList />
+
+    <!-- Taco of the Month & Giving Section -->
+    <section id="totm_giving" class="bg-gradient-to-r from-crema from-50% to-ink to-50%">
         <div class="container">
-            <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Order from any of our locations</h2>
-
-            <!-- Location Cards Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-                <!-- Bronxville Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('bronxville-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Bronxville, NY</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">65 Pondfield Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-[1fr_1fr]">
+                <!-- Taco of the Month -->
+                <div class="flex flex-col gap-[22px] items-center justify-center p-8">
+                    <div class="bg-tortilla w-[412px] h-[384px] overflow-hidden">
+                        <img src="http://localhost:3845/assets/3b5261370fa1705b7df25584c770110663fc7cde.png" alt="Baja Shrimp Taco" class="w-full h-full object-cover" />
                     </div>
+                    <div class="flex flex-col items-center pb-[14px]">
+                        <div class="flex items-center justify-center mb-[-14px]">
+                            <p class="font-holiday text-hot-sauce text-[48px] leading-[1.3] text-center -rotate-[4deg]">Taco of the Month</p>
+                        </div>
+                        <h3 class="font-futura text-ocean text-[96px] leading-[0.88] tracking-[-4.8px] uppercase text-center">BAJA SHRIMP</h3>
+                    </div>
+                    <a href="#" class="btn btn-primary">Order now</a>
                 </div>
 
-                <!-- Tarrytown Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('tarrytown-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Tarrytown, NY</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">18 Main St.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
+                <!-- Partnerships / Giving -->
+                <div class="flex flex-col gap-[22px] items-start justify-center p-8">
+                    <div class="w-full h-[426px] overflow-hidden relative">
+                        <img src="http://localhost:3845/assets/dc01d7b9bd1e637ec3f4ac3eb8218a828c3e23e5.png" alt="Feeding America" class="absolute top-0 left-[51px] w-[155px] h-[91px] object-contain" />
+                        <img src="http://localhost:3845/assets/248b1883530c960df429e877c775d3eafcf33314.png" alt="Filling in the Blanks" class="absolute top-[14px] right-[56px] w-[185px] h-[89px] object-contain" />
+                        <img src="http://localhost:3845/assets/0ab856f1eacb8dbca0c455602354e31007099c1d.png" alt="Future 5" class="absolute bottom-[86px] right-[66px] w-[91px] h-[89px] object-contain" />
+                        <img src="http://localhost:3845/assets/bf2470a33502da17b1551be910fd35598c948076.png" alt="Spectrum Designs" class="absolute bottom-[230px] left-1/2 -translate-x-1/2 w-[274px] h-[56px] object-contain" />
+                        <img src="http://localhost:3845/assets/81641c9742f2748fee56eda1f82ca8e63046492d.png" alt="WMC" class="absolute bottom-[140px] left-[51px] w-[155px] h-[91px] object-contain" />
                     </div>
-                </div>
-
-                <!-- New Rochelle Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('new-rochelle-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">New Rochelle, NY</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">596 North Ave.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19147297949">(914) 729-7949</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yonkers Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('yonkers-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Yonkers, NY</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">1086 N. Broadway</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143754000">(914) 375-4000</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stamford Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('stamford-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Stamford, CT</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">1111 High Ridge Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+12037039495">(203) 703-9495</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pleasantville Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('pleasantville-catering_tn.webp');"></div>
-
-                    <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Pleasantville, NY</h3>
-                                <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                                        <use href="#icon-external-link"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">465 Bedford Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19144228111">(914) 422-8111</a></p>
-                            </div>
-
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-holiday text-crema text-[48px] leading-[1.3] -rotate-[4deg]">Making a difference</h4>
+                        <p class="font-geist text-crema text-[14px] leading-[1.4] max-w-[400px]">
+                            We love a good partnership — especially one that makes positive change. If you're interested in partnering with The Taco Project, please reach out to
+                            <a href="mailto:marketing@thetacoproject.com" class="underline text-crema hover:opacity-80">marketing@thetacoproject.com</a>.
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section id="instagram_feed" class="bg-tortilla py-16 overflow-hidden">
+        <!-- Image Gallery - horizontally centered, overflowing viewport -->
+        <div class="flex gap-[22px] justify-center items-center mb-8">
+            {
+                instagramPosts.map((post) => (
+                    <a href={post.permalink} target="_blank" rel="noopener noreferrer" class="bg-tortilla border border-ink w-[386px] h-[514px] shrink-0 overflow-hidden block hover:opacity-90 transition-opacity">
+                        <img src={post.mediaUrl} alt={post.caption.substring(0, 100)} class="w-full h-full object-cover" loading="lazy" />
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- Follow Button -->
+        <div class="flex justify-center">
+            <a href="https://www.instagram.com/tacoproject/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 font-geist text-hot-sauce text-[14.203px] uppercase leading-[1.4] hover:opacity-80 transition-opacity">
+                follow along on instagram
+                <svg width="13" height="13" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-hot-sauce">
+                    <path
+                        d="M10.6629 1.92016C13.5119 1.92016 13.8493 1.93265 14.9697 1.98264C16.011 2.02845 16.5733 2.20339 16.9482 2.34917C17.4439 2.54077 17.8021 2.77402 18.1728 3.14473C18.5476 3.5196 18.7767 3.87364 18.9683 4.3693C19.1141 4.74416 19.289 5.31063 19.3349 6.34777C19.3848 7.47237 19.3973 7.80975 19.3973 10.6546C19.3973 13.5036 19.3848 13.841 19.3349 14.9614C19.289 16.0027 19.1141 16.565 18.9683 16.9399C18.7767 17.4355 18.5435 17.7937 18.1728 18.1644C17.7979 18.5393 17.4439 18.7684 16.9482 18.96C16.5733 19.1058 16.0069 19.2807 14.9697 19.3265C13.8451 19.3765 13.5077 19.389 10.6629 19.389C7.81392 19.389 7.47654 19.3765 6.3561 19.3265C5.3148 19.2807 4.75249 19.1058 4.37763 18.96C3.88197 18.7684 3.52376 18.5351 3.15306 18.1644C2.77819 17.7896 2.5491 17.4355 2.3575 16.9399C2.21172 16.565 2.03678 15.9985 1.99097 14.9614C1.94098 13.8368 1.92849 13.4994 1.92849 10.6546C1.92849 7.80559 1.94098 7.46821 1.99097 6.34777C2.03678 5.30647 2.21172 4.74416 2.3575 4.3693C2.5491 3.87364 2.78235 3.51543 3.15306 3.14473C3.52793 2.76986 3.88197 2.54077 4.37763 2.34917C4.75249 2.20339 5.31896 2.02845 6.3561 1.98264C7.47654 1.93265 7.81392 1.92016 10.6629 1.92016ZM10.6629 0C7.7681 0 7.40573 0.0124956 6.26863 0.062478C5.13569 0.11246 4.3568 0.295729 3.68204 0.558137C2.97812 0.83304 2.3825 1.19541 1.79104 1.79104C1.19541 2.3825 0.83304 2.97812 0.558137 3.67787C0.295729 4.3568 0.11246 5.13153 0.062478 6.26446C0.0124956 7.40573 0 7.7681 0 10.6629C0 13.5577 0.0124956 13.9201 0.062478 15.0572C0.11246 16.1901 0.295729 16.969 0.558137 17.6438C0.83304 18.3477 1.19541 18.9433 1.79104 19.5348C2.3825 20.1263 2.97812 20.4928 3.67787 20.7635C4.3568 21.0259 5.13153 21.2092 6.26446 21.2592C7.40156 21.3092 7.76393 21.3217 10.6587 21.3217C13.5536 21.3217 13.9159 21.3092 15.053 21.2592C16.186 21.2092 16.9649 21.0259 17.6396 20.7635C18.3394 20.4928 18.935 20.1263 19.5265 19.5348C20.1179 18.9433 20.4845 18.3477 20.7552 17.648C21.0176 16.969 21.2009 16.1943 21.2509 15.0614C21.3008 13.9243 21.3133 13.5619 21.3133 10.6671C21.3133 7.77227 21.3008 7.40989 21.2509 6.27279C21.2009 5.13986 21.0176 4.36097 20.7552 3.6862C20.4928 2.97812 20.1304 2.3825 19.5348 1.79104C18.9433 1.19958 18.3477 0.83304 17.648 0.562302C16.969 0.299894 16.1943 0.116626 15.0614 0.0666432C13.9201 0.0124956 13.5577 0 10.6629 0Z"
+                        fill="currentColor"
+                    >
+                    </path>
+                    <path d="M10.6629 5.18567C7.63897 5.18567 5.18567 7.63897 5.18567 10.6629C5.18567 13.6868 7.63897 16.1401 10.6629 16.1401C13.6868 16.1401 16.1401 13.6868 16.1401 10.6629C16.1401 7.63897 13.6868 5.18567 10.6629 5.18567ZM10.6629 14.2158C8.7011 14.2158 7.10999 12.6247 7.10999 10.6629C7.10999 8.7011 8.7011 7.10999 10.6629 7.10999C12.6247 7.10999 14.2158 8.7011 14.2158 10.6629C14.2158 12.6247 12.6247 14.2158 10.6629 14.2158Z" fill="currentColor"></path>
+                    <path d="M17.6354 4.96915C17.6354 5.67723 17.0606 6.24787 16.3567 6.24787C15.6486 6.24787 15.078 5.67307 15.078 4.96915C15.078 4.26106 15.6528 3.69043 16.3567 3.69043C17.0606 3.69043 17.6354 4.26523 17.6354 4.96915Z" fill="currentColor"></path>
+                </svg>
+            </a>
         </div>
     </section>
 </BaseLayout>
