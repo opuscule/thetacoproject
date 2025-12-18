@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { supabase } from "../lib/supabase";
+
+// Define the interface for the press item from Supabase
+interface PressItem {
+    id: number;
+    title: string; // The publication name
+    description: string;
+    publish_date: string;
+    link: string;
+    image: string; // The logo URL
+}
+
+let pressItems: PressItem[] = [];
+let errorMsg = "";
+
+try {
+    const { data, error } = await supabase.from("ttp_press").select("*").order("publish_date", { ascending: false });
+
+    if (error) {
+        console.error("Error fetching press items:", error);
+        errorMsg = "Failed to load press items.";
+    } else {
+        pressItems = data || [];
+    }
+} catch (e) {
+    console.error("Unexpected error:", e);
+    errorMsg = "An unexpected error occurred.";
+}
+
+// Helper to format date: 'October, 17 2024'
+function formatDate(dateString: string) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }).replace(",", ", ");
+}
+---
+
+<BaseLayout title="Press | The Taco Project" description="See what people are saying about The Taco Project.">
+    <!-- Hero -->
+    <section class="bg-crema py-20 md:py-32">
+        <div class="container text-center">
+            <h1 class="font-futura text-ink text-[64px] md:text-[80px] leading-[0.9] tracking-tight uppercase mb-8">In The News</h1>
+            <p class="font-geist text-ink text-lg max-w-2xl mx-auto">We're proud to be recognized by our local community and beyond. Check out some of the publications we've been featured solely in.</p>
+        </div>
+    </section>
+
+    <!-- Press Masonry Grid -->
+    <section class="bg-sky py-20">
+        <div class="container">
+            {errorMsg && <p class="text-center text-red-500 font-geist mb-8">{errorMsg}</p>}
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-16">
+                {
+                    pressItems.map((item) => (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" class="block w-full break-inside-avoid mb-16 group no-underline">
+                            {/* Image */}
+                            <img src={item.image} alt={item.title} class="w-full h-auto object-cover mb-4" loading="lazy" />
+
+                            {/* Title */}
+                            <h3 class="font-futura text-ocean text-[32px] font-bold leading-[100%] tracking-tight mb-2 group-hover:opacity-80 transition-opacity">{item.title}</h3>
+
+                            {/* Description */}
+                            <p class="font-geist text-ink text-sm font-normal leading-[140%] mb-4">{item.description}</p>
+
+                            {/* Date */}
+                            <p class="font-geist text-ocean text-sm font-normal leading-[140%]">{formatDate(item.publish_date)}</p>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</BaseLayout>

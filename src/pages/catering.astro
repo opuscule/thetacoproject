@@ -1,5 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "@splidejs/splide/css";
+
+const testimonials = [
+    {
+        quote: "Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!",
+        author: "Anju Kapoor",
+    },
+    {
+        quote: "The catering for our office lunch was phenomenal. Tacos remained fresh, hot, and the setup was seamless. The team loved the variety of salsas and the guacamole was a hit!",
+        author: "Sarah Jenkins",
+    },
+    {
+        quote: "We hired The Taco Project for our backyard summer party and it was the highlight of the season. The staff was professional and the food was authentic and delicious. Highly recommend the Birria tacos!",
+        author: "Mike Ross",
+    },
+    {
+        quote: "Absolute perfection. Ordered a taco bar for a birthday party and it couldn't have been easier. Great portions, fresh ingredients, and everyone went back for seconds.",
+        author: "Elena Rodriguez",
+    },
+];
 ---
 
 <BaseLayout title="Catering | The Taco Project">
@@ -14,7 +34,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase mb-8" style="text-wrap:balance;">We'll Come to You</h2>
                     <div class="flex flex-col gap-6">
                         <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
+                        <p class="font-geist text-ink text-sm leading-[1.4]">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
                     </div>
                 </div>
             </div>
@@ -30,7 +50,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">
                         stress-free<br />catering
                     </h2>
-                    <p class="font-geist text-ink text-[14px] leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
+                    <p class="font-geist text-ink text-sm leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
                 </div>
 
                 <!-- Right Content - Event Types -->
@@ -61,7 +81,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <img src="/catering-guest-list.webp" alt="Prepare the Guest List" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Prepare the Guest List</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We'll need to know: when, and how many. And if there are any allergies or dietary restrictions, let's note those, too.</p>
+                        <p class="font-geist text-ink text-sm leading-[1.4]">We'll need to know: when, and how many. And if there are any allergies or dietary restrictions, let's note those, too.</p>
                     </div>
                     <!-- Step 2 -->
                     <div class="flex flex-col gap-4">
@@ -69,7 +89,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <img src="/catering-ordering.webp" alt="Order Online" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Order your Package</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">We offer two convenient packages with all the proteins, all the fixins, and utensils if you need them. Add on drinks, desserts, and more.</p>
+                        <p class="font-geist text-ink text-sm leading-[1.4]">We offer two convenient packages with all the proteins, all the fixins, and utensils if you need them. Add on drinks, desserts, and more.</p>
                     </div>
                     <!-- Step 3 -->
                     <div class="flex flex-col gap-4">
@@ -77,7 +97,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <img src="/catering-enjoy.webp" alt="Enjoy your delicious taco bar" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Enjoy!</h3>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Swing by the location you ordered from and pick up your order: portioned, hot, and ready to serve.</p>
+                        <p class="font-geist text-ink text-sm leading-[1.4]">Swing by the location you ordered from and pick up your order: portioned, hot, and ready to serve.</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +120,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Bronxville, NY</h3>
                                 <a href="/bronxville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -108,9 +128,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">65 Pondfield Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">65 Pondfield Rd.</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -133,7 +153,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Tarrytown, NY</h3>
                                 <a href="/tarrytown" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -141,9 +161,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">18 Main St.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">18 Main St.</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -166,7 +186,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">New Rochelle, NY</h3>
                                 <a href="/new-rochelle" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -174,9 +194,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">596 North Ave.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19147297949">(914) 729-7949</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">596 North Ave.</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19147297949">(914) 729-7949</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -199,7 +219,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Yonkers, NY</h3>
                                 <a href="/yonkers" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -207,9 +227,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">1086 N. Broadway</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19143754000">(914) 375-4000</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">1086 N. Broadway</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19143754000">(914) 375-4000</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -232,7 +252,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Stamford, CT</h3>
                                 <a href="/stamford" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -240,9 +260,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">1111 High Ridge Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+12037039495">(203) 703-9495</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">1111 High Ridge Rd.</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+12037039495">(203) 703-9495</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -265,7 +285,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             <div class="flex items-center justify-between">
                                 <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Pleasantville, NY</h3>
                                 <a href="/pleasantville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-[14px] uppercase">inquire</span>
+                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
@@ -273,9 +293,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </div>
 
                             <div class="flex items-center gap-1.5">
-                                <p class="font-geist text-ink text-[14px] leading-4">465 Bedford Rd.</p>
-                                <div class="text-ink font-geist text-[14px] leading-4">/</div>
-                                <p class="font-geist text-ink text-[14px] leading-4"><a href="tel:+19144228111">(914) 422-8111</a></p>
+                                <p class="font-geist text-ink text-sm leading-4">465 Bedford Rd.</p>
+                                <div class="text-ink font-geist text-sm leading-4">/</div>
+                                <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19144228111">(914) 422-8111</a></p>
                             </div>
 
                             <div class="flex items-center gap-3">
@@ -293,7 +313,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- Catering FAQ Section -->
-    <section class="flex flex-col md:flex-row mt-20">
+    <section class="flex flex-col md:flex-row">
         <!-- On Ordering -->
         <div class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10">
             <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Ordering</h2>
@@ -341,7 +361,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 </svg>
                             </button>
                             <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
-                                <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
                             </div>
                         </div>
                     ))
@@ -392,7 +412,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 </svg>
                             </button>
                             <div id={`delivery-faq-answer-${index}`} class="hidden px-10 pb-5">
-                                <p class="font-geist text-ink text-[14px] leading-[1.4] opacity-80">{faq.a}</p>
+                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
                             </div>
                         </div>
                     ))
@@ -401,7 +421,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
+    <!-- Testimonial Slider -->
+    <section class="bg-hot-sauce py-24 px-5">
+        <div class="max-w-3xl mx-auto">
+            <section class="splide" aria-label="Customer Testimonials">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {
+                            testimonials.map((t) => (
+                                <li class="splide__slide">
+                                    <div class="flex flex-col items-start gap-6 select-none cursor-grab active:cursor-grabbing">
+                                        <div class="flex gap-1">
+                                            {/* 5 Stars */}
+                                            {[...Array(5)].map(() => (
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
+                                                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                                                </svg>
+                                            ))}
+                                        </div>
+                                        <p class="font-geist text-crema leading-snug font-normal">{t.quote}</p>
+                                        <p class="font-geist text-crema leading-snug font-normal">— {t.author}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <!-- Custom Arrows -->
+                <div class="splide__arrows flex gap-4 mt-8">
+                    <button class="splide__arrow splide__arrow--prev !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Previous slide">
+                        <div class="w-16 h-16 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Next slide">
+                        <div class="w-16 h-16 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </section>
+
     <script>
+        import Splide from "@splidejs/splide";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            new Splide(".splide", {
+                type: "loop",
+                perPage: 1,
+                arrows: true,
+                pagination: false, // Disabled pagination
+                autoplay: false,
+            }).mount();
+        });
+
         document.querySelectorAll(".faq-toggle").forEach((button) => {
             button.addEventListener("click", () => {
                 const isExpanded = button.getAttribute("aria-expanded") === "true";

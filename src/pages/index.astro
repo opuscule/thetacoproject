@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoreLocator from "../components/StoreLocator.astro";
 import LocationsList from "../components/LocationsList.astro";
+import PressTicker from "../components/PressTicker.astro";
+import CateringCTA from "../components/CateringCTA.astro";
 
 // Fetch Instagram posts from Behold
 const beholdFeedUrl = "https://feeds.behold.so/2GXViHq88dWJYl2lDbPb";
@@ -135,94 +137,19 @@ try {
     </section>
 
     <!-- Press Ticker -->
-    <section class="bg-hot-sauce py-6 overflow-hidden">
-        <div class="flex animate-scroll">
-            <!-- First set of logos -->
-            <div class="flex gap-18 items-center shrink-0">
-                <img src="ticker-ct-insider.webp" alt="CT Insider" class="shrink-0 w-28" width="300" height="87" loading="lazy" decoding="async" />
-                <img src="ticker-news12.webp" alt="News 12" class="shrink-0 w-28" width="300" height="24" loading="lazy" decoding="async" />
-                <img src="ticker-fox5.webp" alt="Fox 5" class="shrink-0 w-20" width="300" height="24" loading="lazy" decoding="async" />
-                <img src="ticker-westchester-mag.webp" alt="Westchester Magazine" class="shrink-0 w-30" width="300" height="59" loading="lazy" decoding="async" />
-                <img src="ticker-patch.webp" alt="Patch" class="shrink-0 w-24" width="300" height="94" loading="lazy" decoding="async" />
-                <img src="ticker-ct-bites.webp" alt="CT Bites" class="shrink-0 w-24" width="300" height="73" loading="lazy" decoding="async" />
-                <img src="ticker-greenwich-lifestyle.webp" alt="Greenwich Lifestyle" class="shrink-0 w-28" width="300" height="103" loading="lazy" decoding="async" />
-                <img src="ticker-daily-voice.webp" alt="Daily Voice" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
-                <img src="ticker-pix11.svg" alt="PIX 11" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
-                <img src="ticker-stamford-advocate.webp" alt="Stamford Advocate" class="shrink-0 w-28" width="300" height="82" loading="lazy" decoding="async" />
-                <img src="ticker-stamford-mag.webp" alt="Stamford Magazine" class="shrink-0 w-28 mr-18" width="300" height="66" loading="lazy" decoding="async" />
-            </div>
-            <!-- Duplicate set for seamless loop -->
-            <div class="flex gap-18 items-center shrink-0" aria-hidden="true">
-                <img src="ticker-ct-insider.webp" alt="" class="shrink-0 w-28" width="300" height="87" loading="lazy" decoding="async" />
-                <img src="ticker-news12.webp" alt="" class="shrink-0 w-28" width="300" height="24" loading="lazy" decoding="async" />
-                <img src="ticker-fox5.webp" alt="" class="shrink-0 w-20" width="300" height="24" loading="lazy" decoding="async" />
-                <img src="ticker-westchester-mag.webp" alt="" class="shrink-0 w-30" width="300" height="59" loading="lazy" decoding="async" />
-                <img src="ticker-patch.webp" alt="" class="shrink-0 w-24" width="300" height="94" loading="lazy" decoding="async" />
-                <img src="ticker-ct-bites.webp" alt="" class="shrink-0 w-24" width="300" height="73" loading="lazy" decoding="async" />
-                <img src="ticker-greenwich-lifestyle.webp" alt="" class="shrink-0 w-28" width="300" height="103" loading="lazy" decoding="async" />
-                <img src="ticker-daily-voice.webp" alt="" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
-                <img src="ticker-pix11.svg" alt="" class="shrink-0 w-20" width="300" height="146" loading="lazy" decoding="async" />
-                <img src="ticker-stamford-advocate.webp" alt="" class="shrink-0 w-28" width="300" height="82" loading="lazy" decoding="async" />
-                <img src="ticker-stamford-mag.webp" alt="" class="shrink-0 w-28" width="300" height="66" loading="lazy" decoding="async" />
-            </div>
-        </div>
-    </section>
+    <PressTicker />
 
-    <style>
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .animate-scroll {
-            animation: scroll 30s linear infinite;
-        }
-        .animate-scroll:hover {
-            animation-play-state: paused;
-        }
-    </style>
-
-    <!-- CATERING CTA -->
-
-    <section>
-        <div class="flex">
-            <div class="w-[65%]">
-                <img src="/catering-taco-project.webp" alt="Catering" class="w-full h-auto object-cover" />
-            </div>
-            <div class="w-[35%] bg-sky">
-                <div class="px-6" style="width: calc(var(--max-content-width) * 0.35);">
-                    <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase" style="text-wrap:balance;">We'll Come to You</h2>
-                    <div class="bottom-wrapper">
-                        <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
-                        <p class="font-geist text-ink text-[14px] leading-[1.4] lowercase">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-futura text-ocean text-[56px] leading-[0.9] uppercase tracking-[-2.8px]">catering</h2>
-                            <a href="#" class="flex items-center gap-2 text-ocean font-geist text-[14px] uppercase hover:opacity-80 transition-opacity">
-                                details
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.427 12.427" class="size-[12.427px]">
-                                    <path fill="currentColor" d="M3.5 3.5h5.427v5.427" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.927 3.5L3.5 8.927"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <CateringCTA />
 
     <!-- CREATED FOR YOU -->
     <section id="created_for_you" class="bg-crema grid grid-cols-[auto_1fr] items-stretch">
         <div class="flex flex-col gap-6 p-8 max-w-[500px]">
             <h2 class="font-futura text-citrus text-[96px] font-[950] leading-[0.88] tracking-[-4.8px] uppercase">Created for you</h2>
             <img src="creating-for-you-tn.webp" alt="Created for you" class="w-full max-w-[352px] h-auto" width="800" height="610" />
-            <p class="font-geist text-ink text-[14px] font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
+            <p class="font-geist text-ink text-sm font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
             <a href="/menu/" class="flex gap-2">
                 <span class="font-futura text-citrus text-6xl font-bold tracking-tight uppercase">Menu</span>
-                <span class="flex items-center gap-2 font-geist text-citrus text-[14px]">
+                <span class="flex items-center gap-2 font-geist text-citrus text-sm">
                     View
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                         <use href="#icon-external-link"></use>
@@ -249,7 +176,7 @@ try {
             <p class="font-geist text-crema text-[24px] leading-[1.4] font-normal">
                 Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!
             </p>
-            <p class="font-geist text-crema text-[14px] leading-[1.4] font-normal">— Anju Kapoor</p>
+            <p class="font-geist text-crema text-sm leading-[1.4] font-normal">— Anju Kapoor</p>
         </div>
     </section>
 
@@ -286,7 +213,7 @@ try {
                     </div>
                     <div class="flex flex-col gap-4">
                         <h4 class="font-holiday text-crema text-[48px] leading-[1.3] -rotate-[4deg]">Making a difference</h4>
-                        <p class="font-geist text-crema text-[14px] leading-[1.4] max-w-[400px]">
+                        <p class="font-geist text-crema text-sm leading-[1.4] max-w-[400px]">
                             We love a good partnership — especially one that makes positive change. If you're interested in partnering with The Taco Project, please reach out to
                             <a href="mailto:marketing@thetacoproject.com" class="underline text-crema hover:opacity-80">marketing@thetacoproject.com</a>.
                         </p>

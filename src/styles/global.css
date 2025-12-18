@@ -83,11 +83,3 @@ h1 {
     color: var(--color-hot-sauce);
     background: var(--color-crema);
 }
-
-.text-ocean {
-    color: var(--color-ocean);
-}
-
-.text-citrus {
-    color: var(--color-citrus);
-}

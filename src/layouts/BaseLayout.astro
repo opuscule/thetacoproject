@@ -16,6 +16,7 @@ const siteName = "The Taco Project";
 
 <html lang="en">
     <head>
+        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/f089ace1b842e546749348ed/script.js"></script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -54,6 +55,10 @@ const siteName = "The Taco Project";
         <svg style="display: none;" aria-hidden="true">
             <symbol id="icon-external-link" viewBox="0 0 13 13">
                 <path d="M5.12622 2.95166H2.95142C2.35086 2.95166 1.86401 3.43851 1.86401 4.03906V9.47607C1.86401 10.0766 2.35086 10.5635 2.95142 10.5635H8.38843C8.98898 10.5635 9.47583 10.0766 9.47583 9.47607V7.30127M7.30102 1.86426H10.5632M10.5632 1.86426V5.12646M10.5632 1.86426L5.12622 7.30127" stroke="currentColor" stroke-width="0.887675" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            </symbol>
+
+            <symbol id="icon-arrow-right" viewBox="0 0 13 13">
+                <path fill="currentColor" fill-rule="evenodd" d="M7.46 3.654a.544.544 0 0 1 .77 0l2.174 2.175a.544.544 0 0 1 0 .77L8.23 8.772a.544.544 0 1 1-.768-.769l1.246-1.247H2.408a.544.544 0 0 1 0-1.087h6.3L7.46 4.423a.544.544 0 0 1 0-.769" clip-rule="evenodd"></path>
             </symbol>
         </svg>
 
@@ -371,41 +376,44 @@ const siteName = "The Taco Project";
         <!-- Global Footer -->
         <footer id="footer" class="bg-ink pt-9 pb-9">
             <div class="container">
-                <div class="flex flex-col md:flex-row gap-[24px] justify-between">
-                    <div class="flex gap-4">
-                        <div class="">
-                            <h4 class="text-tortilla uppercase text-3xl tracking-tight font-futura font-bold m-0 p-0">Locations</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/tarrytown-ny/" class="text-ocean">Tarrytown, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/new-rochelle-ny/" class="text-ocean">New Rochelle, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/bronxville-ny/" class="text-ocean">Bronxville, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/yonkers-ny/" class="text-ocean">Yonkers, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/pleasantville-ny/" class="text-ocean">Pleasantville, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/stamford-ct/" class="text-ocean">Stamford, CT</a></li>
-                                <li class="m-0 p-0 leading-none" style="color: #205350">Greenwich, NY</li>
-                                <li class="m-0 p-0 font-holiday text-tortilla capitalize text-2xl rotate-[-4deg]">Coming soon!</li>
+                <div class="flex flex-col lg:flex-row gap-6 justify-between">
+                    <div class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between lg:justify-start">
+                        <!-- Locations -->
+                        <div>
+                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Locations</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
+                                <li class="m-0 p-0 leading-none"><a href="/tarrytown-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Tarrytown, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/new-rochelle-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">New Rochelle, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/bronxville-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Bronxville, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/yonkers-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Yonkers, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/pleasantville-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Pleasantville, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/stamford-ct/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Stamford, CT</a></li>
+                                <li class="m-0 p-0 leading-none" style="color: #205350">Greenwich, CT</li>
+                                <li class="m-0 p-0 font-holiday text-tortilla capitalize text-2xl rotate-[-4deg] right-0 -mt-[24px]">Coming soon!</li>
                             </ul>
                         </div>
-                        <div class="">
-                            <h4 class="text-tortilla uppercase text-3xl tracking-tight font-futura font-bold m-0 p-0">Menus</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/menu/" class="text-ocean">Food &amp; Drink</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/menu/#happy-hour" class="text-ocean">Happy Hour</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/menu/#brunch" class="text-ocean">Brunch</a></li>
+                        <!-- Menus -->
+                        <div>
+                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Menus</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
+                                <li class="m-0 p-0 leading-none"><a href="/menu/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Food &amp; Drink</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/menu/#happy-hour" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Happy Hour</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/menu/#brunch" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Brunch</a></li>
                             </ul>
                         </div>
-                        <div class="">
-                            <h4 class="text-tortilla uppercase text-3xl tracking-tight font-futura font-bold m-0 p-0">More</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/food-truck/" class="text-ocean">The Truck</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/catering/" class="text-ocean">Catering</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/careers/" class="text-ocean">Careers</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/press/" class="text-ocean">Press</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/contact/" class="text-ocean">Contact</a></li>
+                        <!-- More -->
+                        <div>
+                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">More</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
+                                <li class="m-0 p-0 leading-none"><a href="/food-truck/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">The Truck</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/catering/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Catering</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/careers/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Careers</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/press/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Press</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/contact/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-4 w-full max-w-96">
+                    <div class="flex flex-col gap-4 w-full lg:max-w-96 order-first lg:order-0">
                         <!-- subscribe to email list -->
                         <h5 class="font-holiday text-tortilla text-2xl tracking-tight">Join the project</h5>
                         <form class="flex flex-col gap-2" id="sib-form" method="POST" action="https://c4ded333.sibforms.com/serve/MUIFAI-bIopcgdPu_2EJ1UQlO5kBLqMTig4ank1tduZbMD-quKmFlH9hJbx5pBBB4HFOuLFtDmIxfMHjVXCyk1EIEqTO2owa0ZXmURSvsDdp_DZhvBQz6z5anWsEqljJVTW49j4Z5Z4_lG0nTN4ENriOZCzFHUj33m_gCMsZqQK0cKgCt6KX5EDT5wGIrTS1F89wtWdztP9QR6CN">
@@ -478,9 +486,9 @@ const siteName = "The Taco Project";
             </div>
 
             <div class="container">
-                <div class="flex justify-between">
-                    <p class="font-geist text-ocean text-sm leading-4">&copy; {new Date().getFullYear()} The Taco Project. All rights reserved.</p>
-                    <div class="flex font-geist text-sm leading-4 text-ocean gap-2">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 justify-between">
+                    <p class="text-center md:text-left font-geist text-ocean text-xs md:text-sm">&copy; {new Date().getFullYear()} The Taco Project. All rights reserved.</p>
+                    <div class="flex font-geist text-xs md:text-sm leading-4 text-ocean gap-2 flex-wrap md:flex-nowrap items-center justify-center-safe md:justify-end">
                         <a href="/cookie-policy/" class="text-ocean">Cookie Policy</a><span>/</span><a href="/privacy-policy/" class="text-ocean">Privacy Policy</a><span>/</span><a href="/terms/" class="text-ocean">Terms &amp; Conditions</a>
                     </div>
                 </div>

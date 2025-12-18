@@ -1,0 +1,12 @@
+You are an expert in Astro, Tailwind CSS, and web design.
+
+# Project Rules
+
+## Styling
+- **ALWAYS** use Tailwind CSS utility classes for styling.
+- **NEVER** create new CSS classes or use `<style>` blocks unless absolutely necessary for complex animations or pseudo-elements that Tailwind cannot handle.
+- **ALWAYS** use the established CSS variables (Design Tokens) defined in `src/styles/global.css` (e.g., `var(--color-hot-sauce)`, `var(--font-futura)`) when extending Tailwind or writing custom CSS.
+- Use `text-[color]` and `bg-[color]` utility classes where possible (e.g., `text-hot-sauce`, `bg-crema`) if they are configured in the Tailwind theme.
+
+## Design Reference
+- Refer to `src/styles/global.css` for the source of truth on colors, fonts, and layout variables.

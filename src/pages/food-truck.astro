@@ -24,10 +24,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="flex gap-4">
                     <img src="/food-truck-banner-tn.webp" class="flex-shrink-0" style="max-width: 233px;" alt="The Taco Project Food Truck" width="" height="" />
                     <div class="flex flex-col gap-4">
-                        <p class="font-geist text-ink text-[14px] leading-[1.4]">Starting from Pleasantville, NY, our truck is available to book for events within a 20-mile radius—and beyond. Get ready for a fun, fresh, and flavorful experience, with customizable menu options, self-serve stations, and a team dedicated to making your event unforgettable!</p>
+                        <p class="font-geist text-ink text-sm leading-[1.4]">Starting from Pleasantville, NY, our truck is available to book for events within a 20-mile radius—and beyond. Get ready for a fun, fresh, and flavorful experience, with customizable menu options, self-serve stations, and a team dedicated to making your event unforgettable!</p>
                         <a href="https://www.toasttab.com/invoice/lead?rx=eb727eba-109b-4380-81dc-864212560986&ot=f8bf34b6-e937-475e-9591-b8e0836a9b23" target="_blank" class="flex mt-8" rel="noopener noreferrer">
                             <span class="text-hot-sauce font-futura font-black text-[56px] leading-[0.9] tracking-tight uppercase">Book Us</span>
-                            <span class="text-hot-sauce font-geist text-[14px] leading-[1.4] uppercase">Inquiry Form <!-- external link icon --></span>
+                            <span class="text-hot-sauce font-geist text-sm leading-[1.4] uppercase">Inquiry Form <!-- external link icon --></span>
                         </a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section id="food-truck-details" class="bg-tortilla relative py-16">
         <div class="container mb-14">
             <div class="max-w-lg">
-                <p class="font-geist text-ink text-[14px] leading-[1.4]">Our signature tacos are hitting the road! Whether you’re hosting a private party, corporate event, or special celebration, The Taco Project’s brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
+                <p class="font-geist text-ink text-sm leading-[1.4]">Our signature tacos are hitting the road! Whether you’re hosting a private party, corporate event, or special celebration, The Taco Project’s brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
             </div>
         </div>
         <!-- Image Gallery -->
@@ -53,4 +53,75 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
         </div>
     </section>
+
+    <!-- Food Truck FAQs -->
+    <section id="food-truck-faqs" class="bg-crema py-[100px] border-t border-ink/10">
+        <div class="container flex flex-col items-center">
+            <h2 class="font-futura text-ink text-[40px] leading-[0.92] tracking-[-2px] uppercase text-center mb-[54px]">We've Got Answers</h2>
+
+            <div class="w-full max-w-[704px] border-t border-ink">
+                {
+                    [
+                        {
+                            q: "How do I book The Taco Project food truck for my event?",
+                            a: "Booking is easy! Simply inquire through our contact form or call us to check availability.<br><br>Please note that booking must be completed at least two weeks before your event, and a 50% non-refundable deposit is required to secure your date.",
+                        },
+                        {
+                            q: "Is there a minimum booking time?",
+                            a: "Yes, we require a minimum booking of 2 hours at a rate of $800 per hour. This includes two servers, and additional servers can be provided at $35/hour.",
+                        },
+                        {
+                            q: "What is included in the food truck package?",
+                            a: "You’ll get an array of delicious options! Choose from our preset taco stations with various proteins (chicken, beef, shrimp, pork, and more) and sides like rice, beans, and churros.<br><br>Plus, we offer a self-serve toppings station, guacamole, and salsa with house-made chips.",
+                        },
+                        {
+                            q: "Can I customize the menu?",
+                            a: "Yes, we offer flexible menu options, allowing you to choose between pre-assembled tacos or tacos served from the truck.<br><br>Our team will work with you to ensure the menu fits your needs.",
+                        },
+                        {
+                            q: "Do you offer beverages?",
+                            a: "Absolutely! We offer a variety of non-alcoholic beverages, including Mexican sodas, Snapple Iced Tea, and Aguas Frescas.<br><br>If you want to serve alcohol, just ask us about adding a third server for your event.",
+                        },
+                        {
+                            q: "Is there a travel fee?",
+                            a: "For events located more than 20 miles from our Pleasantville location, there is a $55 travel fee.<br><br>We currently serve areas within and around Pleasantville, including Yonkers, Bronxville, and Stamford.",
+                        },
+                        {
+                            q: "What is your cancellation policy?",
+                            a: "We understand that plans can change. You can cancel up to 7 days before your event for a full refund.<br><br>Cancellations within 7 days may forfeit the 50% deposit, while those made within 72 hours of the event are eligible for store credit, valid for 3 months.",
+                        },
+                    ].map((faq, index) => (
+                        <div class="border-b border-ink">
+                            <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`ft-faq-${index}`}>
+                                <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div id={`ft-faq-${index}`} class="hidden px-10 pb-5">
+                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80" set:html={faq.a} />
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll(".faq-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const isExpanded = button.getAttribute("aria-expanded") === "true";
+                button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+                const answerId = button.getAttribute("aria-controls");
+                if (answerId) {
+                    const answer = document.getElementById(answerId);
+                    if (answer) {
+                        answer.classList.toggle("hidden");
+                    }
+                }
+            });
+        });
+    </script>
 </BaseLayout>
