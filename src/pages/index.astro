@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoreLocator from "../components/StoreLocator.astro";
-import LocationsList from "../components/LocationsList.astro";
 import PressTicker from "../components/PressTicker.astro";
 import CateringCTA from "../components/CateringCTA.astro";
 
@@ -53,6 +52,13 @@ try {
                 <div class="logo-row logo-row-5 w-full max-w-[349px]">
                     <div class="logo-group logo-for-friends w-full max-w-[349px]"><img src="/video/for-friends.svg" alt="For Friends" class="w-full" /></div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="flex gap-2 align-center justify-center">
+                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Order Online</a>
+                <a href="https://www.toasttab.com/catering/locations/dda922d3-35f1-4612-9446-bc35a1067a2c" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Order Catering</a>
             </div>
         </div>
 
@@ -141,23 +147,30 @@ try {
 
     <CateringCTA />
 
-    <!-- CREATED FOR YOU -->
-    <section id="created_for_you" class="bg-crema grid grid-cols-[auto_1fr] items-stretch">
-        <div class="flex flex-col gap-6 p-8 max-w-[500px]">
-            <h2 class="font-futura text-citrus text-[96px] font-[950] leading-[0.88] tracking-[-4.8px] uppercase">Created for you</h2>
-            <img src="creating-for-you-tn.webp" alt="Created for you" class="w-full max-w-[352px] h-auto" width="800" height="610" />
-            <p class="font-geist text-ink text-sm font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
-            <a href="/menu/" class="flex gap-2">
-                <span class="font-futura text-citrus text-6xl font-bold tracking-tight uppercase">Menu</span>
-                <span class="flex items-center gap-2 font-geist text-citrus text-sm">
-                    View
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
-                        <use href="#icon-external-link"></use>
-                    </svg>
-                </span>
-            </a>
+    <!-- Created For You: Two-column section -->
+    <section id="created_for_you" class="bg-crema min-h-auto md:min-h-[80vh] flex flex-col md:flex-row">
+        <!-- Column 1: Content -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.35)] p-8">
+            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
+                <h2 class="font-futura text-citrus text-[96px] font-[950] leading-[0.88] tracking-tight uppercase mb-14">Created for you</h2>
+                <img src="/creating-for-you-tn.webp" alt="Created for you" class="w-full h-auto" width="800" height="610" />
+                <p class="font-geist text-ink text-sm font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
+
+                <div class="flex items-center justify-between">
+                    <a href="/menu/" class="group flex items-center justify-between w-full gap-2">
+                        <div class="font-futura text-citrus text-5xl md:text-[56px] leading-tight uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">menu</div>
+                        <div class="flex items-center gap-2 text-citrus font-geist text-sm uppercase transition-all duration-500 pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                            view
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-[13px]">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="bg-cover bg-center bg-[url('/created-you.webp')] min-h-[400px]"></div>
+        <!-- Column 2: Image -->
+        <div class="flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/created-you.webp')]"></div>
     </section>
 
     <!-- Testimonial -->
@@ -182,41 +195,87 @@ try {
 
     <StoreLocator />
 
-    <LocationsList />
+
+
+
+    <section class="min-h-auto md:min-h-[80vh] bg-sky flex flex-col md:flex-row">
+        <!-- Column 1: Image (remaining width) -->
+        <div class="flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/mexican-food-truck-my.webp')]"></div>
+        <!-- Column 2: Content (max-width 35%) -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.35)] p-6">
+            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
+                <h2 class="text-ocean font-futura text-6xl md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase" style="text-wrap:balance;">The Taco Truck</h2>
+                <div class="flex flex-col gap-4">
+                    <div class="text-ocean font-holiday text-5xl font-normal leading-14 rotate-[-4deg]">Let's book your event!</div>
+
+                    <p class="font-geist text-ink text-sm leading-[1.4] lowercase">Whether you're hosting a private party, corporate event, or special celebration, The Taco Project's brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
+                    <div class="flex flex-col gap-4">
+                        <a href="/food-truck/">About Our Truck <!-- right arrow --></a>
+                        <a href="#" target="_blank" rel="noopener nofollow noreferrer">Event Inquiry Form <!-- external link icon --></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 
     <!-- Taco of the Month & Giving Section -->
     <section id="totm_giving" class="bg-gradient-to-r from-crema from-50% to-ink to-50%">
-        <div class="container">
-            <div class="grid grid-cols-[1fr_1fr]">
+        <div class="flex flex-col md:flex-row justify-center">
+            <div class="flex w-full max-w-1/2 justify-center">
                 <!-- Taco of the Month -->
-                <div class="flex flex-col gap-[22px] items-center justify-center p-8">
-                    <div class="bg-tortilla w-[412px] h-[384px] overflow-hidden">
-                        <img src="http://localhost:3845/assets/3b5261370fa1705b7df25584c770110663fc7cde.png" alt="Baja Shrimp Taco" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="flex flex-col items-center pb-[14px]">
-                        <div class="flex items-center justify-center mb-[-14px]">
-                            <p class="font-holiday text-hot-sauce text-[48px] leading-[1.3] text-center -rotate-[4deg]">Taco of the Month</p>
+                <div class="w-full md:max-w-[calc(var(--max-content-width)*0.5)] flex justify-center md:justify-end">
+                    <div class="flex flex-col gap-[22px] items-center justify-center p-8">
+                        <div class="bg-tortilla w-[412px] h-[384px] overflow-hidden">
+                            <img src="baha-shrimp-tacos-taco-project.webp" alt="Baja Shrimp Taco" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                         </div>
-                        <h3 class="font-futura text-ocean text-[96px] leading-[0.88] tracking-[-4.8px] uppercase text-center">BAJA SHRIMP</h3>
+                        <div class="flex flex-col items-center pb-[14px]">
+                            <div class="flex items-center justify-center mb-[-14px]">
+                                <p class="font-holiday text-hot-sauce text-[48px] leading-[1.3] text-center -rotate-[4deg]">Taco of the Month</p>
+                            </div>
+                            <h3 class="font-futura text-ocean text-[96px] leading-[0.88] tracking-[-4.8px] uppercase text-center">BAJA SHRIMP</h3>
+                        </div>
+                        <a href="#" class="btn btn-primary">Order now</a>
                     </div>
-                    <a href="#" class="btn btn-primary">Order now</a>
                 </div>
+            </div>
 
+            <div class="flex w-full max-w-1/2 justify-center">
                 <!-- Partnerships / Giving -->
-                <div class="flex flex-col gap-[22px] items-start justify-center p-8">
-                    <div class="w-full h-[426px] overflow-hidden relative">
-                        <img src="http://localhost:3845/assets/dc01d7b9bd1e637ec3f4ac3eb8218a828c3e23e5.png" alt="Feeding America" class="absolute top-0 left-[51px] w-[155px] h-[91px] object-contain" />
-                        <img src="http://localhost:3845/assets/248b1883530c960df429e877c775d3eafcf33314.png" alt="Filling in the Blanks" class="absolute top-[14px] right-[56px] w-[185px] h-[89px] object-contain" />
-                        <img src="http://localhost:3845/assets/0ab856f1eacb8dbca0c455602354e31007099c1d.png" alt="Future 5" class="absolute bottom-[86px] right-[66px] w-[91px] h-[89px] object-contain" />
-                        <img src="http://localhost:3845/assets/bf2470a33502da17b1551be910fd35598c948076.png" alt="Spectrum Designs" class="absolute bottom-[230px] left-1/2 -translate-x-1/2 w-[274px] h-[56px] object-contain" />
-                        <img src="http://localhost:3845/assets/81641c9742f2748fee56eda1f82ca8e63046492d.png" alt="WMC" class="absolute bottom-[140px] left-[51px] w-[155px] h-[91px] object-contain" />
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h4 class="font-holiday text-crema text-[48px] leading-[1.3] -rotate-[4deg]">Making a difference</h4>
-                        <p class="font-geist text-crema text-sm leading-[1.4] max-w-[400px]">
-                            We love a good partnership — especially one that makes positive change. If you're interested in partnering with The Taco Project, please reach out to
-                            <a href="mailto:marketing@thetacoproject.com" class="underline text-crema hover:opacity-80">marketing@thetacoproject.com</a>.
-                        </p>
+                <div class="w-full md:max-w-[calc(var(--max-content-width)*0.5)] flex justify-center md:justify-start">
+                    <div class="flex flex-col gap-[22px] items-start justify-center p-8">
+                        <div class="w-full">
+                            <div class="w-full flex justify-evenly items-center gap-4">
+                                <div class="flex justify-center items-center">
+                                    <img src="/feeding-america-logo.webp" alt="Feeding America" class="w-full max-w-40" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <img src="/fill-in-the-blanks-logo.webp" alt="Filling in the Blanks" class="w-full max-w-48" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="flex w-full justify-center">
+                                <img src="/spectrum-designs-logo.webp" alt="Spectrum Designs" class="w-full max-w-72" loading="lazy" decoding="async" />
+                            </div>
+                            <div class="w-full flex justify-evenly items-center gap-4">
+                                <div class="flex justify-center items-center">
+                                    <img src="/wmc-health-logo.webp" alt="WMC Health" class="w-full max-w-64" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <img src="/future-5-logo.webp" alt="Future 5" class="w-full max-w-24" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h4 class="font-holiday text-crema text-5xl leading-[1.3] -rotate-[4deg]">Making a difference</h4>
+                            <p class="font-geist text-crema text-sm leading-[1.4] max-w-[400px]">
+                                We love a good partnership — especially one that makes positive change. If you're interested in partnering with The Taco Project, please reach out to
+                                <a href="mailto:marketing@thetacoproject.com" class="underline text-crema hover:opacity-80">marketing@thetacoproject.com</a>.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
