@@ -10,14 +10,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
     <!-- Banner Section -->
-    <section class="bg-crema relative flex min-h-[90vh]">
+    <section class="bg-crema relative flex min-h-[55vh]">
         <div class="w-[50vw] bg-[url('/tarrytown_banner.jpg')] bg-cover bg-center"></div>
 
         <!-- Right Column: Text Content -->
         <div class="flex flex-col">
-            <div class="py-9 px-12" style="width:calc(var(--max-content-width) / 2)">
-                <h1 class="font-futura text-ink text-[96px] leading-[0.88] uppercase tracking-tight">
-                    Tarrytown,<br />New york
+            <div class="py-9 px-12 w-full md:max-w-[calc(var(--max-content-width)*0.5)] h-full flex flex-col justify-between gap-12 md:gap-24">
+                <h1 class="font-futura text-ink text-[56px] md:text-[96px] leading-[0.88] uppercase tracking-tight">
+                    Tarrytown,<br />New York
                 </h1>
                 <div class="flex flex-col gap-9">
                     <div class="flex flex-col gap-3.5">
@@ -46,14 +46,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         </div>
                     </div>
                     <div class="flex items-center gap-8">
-                        <a href="https://order.toasttab.com/online/the-taco-project-tarrytown-18-main-street" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                        <a href="https://order.toasttab.com/online/the-taco-project-tarrytown-18-main-street" rel="noopener nofollow noreferrer" target="_blank" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
                             Order online
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.427 12.427" class="size-[12.427px]">
-                                <path fill="currentColor" d="M3.5 3.5h5.427v5.427" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.927 3.5L3.5 8.927"></path>
+                            <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                <use href="#icon-external-link"></use>
                             </svg>
                         </a>
-                        <a href="">Order Catering</a>
+                        <a href="https://www.toasttab.com/catering/the-taco-project-tarrytown-18-main-street" rel="noopener nofollow noreferrer" target="_blank" class="font-geist text-hot-sauce">
+                            <div class="flex items-center gap-2 text-hot-sauce font-geist text-sm uppercase transition-all duration-500 hover:text-ink group-focus:text-ink">
+                                Order Catering
+                                <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -61,10 +67,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section id="store_details" class="bg-tortilla pt-16">
-        <div class="container">
+        <div class="px-6">
             <div class="flex flex-col gap-9 max-w-lg">
                 <p class="font-geist text-ink text-sm leading-[1.4]">At The Taco Project in Tarrytown, we're committed to providing our customers with an authentic and memorable dining experience. That's why we pride ourselves on our friendly service, cozy atmosphere, and vibrant flavors. From our colorful decor to our festive music, we're dedicated to bringing the energy and excitement of Mexico to every meal.</p>
-                <p class="font-geist text-sm leading-[1.4] uppercase"><a href="text-hot-sauce">Inquiry Form <!-- external link icon --></a></p>
             </div>
         </div>
 

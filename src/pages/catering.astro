@@ -2,6 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "@splidejs/splide/css";
 
+// Aggregate rating data (from all reviews, e.g., Google, Yelp, etc.)
+const aggregateRating = {
+    ratingValue: "4.8",
+    reviewCount: "342",
+    bestRating: "5"
+};
+
+// Featured testimonials to display on page
 const testimonials = [
     {
         quote: "Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!",
@@ -23,6 +31,32 @@ const testimonials = [
 ---
 
 <BaseLayout title="Catering | The Taco Project">
+    <!-- Review Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "The Taco Project",
+        "image": "https://thetacoproject.com/og-image.jpg",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": aggregateRating.ratingValue,
+            "bestRating": aggregateRating.bestRating,
+            "reviewCount": aggregateRating.reviewCount
+        },
+        "review": testimonials.map((t) => ({
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": t.author
+            },
+            "reviewBody": t.quote
+        }))
+    })} />
     <!-- Intro Section -->
     <section>
         <div class="flex">
@@ -439,8 +473,8 @@ const testimonials = [
                                                 </svg>
                                             ))}
                                         </div>
-                                        <p class="font-geist text-crema leading-snug font-normal">{t.quote}</p>
-                                        <p class="font-geist text-crema leading-snug font-normal">— {t.author}</p>
+                                        <p class="font-geist text-crema leading-snug text-sm font-normal">{t.quote}</p>
+                                        <p class="font-geist text-crema leading-snug text-sm font-normal">— {t.author}</p>
                                     </div>
                                 </li>
                             ))
@@ -451,16 +485,16 @@ const testimonials = [
                 <!-- Custom Arrows -->
                 <div class="splide__arrows flex gap-4 mt-8">
                     <button class="splide__arrow splide__arrow--prev !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Previous slide">
-                        <div class="w-16 h-16 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                        <div class="w-12 h-12 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-5">
+                                <use href="#icon-arrow-right"></use>
                             </svg>
                         </div>
                     </button>
                     <button class="splide__arrow splide__arrow--next !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Next slide">
-                        <div class="w-16 h-16 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        <div class="w-12 h-12 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-5">
+                                <use href="#icon-arrow-right"></use>
                             </svg>
                         </div>
                     </button>
