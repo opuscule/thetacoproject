@@ -3,53 +3,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Book The Taco Project Food Truck | Taco Catering for Events" description="Bring the flavors of The Taco Project to your event with our taco truck! Serving freshly made tacos and more. Perfect for private parties and corporate events—book today!" ogImage="/food-truck-hero-the-taco-project.webp" ogUrl="https://thetacoproject.com/food-truck" ogType="restaurant">
-    <style>
-        #hero:after {
-            position: absolute;
-            content: "";
-            top: 0;
-            right: 0;
-            width: calc(((100vw - var(--max-content-width))) + (var(--max-content-width) - 60%));
-            height: 100%;
-            background: url("/food-truck-hero-the-taco-project.webp") no-repeat center center;
-            background-size: cover;
-            z-index: 1;
-        }
-    </style>
-
-    <section id="hero" class="bg-crema relative md:min-h-[800px]">
-        <div class="container h-full">
-            <div class="w-[60%] flex flex-col justify-stretch h-full">
-                <h1 class="font-futura text-hot-sauce text-6xl md:text-8xl leading-[0.88] uppercase tracking-tight mb-8">Vote Best Food Truck in NY</h1>
-                <div class="flex gap-4">
-                    <img src="/food-truck-banner-tn.webp" class="flex-shrink-0" style="max-width: 233px;" alt="The Taco Project Food Truck" width="" height="" />
+    
+    <section class="min-h-auto md:min-h-[80vh] bg-crema flex flex-col md:flex-row justify-between">
+        
+        <!-- Column 1: Content (md:80%, lg:60%) -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.8)] lg:max-w-[calc(var(--max-content-width)*0.6)] p-6 md:pt-8 md:pb-12 md:pl-12 md:pr-8">
+            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
+                <h1 class="text-hot-sauce font-futura text-[56px] md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">Vote Best Food Truck in NY</h1>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <img src="/food-truck-banner-tn.webp" class="shrink max-w-[240px] w-full h-auto object-contain" alt="The Taco Project Food Truck" width="350" height="353" loading="eager" />
                     <div class="flex flex-col gap-4">
                         <p class="font-geist text-ink text-sm leading-[1.4]">Starting from Pleasantville, NY, our truck is available to book for events within a 20-mile radius—and beyond. Get ready for a fun, fresh, and flavorful experience, with customizable menu options, self-serve stations, and a team dedicated to making your event unforgettable!</p>
-                        <a href="https://www.toasttab.com/invoice/lead?rx=eb727eba-109b-4380-81dc-864212560986&ot=f8bf34b6-e937-475e-9591-b8e0836a9b23" target="_blank" class="flex mt-8" rel="noopener noreferrer">
-                            <span class="text-hot-sauce font-futura font-black text-[56px] leading-[0.9] tracking-tight uppercase">Book Us</span>
-                            <span class="text-hot-sauce font-geist text-sm leading-[1.4] uppercase">Inquiry Form <!-- external link icon --></span>
-                        </a>
+
+
+
+                        <div class="flex items-center justify-between">
+                            <a href="https://www.toasttab.com/invoice/lead?rx=eb727eba-109b-4380-81dc-864212560986&ot=f8bf34b6-e937-475e-9591-b8e0836a9b23" rel="noopener noreferrer" class="group flex items-center justify-between w-full gap-2">
+                                <div class="font-futura text-hot-sauce text-5xl md:text-[56px] leading-tight uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">Book Us</div>
+                                <div class="flex items-center gap-2 text-hot-sauce font-geist text-sm uppercase transition-all duration-500 pr-0 md:pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                                    Inquiry Form
+                                    <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Column 2: Image (md:20%, lg:40%) -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.2)] lg:max-w-[calc(var(--max-content-width)*0.4)] min-h-96 bg-cover bg-center bg-[url('/food-truck/food-truck-banner.webp')]"></div>
     </section>
 
-    <!-- Food Truck Details Gallery -->
-    <section id="food-truck-details" class="bg-tortilla relative py-16">
-        <div class="container mb-14">
-            <div class="max-w-lg">
-                <p class="font-geist text-ink text-sm leading-[1.4]">Our signature tacos are hitting the road! Whether you’re hosting a private party, corporate event, or special celebration, The Taco Project’s brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
+
+
+
+
+
+    <!-- The Truck Gallery -->
+    <section id="the_truck_gallery" class="bg-tortilla pt-12">
+        <div class="px-6">
+            <div class="flex flex-col gap-8 max-w-lg">
+                <p class="font-geist text-ink text-sm leading-[1.4]">Our signature tacos are hitting the road! Whether you're hosting a private party, corporate event, or special celebration, The Taco Project’s brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
+                <p class="font-geist text-sm leading-[1.4] uppercase">
+                    <a href="https://www.toasttab.com/invoice/lead?rx=eb727eba-109b-4380-81dc-864212560986&ot=f8bf34b6-e937-475e-9591-b8e0836a9b23" class="text-hot-sauce flex gap-2 items-center" target="_blank" rel="noopener nofollow noreferrer">
+                        Inquiry Form
+                        <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                            <use href="#icon-external-link"></use>
+                        </svg>
+                    </a>
+                </p>
             </div>
         </div>
-        <!-- Image Gallery -->
-        <div class="container mx-auto overflow-x-auto">
-            <div class="grid grid-flow-col auto-cols-[minmax(352px,1fr)] gap-4 items-end">
-                <img src="http://localhost:3845/assets/83edfedb7b65c0435710ecbf7352ce698a4c615d.png" alt="Food Truck" class="w-full" />
-                <img src="http://localhost:3845/assets/82b64146797a71d33929a33ca9cc661472425091.png" alt="Food Truck" class="w-full" />
-                <img src="http://localhost:3845/assets/b9133c36a4bc2591c90896820ea7af052f3c6043.png" alt="Food Truck" class="w-full" />
-                <img src="http://localhost:3845/assets/88d6c183f4264c1ca9cd5b1d62cbc09342441199.png" alt="Food Truck" class="w-full" />
-                <img src="http://localhost:3845/assets/a128727c06fe5d1a44d14e057dd1ab1d865a91c8.png" alt="Food Truck" class="w-full" />
+
+        <div class="px-6 md:px-8 lg:px-12 overflow-x-auto py-12">
+            <!-- Photo Layout -->
+            <div class="flex gap-4 w-max items-end">
+                <img src="/food-truck/food-truck-customers-ny.webp" alt="Check out 'The Truck' from The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="484" />
+                <img src="/food-truck/food-truck-customer-taco-project.webp" alt="Customers at The Taco Project Food Truck" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="804" />
+                <img src="/food-truck/the-truck-taco-project.webp" alt="Westchester Food Truck from The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="450" />
+                <img src="/food-truck/chips-salsa-guac-ny.webp" alt="Chips, Salsa, and Guacamole at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="503" />
+                <img src="/food-truck/taco-truck-food-ordering.webp" alt="Ordering from the The Taco Project's Food Truck" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="492" />
+                <img src="/food-truck/food-truck-in-bronxville.webp" alt="The Taco Project's Food Truck in Bronxville, NY" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="675" height="450" />
             </div>
         </div>
     </section>

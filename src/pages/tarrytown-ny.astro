@@ -4,6 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Best Tacos in Tarrytown | Mexican Restaurant | Lunch & Dinner" description="Join us on Main Street for the best tacos in Tarrytown, NY. Open for lunch and dinner every day! Stop by or order online.">
+
+
+
+
+
     <!-- Banner Section -->
     <section class="bg-crema relative flex min-h-[90vh]">
         <div class="w-[50vw] bg-[url('/tarrytown_banner.jpg')] bg-cover bg-center"></div>
@@ -11,7 +16,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <!-- Right Column: Text Content -->
         <div class="flex flex-col">
             <div class="py-9 px-12" style="width:calc(var(--max-content-width) / 2)">
-                <h1 class="font-futura text-ink text-[96px] leading-[0.88] uppercase tracking-[-4.8px]">
+                <h1 class="font-futura text-ink text-[96px] leading-[0.88] uppercase tracking-tight">
                     Tarrytown,<br />New york
                 </h1>
                 <div class="flex flex-col gap-9">
@@ -55,22 +60,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
-    <section id="store_details" class="bg-tortilla">
+    <section id="store_details" class="bg-tortilla pt-16">
         <div class="container">
             <div class="flex flex-col gap-9 max-w-lg">
                 <p class="font-geist text-ink text-sm leading-[1.4]">At The Taco Project in Tarrytown, we're committed to providing our customers with an authentic and memorable dining experience. That's why we pride ourselves on our friendly service, cozy atmosphere, and vibrant flavors. From our colorful decor to our festive music, we're dedicated to bringing the energy and excitement of Mexico to every meal.</p>
-                <p class="font-geist text-ink text-sm leading-[1.4]">Inquiry Form</p>
+                <p class="font-geist text-sm leading-[1.4] uppercase"><a href="text-hot-sauce">Inquiry Form <!-- external link icon --></a></p>
             </div>
         </div>
 
-        <div class="px-12 overflow-x-auto pb-12">
+        <div class="px-6 md:px-8 lg:px-12 overflow-x-auto py-12">
             <!-- Photo Layout -->
-            <div class="flex gap-6 w-max items-end">
-                <img src="/tarrytown-taco-project-2.jpg" alt="Tarrytown Taco Project Interior" class="w-[28vw]" />
-                <img src="/the-taco-project-menu-items.webp" alt="Menu Items from The Taco Project" class="w-[28vw]" />
-                <img src="/tarrytown-taco-project-4.jpg" alt="Food at The Taco Project" class="w-[28vw]" />
-                <img src="/friends-eating-at-the-taco-project.webp" alt="Friends Eating at The Taco Project" class="w-[28vw]" />
-                <img src="/delicious-food-at-the-taco-project.webp" alt="Delicious Food at The Taco Project" class="w-[28vw]" />
+            <div class="flex gap-4 w-max items-end">
+                <img src="/tarrytown-taco-project-2.jpg" alt="Tarrytown Taco Project Interior" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
+                <img src="/the-taco-project-menu-items.webp" alt="Menu Items from The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
+                <img src="/tarrytown-taco-project-4.jpg" alt="Food at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
+                <img src="/friends-eating-at-the-taco-project.webp" alt="Friends Eating at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
+                <img src="/delicious-food-at-the-taco-project.webp" alt="Delicious Food at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
             </div>
         </div>
     </section>
