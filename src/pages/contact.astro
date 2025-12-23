@@ -1,75 +1,85 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoreLocator from "../components/StoreLocator.astro";
-import LocationsList from "../components/LocationsList.astro";
+import InstagramFeed from "../components/InstagramFeed.astro";
 ---
 
 <BaseLayout title="Contact Us | The Taco Project">
-    <section id="contact_form" class="bg-sky relative py-[72px] px-[72px]">
-        <div class="flex flex-col gap-[20px] items-start text-ink mb-[52px]">
-            <h2 class="font-futura text-[104px] leading-[0.88] tracking-[-5px] uppercase text-ink">contact us</h2>
-            <p class="font-geist font-normal text-sm leading-[1.4]">
-                For PR/Marketing inquiries please contact <a href="mailto:Marketing@thetacoproject.com" class="underline decoration-solid">Marketing@thetacoproject.com</a>.
-            </p>
-        </div>
-
-        <form class="max-w-[1136px] mx-auto flex flex-col gap-[30px]">
-            <!-- First Row: First Name and Last Name -->
-            <div class="flex gap-[22px] w-full">
-                <div class="flex-1 flex flex-col gap-[14px]">
-                    <label for="first_name" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">First name</label>
-                    <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition" />
-                </div>
-                <div class="flex-1 flex flex-col gap-[14px]">
-                    <label for="last_name" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Last name</label>
-                    <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition" />
-                </div>
+    <section class="bg-sky py-16 relative">
+        <div class="container">
+            <div class="flex flex-col">
+                <h1 class="font-futura text-[104px] leading-[0.88] tracking-[-5px] uppercase text-ink">Contact Us</h1>
+                <p class="font-geist font-normal text-sm leading-[1.4]">
+                    For PR/Marketing inquiries please contact <a href="mailto:Marketing@thetacoproject.com" class="underline decoration-solid">Marketing@thetacoproject.com</a>.
+                </p>
             </div>
+            <form class="mx-auto flex flex-col gap-[30px]">
 
-            <!-- Second Row: Email and Phone Number -->
-            <div class="flex gap-[22px] w-full">
-                <div class="flex-1 flex flex-col gap-[14px]">
-                    <label for="email" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Email</label>
-                    <input type="email" id="email" name="email" required class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition" />
-                </div>
-                <div class="flex-1 flex flex-col gap-[14px]">
-                    <label for="phone" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Phone number</label>
-                    <input type="tel" id="phone" name="phone" class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition" />
-                </div>
-            </div>
 
-            <!-- Third Row: Message Type -->
-            <div class="flex flex-col gap-[14px]">
-                <label for="message_type" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Message type</label>
-                <select
-                    id="message_type"
-                    name="message_type"
-                    required
-                    class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%23202020%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:20px] bg-[right_20px_center] bg-no-repeat pr-[50px]"
-                >
-                    <option value="">Select a message type...</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="catering">Catering</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="careers">Careers</option>
-                    <option value="press">Press & Media</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+                <!-- First Name, Last Name -->
+                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="first_name" class="font-geist font-normal text-sm leading-5 text-ink">First Name*</label>
+                        <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="last_name" class="font-geist font-normal text-sm leading-5 text-ink">Last Name*</label>
+                        <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                </div>
+
+                <!-- Company or Organization, Email -->
+                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="company" class="font-geist font-normal text-sm leading-5 text-ink">Company or Organization</label>
+                        <input type="text" id="company" name="company" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="email" class="font-geist font-normal text-sm leading-5 text-ink">Email*</label>
+                        <input type="email" id="email" name="email" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                </div>
+
+                <!-- Phone Number, Related Store Location (if any) -->
+                <div class="flex gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="store_location" class="font-geist font-normal text-sm leading-5 text-ink">Related Store Location (if any)</label>
+                        <select
+                            id="store_location"
+                            name="store_location"
+                            class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%23202020%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:20px] bg-[right_20px_center] bg-no-repeat pr-10">
+                            <option value="">Choose a location...</option>
+                            <option value="bronxville">Bronxville, NY</option>
+                            <option value="new_rochelle">New Rochelle, NY</option>
+                            <option value="pleasantville">Pleasantville, NY</option>
+                            <option value="stamford">Stamford, CT</option>
+                            <option value="tarrytown">Tarrytown, NY</option>
+                            <option value="yonkers">Yonkers, NY</option>
+                        </select>
+                    </div>
+                </div>
+
+           
 
             <!-- Fourth Row: Message -->
-            <div class="flex flex-col gap-[14px]">
+            <div class="flex flex-col gap-3.5 w-full">
                 <label for="message" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Message</label>
                 <textarea id="message" name="message" required rows="6" class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-start">
-                <button type="submit" class="bg-hot-sauce text-crema rounded-[8px] px-[20px] py-[8px] h-[44px] flex items-center gap-[8.877px] font-geist font-normal text-[14.203px] leading-[1.4] uppercase hover:opacity-90 transition-opacity">submit form</button>
+                <button type="submit" class="bg-hot-sauce btn btn-primary text-crema rounded-[8px] px-[20px] py-[8px] h-[44px] flex items-center gap-[8.877px] font-geist font-normal text-[14.203px] leading-[1.4] uppercase hover:opacity-90 transition-opacity">submit form</button>
             </div>
         </form>
+        </div>
+
     </section>
 
-    <LocationsList />
     <StoreLocator />
+    <InstagramFeed />
 </BaseLayout>

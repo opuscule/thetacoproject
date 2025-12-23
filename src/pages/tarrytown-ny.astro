@@ -1,6 +1,43 @@
 ---
 import CateringCTA from "../components/CateringCTA.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { supabase } from "../lib/supabase";
+import "@splidejs/splide/css";
+
+// Define the interface for reviews from Supabase
+interface Review {
+    id: number;
+    quote: string;
+    name: string;
+    location: string;
+    type: string;
+    display: boolean;
+}
+
+// Fetch reviews from Supabase
+let testimonials: { quote: string; author: string }[] = [];
+
+try {
+    const { data, error } = await supabase
+        .from("reviews")
+        .select("quote, name")
+        .eq("location", "Tarrytown")
+        .eq("type", "Restaurant")
+        .eq("display", true);
+
+    if (error) {
+        console.error("Error fetching reviews:", error);
+    } else if (data && data.length > 0) {
+        // Shuffle and pick 4 random reviews
+        const shuffled = data.sort(() => Math.random() - 0.5);
+        testimonials = shuffled.slice(0, 4).map((review) => ({
+            quote: review.quote,
+            author: review.name,
+        }));
+    }
+} catch (e) {
+    console.error("Unexpected error fetching reviews:", e);
+}
 ---
 
 <BaseLayout title="Best Tacos in Tarrytown | Mexican Restaurant | Lunch & Dinner" description="Join us on Main Street for the best tacos in Tarrytown, NY. Open for lunch and dinner every day! Stop by or order online.">
@@ -66,6 +103,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
+
+    <!-- location details -->
     <section id="store_details" class="bg-tortilla pt-16">
         <div class="px-6">
             <div class="flex flex-col gap-9 max-w-lg">
@@ -86,4 +125,83 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <CateringCTA />
+
+
+    <!-- Testimonial Slider -->
+    <section class="bg-hot-sauce py-24 px-5">
+        <div class="max-w-3xl mx-auto">
+            <div class="splide" aria-label="Customer Testimonials">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {
+                            testimonials.map((t) => (
+                                <li class="splide__slide">
+                                    <div class="flex flex-col items-start gap-6 select-none cursor-grab active:cursor-grabbing">
+                                        <div class="flex gap-1">
+                                            {/* 5 Stars */}
+                                            {[...Array(5)].map(() => (
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
+                                                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                                                </svg>
+                                            ))}
+                                        </div>
+                                        <p class="font-geist text-crema leading-snug font-normal text-pretty">{t.quote}</p>
+                                        <p class="font-geist text-crema leading-snug text-sm font-normal">— {t.author}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <!-- Custom Arrows -->
+                <div class="splide__arrows flex gap-4 mt-8">
+                    <button class="splide__arrow splide__arrow--prev !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Previous slide">
+                        <div class="w-12 h-12 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-5">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next !static !transform-none !opacity-100 !w-auto !h-auto !bg-transparent group cursor-pointer" type="button" aria-label="Next slide">
+                        <div class="w-12 h-12 rounded-full bg-crema flex items-center justify-center transition-colors hover:opacity-80 text-ink">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-5">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        import Splide from "@splidejs/splide";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            new Splide(".splide", {
+                type: "loop",
+                perPage: 1,
+                arrows: true,
+                pagination: false, // Disabled pagination
+                autoplay: false,
+            }).mount();
+        });
+
+        document.querySelectorAll(".faq-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const isExpanded = button.getAttribute("aria-expanded") === "true";
+                button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+                const answerId = button.getAttribute("aria-controls");
+                if (answerId) {
+                    const answer = document.getElementById(answerId);
+                    if (answer) {
+                        answer.classList.toggle("hidden");
+                    }
+                }
+            });
+        });
+    </script>
+
 </BaseLayout>

@@ -1,64 +1,79 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import StoreSlider from "../components/StoreSlider.astro";
 ---
 
-<BaseLayout title="Careers | The Taco Project">
-    <section class="bg-crema">
-        <div class="flex">
-            <div class="w-[60%]">
-                <div class="w-[60%] flex justify-end">
-                    <h1 class="font-futura font-black text-8xl leading-24 tracking-tight uppercase text-citrus mb-8">Join the Taco Project Team</h1>
-                </div>
-                <div class="md:flex md:gap-8">
-                    <div class="md:w-2/5">
-                        <img src="careers-banner-tn.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="md:w-3/5">
-                        <p class="font-geist text-ink text-sm leading-[1.4] text-pretty">The Taco Project restaurants are Mexican-inspired, polished casual / quick service taquerias, located in Westchester County, NY, and Fairfield County, CT. If you've got a passion for food and love working alongside vibrant, growth-minded humans, you'll fit right in.</p>
-                        <div class="">
-                            <a href="" class="">JOIN us Apply Today</a>
+<BaseLayout title="Join Our Team - Now Hiring at The Taco Project | NY, CT" description="We're currently hiring front of house and back of house staff. Please fill out the application and we'll reach out to you if it's a fit!">
+
+    <section class="min-h-auto md:min-h-[80vh] bg-crema flex flex-col md:flex-row justify-between">
+        
+        <!-- Column 1: Content (md:80%, lg:60%) -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.8)] lg:max-w-[calc(var(--max-content-width)*0.6)] p-6 md:pt-8 md:pb-12 md:pl-12 md:pr-8">
+            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
+                <h1 class="text-citrus font-futura text-[56px] md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">Join the Taco Project Team</h1>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <img src="/careers-banner-tn.webp" class="shrink max-w-[240px] w-full h-auto object-contain" alt="Work at The Taco Project" width="350" height="353" loading="eager" />
+                    <div class="flex flex-col gap-4">
+                        <p class="font-geist text-ink text-sm leading-5 text-pretty">The Taco Project restaurants are Mexican-inspired, polished casual / quick service taquerias, located in Westchester County, NY, and Fairfield County, CT. If you've got a passion for food and love working alongside vibrant, growth-minded humans, you'll fit right in.</p>
+
+
+
+                        <div class="flex items-center justify-between">
+                            <a href="#apply" class="group flex items-center justify-between w-full gap-2">
+                                <div class="font-futura text-hot-sauce text-5xl md:text-[56px] leading-tight uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">Join Us</div>
+                                <div class="flex items-center gap-2 text-hot-sauce font-geist text-sm uppercase transition-all duration-500 pr-0 md:pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                                    Apply Today
+                                    <svg class="w-4 h-4 rotate-90" aria-hidden="true" focusable="false">
+                                        <use href="#icon-arrow-right"></use>
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-[40%] bg-sky"></div>
+        <!-- Column 2: Image (md:20%, lg:40%) -->
+        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.2)] lg:max-w-[calc(var(--max-content-width)*0.4)] min-h-96 bg-cover bg-center bg-[url('/careers-banner-v2.webp')]"></div>
     </section>
+
 
     <section id="working_with_us" class="bg-crema flex flex-col">
         <div class="container">
-            <div class="flex justify-center items-center mb-12">
-                <h2 class="font-holiday text-citrus text-[64px] leading-[1.3] rotate-[-2deg]">Why you'll love working with us</h2>
+            <div class="flex mb-12">
+                <h2 class="font-holiday text-citrus text-6xl leading-[1.3] -rotate-2">Why you&lsquo;ll love working with us</h2>
             </div>
 
             <div class="flex flex-col md:flex-row gap-6 justify-center items-start">
-                <div class="flex flex-col gap-[14px] w-full">
+                <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
                         <img src="/careers-grid-1.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Good energy, every shift</h3>
-                        <p class="font-geist text-ink text-sm leading-[1.4]">Work in a place where the vibes are high, the playlists are good, and the people actually like being here.</p>
+                        <p class="font-geist text-ink text-sm leading-5">Work in a place where the vibes are high, the playlists are good, and the people actually like being here.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-[14px] w-full">
+                <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
                         <img src="/careers-grid-2.webp" alt="Flexible Schedule at The Taco Project" class="w-full h-full object-cover" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Fuel for your future</h3>
-                        <p class="font-geist text-ink text-sm leading-[1.4]">Competitive pay, flexible schedules, and room to grow, because your goals matter.</p>
+                        <p class="font-geist text-ink text-sm leading-5">Competitive pay, flexible schedules, and room to grow, because your goals matter.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-[14px] w-full">
+                <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
                         <img src="/careers-grid-3.webp" alt="Feels like fam at The Taco Project" class="w-full h-full object-cover" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Feels like fam</h3>
-                        <p class="font-geist text-ink text-sm leading-[1.4]">We've built something real: a crew that's supportive, collaborative, and always up for a post-shift taco (or two).</p>
+                        <p class="font-geist text-ink text-sm leading-5">We've built something real: a crew that's supportive, collaborative, and always up for a post-shift taco (or two).</p>
                     </div>
                 </div>
             </div>
@@ -66,172 +81,181 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- Careers Form -->
-    <section id="careers_form" class="bg-sky py-16">
+    <section id="apply" class="bg-sky py-16">
         <div class="container">
             <div class="flex flex-col gap-[20px] items-start text-ink mb-[52px]">
                 <h2 class="font-futura text-[64px] lg:text-[104px] leading-[0.88] tracking-[-5px] uppercase text-ink">Apply Today</h2>
-                <p class="font-geist font-normal text-sm leading-[1.4]">We are currently hiring for all positions.</p>
+                <p class="font-geist font-normal text-sm leading-5">We are currently hiring for all positions.</p>
             </div>
 
-            <form class="max-w-[1136px] mx-auto flex flex-col gap-[30px]">
+            <form class="flex flex-col gap-[30px]">
                 <!-- Row 1 -->
-                <div class="flex flex-col lg:flex-row gap-[22px] w-full">
-                    <div class="flex-1 flex flex-col gap-[14px]">
-                        <label for="first_name" class="font-geist font-normal text-sm leading-[1.4] text-ink">First Name*</label>
-                        <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="first_name" class="font-geist font-normal text-sm leading-5 text-ink">First Name*</label>
+                        <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
-                    <div class="flex-1 flex flex-col gap-[14px]">
-                        <label for="last_name" class="font-geist font-normal text-sm leading-[1.4] text-ink">Last Name*</label>
-                        <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="last_name" class="font-geist font-normal text-sm leading-5 text-ink">Last Name*</label>
+                        <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                 </div>
 
                 <!-- Row 2 -->
-                <div class="flex flex-col lg:flex-row gap-[22px] w-full">
-                    <div class="flex-1 flex flex-col gap-[14px]">
-                        <label for="email" class="font-geist font-normal text-sm leading-[1.4] text-ink">Email*</label>
-                        <input type="email" id="email" name="email" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
-                    <div class="flex-1 flex flex-col gap-[14px]">
-                        <label for="phone" class="font-geist font-normal text-sm leading-[1.4] text-ink">Phone Number*</label>
-                        <input type="tel" id="phone" name="phone" required class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="email" class="font-geist font-normal text-sm leading-5 text-ink">Email*</label>
+                        <input type="email" id="email" name="email" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                 </div>
 
+
                 <!-- Row 3: Position -->
-                <div class="flex flex-col gap-[14px] w-full">
-                    <label for="position" class="font-geist font-normal text-sm leading-[1.4] text-ink">Position you are applying for*</label>
-                    <div class="relative">
-                        <select id="position" name="position" required class="bg-crema rounded-[8px] px-[24px] py-[18px] w-full font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer">
-                            <option value="" disabled selected>Select a position</option>
+
+                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="position" class="font-geist font-normal text-sm leading-5 text-ink">Position of Interest*</label>
+                        <select id="position" name="position" required class="bg-crema rounded-lg px-6 py-4 w-full font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer">
+                            <option value="" disabled selected>Choose a position</option>
                             <option value="server">Server</option>
                             <option value="cook">Line Cook</option>
                             <option value="bartender">Bartender</option>
                             <option value="manager">Manager</option>
+                            <option value="other">Other</option>
                         </select>
-                        <div class="absolute right-[24px] top-1/2 -translate-y-1/2 pointer-events-none">
+                        <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </div>
                     </div>
+                    <div class="flex-1 flex flex-col gap-3.5">
+                        <label for="location" class="font-geist font-normal text-sm leading-5 text-ink">Location Preference*</label>
+                        <div class="relative" data-dropdown="location">
+                            <button type="button" class="bg-crema rounded-lg px-6 py-4 w-full font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition cursor-pointer flex justify-between items-center" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="dropdown-label text-ink/50">Choose location(s)</span>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 right-0 top-full mt-1 bg-crema rounded-lg shadow-lg z-20 hidden overflow-hidden">
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="tarrytown" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Tarrytown, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="yonkers" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Yonkers, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="pleasantville" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Pleasantville, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="bronxville" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Bronxville, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="stamford" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Stamford, CT</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="checkbox" name="location[]" value="new_rochelle" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">New Rochelle, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors border-t border-ink/10">
+                                    <input type="checkbox" name="location[]" value="no_preference" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">No Preference</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+
+                <!-- Row 4: great team member -->
+                <div class="flex flex-col gap-3.5 w-full">
+                    <label for="cover_letter" class="font-geist font-normal text-sm leading-5 text-ink">Why would you make a great teammate?</label>
+                    <textarea id="cover_letter" name="cover_letter" rows="4" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                </div>
+
+
+
+
                 <!-- Row 4: Resume -->
-                <div class="flex flex-col gap-[14px] w-full">
-                    <label class="font-geist font-normal text-sm leading-[1.4] text-ink">Upload Resume*</label>
+                <div class="flex flex-col gap-3.5 w-full">
+                    <label class="font-geist font-normal text-sm leading-5 text-ink">Upload Resume*</label>
                     <div class="relative">
                         <input type="file" id="resume" name="resume" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
-                        <div class="bg-crema rounded-[8px] px-[24px] py-[18px] w-full flex justify-between items-center border border-dashed border-ink/20">
+                        <div class="bg-crema rounded-lg px-6 py-4 w-full flex justify-between items-center border border-dashed border-ink/20">
                             <span class="font-geist text-ink/50 text-sm">Choose file...</span>
                             <span class="font-geist text-ink text-sm underline">Browse</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Row 5: Cover Letter -->
-                <div class="flex flex-col gap-[14px] w-full">
-                    <label for="cover_letter" class="font-geist font-normal text-sm leading-[1.4] text-ink">Cover Letter</label>
-                    <textarea id="cover_letter" name="cover_letter" rows="4" class="bg-crema rounded-[8px] px-[24px] py-[18px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
-                </div>
+                
 
                 <!-- Submit Button -->
                 <div class="flex justify-end">
-                    <button type="submit" class="bg-hot-sauce text-crema rounded-[8px] px-[20px] py-[8px] font-geist font-normal text-[14.2px] leading-[1.4] uppercase hover:opacity-90 transition-opacity">Submit Form</button>
+                    <button type="submit" class="bg-hot-sauce text-crema rounded-lg px-5 py-2 font-geist font-normal text-sm leading-5 uppercase hover:opacity-90 transition-opacity">Submit Form</button>
                 </div>
             </form>
         </div>
     </section>
 
-    <!-- Store Slider -->
-    <section id="store_slider" class="bg-crema py-[96px] overflow-hidden relative">
-        <div class="container relative">
-            <h2 class="font-futura text-citrus text-[64px] lg:text-[92px] leading-[0.88] uppercase tracking-[-4.4px] text-center mb-16 max-w-[800px] mx-auto">Wherever you are, we got you.</h2>
+    <StoreSlider />
 
-            <div class="absolute top-[80px] right-[100px] hidden lg:block rotate-[5deg]">
-                <p class="font-holiday text-ocean text-5xl leading-[1.3]">Apply to a store near you</p>
-            </div>
-        </div>
+    <script>
+        // Location dropdown with checkboxes
+        document.querySelectorAll('[data-dropdown="location"]').forEach((dropdown) => {
+            const button = dropdown.querySelector('button');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            const label = dropdown.querySelector('.dropdown-label');
+            const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+            const arrow = button?.querySelector('svg');
 
-        <!-- Slider Container -->
-        <div class="flex flex-col md:flex-row gap-6 px-5 pb-8 md:overflow-x-auto md:px-9 md:no-scrollbar md:snap-x md:snap-mandatory">
-            <!-- Tarrytown -->
-            <a href="/tarrytown-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-tarrytown.webp" alt="The Taco Project in Tarrytown, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Tarrytown, NY</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
+            // Toggle dropdown
+            button?.addEventListener('click', () => {
+                const isOpen = menu?.classList.contains('hidden') === false;
+                menu?.classList.toggle('hidden');
+                button.setAttribute('aria-expanded', (!isOpen).toString());
+                arrow?.classList.toggle('rotate-180');
+            });
 
-            <!-- Bronxville -->
-            <a href="/bronxville-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-bronxville.webp" alt="The Taco Project in Bronxville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Bronxville, NY</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
+            // Update label when checkboxes change
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                    const checked = Array.from(checkboxes)
+                        .filter((cb) => (cb as HTMLInputElement).checked)
+                        .map((cb) => cb.nextElementSibling?.textContent?.trim());
 
-            <!-- Stamford -->
-            <a href="/stamford-ct/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-stamford.webp" alt="The Taco Project in Stamford, CT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Stamford, CT</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
+                    if (label) {
+                        if (checked.length === 0) {
+                            label.textContent = 'Choose location(s)';
+                            label.classList.add('text-ink/50');
+                            label.classList.remove('text-ink');
+                        } else {
+                            label.textContent = checked.join(', ');
+                            label.classList.remove('text-ink/50');
+                            label.classList.add('text-ink');
+                        }
+                    }
+                });
+            });
 
-            <!-- Yonkers -->
-            <a href="/yonkers-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-yonkers.webp" alt="The Taco Project in Yonkers, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Yonkers, NY</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- Pleasantville -->
-            <a href="/pleasantville-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-pleasantville.webp" alt="The Taco Project in Pleasantville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Pleasantville, NY</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- New Rochelle -->
-            <a href="/new-rochelle-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
-                <div class="overflow-hidden relative aspect-square">
-                    <img src="/location-tn-new-rochelle.webp" alt="The Taco Project in New Rochelle, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
-                    <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">New Rochelle, NY</h3>
-                    <svg class="w-6 h-6 text-ocean transition-transform group-hover:translate-x-1">
-                        <use href="#icon-arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
-        </div>
-    </section>
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target as Node)) {
+                    menu?.classList.add('hidden');
+                    button?.setAttribute('aria-expanded', 'false');
+                    arrow?.classList.remove('rotate-180');
+                }
+            });
+        });
+    </script>
 </BaseLayout>

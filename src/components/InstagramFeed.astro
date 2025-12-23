@@ -1,0 +1,43 @@
+---
+// Fetch Instagram posts from Behold
+const beholdFeedUrl = "https://feeds.behold.so/2GXViHq88dWJYl2lDbPb";
+let instagramPosts: Array<{ permalink: string; mediaUrl: string; caption: string }> = [];
+
+try {
+    const response = await fetch(beholdFeedUrl);
+    const data = await response.json();
+    // Get the first 6 posts with medium size images
+    instagramPosts = data.posts.slice(0, 6).map((post: any) => ({
+        permalink: post.permalink,
+        mediaUrl: post.sizes.medium.mediaUrl,
+        caption: post.prunedCaption || post.caption || "Instagram post",
+    }));
+} catch (error) {
+    console.error("Error fetching Behold feed:", error);
+}
+---
+
+<section id="instagram_feed" class="bg-tortilla py-16 overflow-hidden">
+    <!-- Follow Button -->
+    <div class="container">
+        <div class="flex justify-center">
+            <a href="https://www.instagram.com/tacoproject/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 font-geist text-hot-sauce text-sm uppercase leading-[1.4] transition-colors duration-500 hover:text-ink focus:text-ink">
+                follow along on instagram
+                <svg class="w-4 h-4 ml-0 transition-[margin] duration-500 group-hover:ml-2 group-focus:ml-2" aria-hidden="true" focusable="false">
+                    <use href="#icon-external-link"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Gallery - horizontally scrollable -->
+    <div class="flex gap-6 justify-start mb-8 overflow-x-auto px-6 pt-12 pb-4 scrollbar-hide items-end">
+        {
+            instagramPosts.map((post) => (
+                <a href={post.permalink} target="_blank" rel="noopener noreferrer" class="bg-tortilla border border-ink w-[28vw] min-w-[280px] shrink-0 overflow-hidden block hover:opacity-90 transition-opacity">
+                    <img src={post.mediaUrl} alt={post.caption.substring(0, 100)} class="w-full h-full object-cover" loading="lazy" />
+                </a>
+            ))
+        }
+    </div>
+</section>

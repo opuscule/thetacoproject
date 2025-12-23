@@ -3,23 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import StoreLocator from "../components/StoreLocator.astro";
 import PressTicker from "../components/PressTicker.astro";
 import CateringCTA from "../components/CateringCTA.astro";
-
-// Fetch Instagram posts from Behold
-const beholdFeedUrl = "https://feeds.behold.so/2GXViHq88dWJYl2lDbPb";
-let instagramPosts: Array<{ permalink: string; mediaUrl: string; caption: string }> = [];
-
-try {
-    const response = await fetch(beholdFeedUrl);
-    const data = await response.json();
-    // Get the first 6 posts with medium size images
-    instagramPosts = data.posts.slice(0, 6).map((post: any) => ({
-        permalink: post.permalink,
-        mediaUrl: post.sizes.medium.mediaUrl,
-        caption: post.prunedCaption || post.caption || "Instagram post",
-    }));
-} catch (error) {
-    console.error("Error fetching Behold feed:", error);
-}
+import InstagramFeed from "../components/InstagramFeed.astro";
 ---
 
 <BaseLayout>
@@ -281,33 +265,5 @@ try {
         </div>
     </section>
 
-    <!-- Instagram Feed Section -->
-    <section id="instagram_feed" class="bg-tortilla py-16 overflow-hidden">
-        <!-- Image Gallery - horizontally centered, overflowing viewport -->
-        <div class="flex gap-[22px] justify-center items-center mb-8">
-            {
-                instagramPosts.map((post) => (
-                    <a href={post.permalink} target="_blank" rel="noopener noreferrer" class="bg-tortilla border border-ink w-[386px] h-[514px] shrink-0 overflow-hidden block hover:opacity-90 transition-opacity">
-                        <img src={post.mediaUrl} alt={post.caption.substring(0, 100)} class="w-full h-full object-cover" loading="lazy" />
-                    </a>
-                ))
-            }
-        </div>
-
-        <!-- Follow Button -->
-        <div class="flex justify-center">
-            <a href="https://www.instagram.com/tacoproject/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 font-geist text-hot-sauce text-[14.203px] uppercase leading-[1.4] hover:opacity-80 transition-opacity">
-                follow along on instagram
-                <svg width="13" height="13" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-hot-sauce">
-                    <path
-                        d="M10.6629 1.92016C13.5119 1.92016 13.8493 1.93265 14.9697 1.98264C16.011 2.02845 16.5733 2.20339 16.9482 2.34917C17.4439 2.54077 17.8021 2.77402 18.1728 3.14473C18.5476 3.5196 18.7767 3.87364 18.9683 4.3693C19.1141 4.74416 19.289 5.31063 19.3349 6.34777C19.3848 7.47237 19.3973 7.80975 19.3973 10.6546C19.3973 13.5036 19.3848 13.841 19.3349 14.9614C19.289 16.0027 19.1141 16.565 18.9683 16.9399C18.7767 17.4355 18.5435 17.7937 18.1728 18.1644C17.7979 18.5393 17.4439 18.7684 16.9482 18.96C16.5733 19.1058 16.0069 19.2807 14.9697 19.3265C13.8451 19.3765 13.5077 19.389 10.6629 19.389C7.81392 19.389 7.47654 19.3765 6.3561 19.3265C5.3148 19.2807 4.75249 19.1058 4.37763 18.96C3.88197 18.7684 3.52376 18.5351 3.15306 18.1644C2.77819 17.7896 2.5491 17.4355 2.3575 16.9399C2.21172 16.565 2.03678 15.9985 1.99097 14.9614C1.94098 13.8368 1.92849 13.4994 1.92849 10.6546C1.92849 7.80559 1.94098 7.46821 1.99097 6.34777C2.03678 5.30647 2.21172 4.74416 2.3575 4.3693C2.5491 3.87364 2.78235 3.51543 3.15306 3.14473C3.52793 2.76986 3.88197 2.54077 4.37763 2.34917C4.75249 2.20339 5.31896 2.02845 6.3561 1.98264C7.47654 1.93265 7.81392 1.92016 10.6629 1.92016ZM10.6629 0C7.7681 0 7.40573 0.0124956 6.26863 0.062478C5.13569 0.11246 4.3568 0.295729 3.68204 0.558137C2.97812 0.83304 2.3825 1.19541 1.79104 1.79104C1.19541 2.3825 0.83304 2.97812 0.558137 3.67787C0.295729 4.3568 0.11246 5.13153 0.062478 6.26446C0.0124956 7.40573 0 7.7681 0 10.6629C0 13.5577 0.0124956 13.9201 0.062478 15.0572C0.11246 16.1901 0.295729 16.969 0.558137 17.6438C0.83304 18.3477 1.19541 18.9433 1.79104 19.5348C2.3825 20.1263 2.97812 20.4928 3.67787 20.7635C4.3568 21.0259 5.13153 21.2092 6.26446 21.2592C7.40156 21.3092 7.76393 21.3217 10.6587 21.3217C13.5536 21.3217 13.9159 21.3092 15.053 21.2592C16.186 21.2092 16.9649 21.0259 17.6396 20.7635C18.3394 20.4928 18.935 20.1263 19.5265 19.5348C20.1179 18.9433 20.4845 18.3477 20.7552 17.648C21.0176 16.969 21.2009 16.1943 21.2509 15.0614C21.3008 13.9243 21.3133 13.5619 21.3133 10.6671C21.3133 7.77227 21.3008 7.40989 21.2509 6.27279C21.2009 5.13986 21.0176 4.36097 20.7552 3.6862C20.4928 2.97812 20.1304 2.3825 19.5348 1.79104C18.9433 1.19958 18.3477 0.83304 17.648 0.562302C16.969 0.299894 16.1943 0.116626 15.0614 0.0666432C13.9201 0.0124956 13.5577 0 10.6629 0Z"
-                        fill="currentColor"
-                    >
-                    </path>
-                    <path d="M10.6629 5.18567C7.63897 5.18567 5.18567 7.63897 5.18567 10.6629C5.18567 13.6868 7.63897 16.1401 10.6629 16.1401C13.6868 16.1401 16.1401 13.6868 16.1401 10.6629C16.1401 7.63897 13.6868 5.18567 10.6629 5.18567ZM10.6629 14.2158C8.7011 14.2158 7.10999 12.6247 7.10999 10.6629C7.10999 8.7011 8.7011 7.10999 10.6629 7.10999C12.6247 7.10999 14.2158 8.7011 14.2158 10.6629C14.2158 12.6247 12.6247 14.2158 10.6629 14.2158Z" fill="currentColor"></path>
-                    <path d="M17.6354 4.96915C17.6354 5.67723 17.0606 6.24787 16.3567 6.24787C15.6486 6.24787 15.078 5.67307 15.078 4.96915C15.078 4.26106 15.6528 3.69043 16.3567 3.69043C17.0606 3.69043 17.6354 4.26523 17.6354 4.96915Z" fill="currentColor"></path>
-                </svg>
-            </a>
-        </div>
-    </section>
+    <InstagramFeed />
 </BaseLayout>

@@ -66,7 +66,7 @@ const testimonials = [
             <div class="w-[35%] bg-sky">
                 <div class="px-6 py-16" style="width: calc(var(--max-content-width) * 0.35);">
                     <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase mb-8" style="text-wrap:balance;">We'll Come to You</h2>
-                    <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-4">
                         <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
                         <p class="font-geist text-ink text-sm leading-[1.4]">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
                     </div>
@@ -139,21 +139,23 @@ const testimonials = [
     </section>
 
     <!-- Order from Locations -->
-    <section id="locations-list" class="bg-crema py-16 relative">
+    <section id="locations-list" class="bg-crema pb-0 lg:py-16 relative">
         <div class="container">
             <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Order from any of our locations</h2>
+        </div>
 
+        <div class="max-w-[var(--max-content-width)] mx-auto px-0 md:px-6">
             <!-- Location Cards Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-6 mt-12">
                 <!-- Bronxville Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('bronxville-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-y border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('bronxville-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Bronxville, NY</h3>
-                                <a href="/bronxville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">Bronxville, NY</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=3495d6d2-5fd6-441e-a747-94aa7ef0ec01&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5" target="_blank" rel="noopener noreferrer">
                                     <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
@@ -161,32 +163,34 @@ const testimonials = [
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">65 Pondfield Rd.</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19143568226">(914) 356-8226</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2">
+                                <a href="https://www.toasttab.com/catering/the-taco-project-bronxville-65-pondfield-rd" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=3495d6d2-5fd6-441e-a747-94aa7ef0ec01&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Tarrytown Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('tarrytown-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-b border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('tarrytown-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Tarrytown, NY</h3>
-                                <a href="/tarrytown" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">Tarrytown, NY</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=7aa5b760-6d6e-44e6-986a-8a6a2b3b3c6a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5" target="_blank" rel="noopener noreferrer">
                                     <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
@@ -194,32 +198,34 @@ const testimonials = [
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">18 Main St.</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19149094455">(914) 909-4455</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2">
+                                <a href="https://www.toasttab.com/catering/the-taco-project-tarrytown-18-main-street" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=7aa5b760-6d6e-44e6-986a-8a6a2b3b3c6a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- New Rochelle Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('new-rochelle-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-b border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('new-rochelle-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">New Rochelle, NY</h3>
-                                <a href="/new-rochelle" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">New Rochelle, NY</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=fd0ffc15-d6df-481a-bb2e-a64a6056fa3a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5" target="_blank" rel="noopener noreferrer">
                                     <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
@@ -227,32 +233,34 @@ const testimonials = [
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">596 North Ave.</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19147297949">(914) 729-7949</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2">
+                                <a href="https://www.toasttab.com/catering/taco-project-new-rochelle-596-north-ave" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=fd0ffc15-d6df-481a-bb2e-a64a6056fa3a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Yonkers Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('yonkers-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-b border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('yonkers-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Yonkers, NY</h3>
-                                <a href="/yonkers" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">Yonkers, NY</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=05a4a592-5515-4108-9d68-b85203ab0342&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5" target="_blank" rel="noopener noreferrer">
                                     <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
@@ -260,65 +268,69 @@ const testimonials = [
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">1086 N. Broadway</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19143754000">(914) 375-4000</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2">
+                                <a href="https://www.toasttab.com/catering/the-taco-project-yonkers-1086-north-broadway" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=05a4a592-5515-4108-9d68-b85203ab0342&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Stamford Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('stamford-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-b border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('stamford-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Stamford, CT</h3>
-                                <a href="/stamford" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                                    <span class="font-geist text-ink text-sm uppercase">inquire</span>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">Stamford, CT</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=1b3af55d-3b10-4116-a447-e45f8c6bd678&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5" target="_blank" rel="noopener noreferrer">
+                                    <span class="font-geist text-ink text-sm uppercase">Inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
                                     </svg>
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">1111 High Ridge Rd.</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+12037039495">(203) 703-9495</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2">
+                                <a href="https://www.toasttab.com/catering/the-taco-project-stamford-1101-high-ridge-road/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=1b3af55d-3b10-4116-a447-e45f8c6bd678&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Pleasantville Location -->
-                <div class="grid grid-cols-[136px_1fr]">
-                    <div class="bg-cover bg-center" style="background-image: url('pleasantville-catering_tn.webp');"></div>
+                <div class="grid grid-cols-1 md:grid-cols-[136px_1fr] border-b border-hot-sauce">
+                    <div class="bg-cover bg-center hidden md:block" style="background-image: url('pleasantville-catering_tn.webp');"></div>
 
                     <div class="bg-tortilla px-9 py-8 flex flex-col gap-6 h-full">
-                        <div class="flex flex-col gap-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-futura text-hot-sauce text-3xl leading-9 tracking-tight">Pleasantville, NY</h3>
-                                <a href="/pleasantville" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center justify-between flex-wrap gap-x-2">
+                                <h3 class="font-futura text-hot-sauce text-[28px] md:text-[32px] leading-tight tracking-tight">Pleasantville, NY</h3>
+                                <a href="https://www.toasttab.com/invoice/lead?rx=ed431fc4-91a9-4c42-b9c6-7d10cbf63d18&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap items-center gap-2.5 hover:opacity-80 transition-opacity mt-2.5 whitespace-nowrap" target="_blank" rel="noopener noreferrer">
                                     <span class="font-geist text-ink text-sm uppercase">inquire</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-ink">
                                         <use href="#icon-external-link"></use>
@@ -326,18 +338,21 @@ const testimonials = [
                                 </a>
                             </div>
 
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center flex-wrap gap-1.5">
                                 <p class="font-geist text-ink text-sm leading-4">465 Bedford Rd.</p>
                                 <div class="text-ink font-geist text-sm leading-4">/</div>
                                 <p class="font-geist text-ink text-sm leading-4"><a href="tel:+19144228111">(914) 422-8111</a></p>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="#" class="font-geist text-hot-sauce leading-none" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
-                                    <use href="#icon-external-link"></use>
-                                </svg>
+                            <div class="flex items-center gap-3 mt-2 flex-wrap">
+                                <a href="https://www.toasttab.com/catering/the-taco-project-pleasantville-smb-pos-465-bedford-road" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
+                                
+                                <a href="https://www.toasttab.com/invoice/lead?rx=ed431fc4-91a9-4c42-b9c6-7d10cbf63d18&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                    Get a Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
+                                        <use href="#icon-external-link"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -458,7 +473,7 @@ const testimonials = [
     <!-- Testimonial Slider -->
     <section class="bg-hot-sauce py-24 px-5">
         <div class="max-w-3xl mx-auto">
-            <section class="splide" aria-label="Customer Testimonials">
+            <div class="splide" aria-label="Customer Testimonials">
                 <div class="splide__track">
                     <ul class="splide__list">
                         {
@@ -473,7 +488,7 @@ const testimonials = [
                                                 </svg>
                                             ))}
                                         </div>
-                                        <p class="font-geist text-crema leading-snug text-sm font-normal">{t.quote}</p>
+                                        <p class="font-geist text-crema leading-snug font-normal text-pretty">{t.quote}</p>
                                         <p class="font-geist text-crema leading-snug text-sm font-normal">— {t.author}</p>
                                     </div>
                                 </li>
@@ -499,7 +514,7 @@ const testimonials = [
                         </div>
                     </button>
                 </div>
-            </section>
+            </div>
         </div>
     </section>
 

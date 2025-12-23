@@ -48,7 +48,7 @@ const siteName = "The Taco Project";
         <link rel="icon" type="image/png" sizes="512x512" href="/the-taco-project-favicon-512.png" />
 
         <!-- Google Maps API -->
-        <script src={`https://maps.googleapis.com/maps/api/js?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY}`} async defer></script>
+        <script async src={`https://maps.googleapis.com/maps/api/js?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY}`}></script>
     </head>
     <body>
         <!-- SVG Sprite Definitions -->
@@ -489,7 +489,7 @@ const siteName = "The Taco Project";
                 <div class="flex flex-col md:flex-row gap-4 md:gap-8 justify-between">
                     <p class="text-center md:text-left font-geist text-ocean text-xs md:text-sm">&copy; {new Date().getFullYear()} The Taco Project. All rights reserved.</p>
                     <div class="flex font-geist text-xs md:text-sm leading-4 text-ocean gap-2 flex-wrap md:flex-nowrap items-center justify-center-safe md:justify-end">
-                        <a href="/cookie-policy/" class="text-ocean">Cookie Policy</a><span>/</span><a href="/privacy-policy/" class="text-ocean">Privacy Policy</a><span>/</span><a href="/terms/" class="text-ocean">Terms &amp; Conditions</a>
+                        <a href="/cookie-policy/" class="text-ocean">Cookie Policy</a><span>/</span><a href="/privacy-policy/" class="text-ocean">Privacy Policy</a><span>/</span><a href="/terms-and-conditions/" class="text-ocean">Terms &amp; Conditions</a>
                     </div>
                 </div>
             </div>

@@ -72,14 +72,34 @@ h1 {
     cursor: pointer;
     border: none;
     width: fit-content;
+    white-space: nowrap;
 }
 
 .btn-primary {
     color: var(--color-crema);
     background: var(--color-hot-sauce);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--color-ink);
 }
 
 .btn-secondary {
     color: var(--color-hot-sauce);
     background: var(--color-crema);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.text-pretty {
+    text-wrap: pretty;
 }

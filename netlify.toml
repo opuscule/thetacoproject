@@ -1,0 +1,25 @@
+# Netlify Configuration
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Redirects
+# https://docs.netlify.com/routing/redirects/
+
+[[redirects]]
+  from = "/catering-menu"
+  to = "/taco-project-catering-menu-03112025.pdf"
+  status = 302  # Temporary redirect - easy to update when menu changes
+
+# Security Headers
+# https://docs.netlify.com/routing/headers/
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Content-Security-Policy = "default-src 'self'; ..." # Uncomment and customize as needed
