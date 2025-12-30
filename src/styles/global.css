@@ -103,3 +103,8 @@ h1 {
 .text-pretty {
     text-wrap: pretty;
 }
+@media (max-width: 48rem) {
+    .text-14 {
+        font-size: 3.5rem;
+    }
+}

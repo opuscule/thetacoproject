@@ -1,14 +1,10 @@
 ---
-interface Props {
-    title?: string;
-}
 
-const { title = "Wherever you are, we got you." } = Astro.props;
 ---
 
-<section id="store_slider" class="bg-crema py-24 overflow-hidden relative">
+<section id="store_slider" class="bg-crema py-6 md:py-24 overflow-hidden relative">
     <div class="container relative">
-        <h2 class="font-futura text-citrus text-[56px] lg:text-8xl leading-tight uppercase tracking-tight text-center mb-16 max-w-4xl mx-auto text-balance">{title}</h2>
+        <h2 class="font-futura text-citrus text-14 lg:text-8xl leading-none uppercase tracking-tight text-left md:text-center mb-10 md:mb-16 max-w-4xl mx-auto text-balance">Wherever you are, we got you.</h2>
     </div>
 
     <!-- Slider Container -->
@@ -16,7 +12,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- Tarrytown -->
         <a href="/tarrytown-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-tarrytown.webp" alt="The Taco Project in Tarrytown, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-tarrytown.webp" alt="The Taco Project in Tarrytown, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Tarrytown, NY</h3>
@@ -29,7 +25,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- Yonkers -->
         <a href="/yonkers-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-yonkers.webp" alt="The Taco Project in Yonkers, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-yonkers.webp" alt="The Taco Project in Yonkers, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Yonkers, NY</h3>
@@ -42,7 +38,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- Pleasantville -->
         <a href="/pleasantville-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-pleasantville.webp" alt="The Taco Project in Pleasantville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-pleasantville.webp" alt="The Taco Project in Pleasantville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Pleasantville, NY</h3>
@@ -55,7 +51,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- Bronxville -->
         <a href="/bronxville-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-bronxville.webp" alt="The Taco Project in Bronxville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-bronxville.webp" alt="The Taco Project in Bronxville, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Bronxville, NY</h3>
@@ -68,7 +64,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- Stamford -->
         <a href="/stamford-ct/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-stamford.webp" alt="The Taco Project in Stamford, CT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-stamford.webp" alt="The Taco Project in Stamford, CT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">Stamford, CT</h3>
@@ -81,7 +77,7 @@ const { title = "Wherever you are, we got you." } = Astro.props;
         <!-- New Rochelle -->
         <a href="/new-rochelle-ny/" class="flex-none snap-center group cursor-pointer w-full md:w-[40vw] lg:w-[28vw]">
             <div class="overflow-hidden relative aspect-square">
-                <img src="/location-tn-new-rochelle.webp" alt="The Taco Project in New Rochelle, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src="/location-tn-new-rochelle.webp" alt="The Taco Project in New Rochelle, NY" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             </div>
             <div class="bg-sky px-4 pt-3 pb-4 flex justify-between items-center">
                 <h3 class="font-futura text-ocean text-2xl leading-8 uppercase tracking-tight">New Rochelle, NY</h3>
