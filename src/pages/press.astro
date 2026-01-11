@@ -1,50 +1,91 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { supabase } from "../lib/supabase";
+import { getCollection } from "astro:content";
 
-// Define the interface for the press item from Supabase
+// Define the interface for the press item (mapped from collection)
 interface PressItem {
     id: number;
-    title: string; // The publication name
+    title: string;
     description: string;
     publish_date: string;
     link: string;
-    image: string; // The logo URL
+    image: string;
 }
 
 let pressItems: PressItem[] = [];
 let errorMsg = "";
 
 try {
-    const { data, error } = await supabase.from("ttp_press").select("*").order("publish_date", { ascending: false });
+    const pressEntries = await getCollection("press");
+    
+    // Sort by date descending
+    pressItems = pressEntries
+        .map(entry => ({
+            id: entry.data.id,
+            title: entry.data.title,
+            description: entry.data.description,
+            publish_date: entry.data.publish_date,
+            link: entry.data.link,
+            image: entry.data.image
+        }))
+        .sort((a, b) => new Date(b.publish_date).getTime() - new Date(a.publish_date).getTime());
 
-    if (error) {
-        console.error("Error fetching press items:", error);
-        errorMsg = "Failed to load press items.";
-    } else {
-        pressItems = data || [];
-    }
 } catch (e) {
-    console.error("Unexpected error:", e);
-    errorMsg = "An unexpected error occurred.";
+    console.error("Error fetching press items from collection:", e);
+    errorMsg = "Failed to load press items.";
 }
 
 // Helper to format date: 'October, 17 2024'
 function formatDate(dateString: string) {
     if (!dateString) return "";
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }).replace(",", ", ");
+    try {
+        const date = new Date(dateString);
+        return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }).replace(",", ", ");
+    } catch (e) {
+        return dateString;
+    }
 }
 ---
 
 <BaseLayout title="Press | The Taco Project" description="See what people are saying about The Taco Project.">
-    <!-- Hero -->
-    <section class="bg-crema py-20 md:py-32">
-        <div class="container text-center">
-            <h1 class="font-futura text-ink text-[64px] md:text-[80px] leading-[0.9] tracking-tight uppercase mb-8">In The News</h1>
-            <p class="font-geist text-ink text-lg max-w-2xl mx-auto">We're proud to be recognized by our local community and beyond. Check out some of the publications we've been featured solely in.</p>
+    
+    {pressItems.length > 0 && (
+    <!-- Banner Section -->
+    <section class="bg-crema relative flex flex-col md:flex-row min-h-[55vh]">
+
+        <!-- featured image from the most recent press item -->
+        <div class="w-full md:w-[50vw] order-2 md:order-1 min-h-90 bg-cover bg-center" style={`background-image: url('${pressItems[0].image}')`}></div>
+
+        <!-- Right Column: Text Content -->
+        <div class="flex flex-col order-1 md:order-2">
+            <div class="py-9 px-6 md:px-12 w-full md:max-w-[calc(var(--max-content-width)*0.5)] h-full flex flex-col justify-between gap-12 md:gap-24">
+                <h2 class="font-futura text-ink text-5xl md:text-6xl leading-[0.88] uppercase tracking-tight">
+                    {pressItems[0].title}
+                </h2>
+                <div class="flex flex-col gap-9">
+                    <div class="flex flex-col gap-3.5">
+
+                        <!-- excerpt from the most recent press item -->
+                        <p class="font-geist text-ink text-sm text-3.5 leading-[1.4] text-balance">{pressItems[0].description}</p>
+                                                
+                    </div>
+                    <div class="flex flex-row flex-wrap items-center gap-8">
+                        
+                        <!-- link to the full article of the most recent press item -->
+                        <a href={pressItems[0].link} rel="noopener nofollow noreferrer" target="_blank" class="font-geist text-ocean">
+                            <div class="flex items-center gap-2 text-ocean font-geist text-sm uppercase transition-all duration-500 hover:text-ink group-focus:text-ink">
+                                Read More
+                                <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    )}
 
     <!-- Press Masonry Grid -->
     <section class="bg-sky py-20">
@@ -53,7 +94,7 @@ function formatDate(dateString: string) {
 
             <div class="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-16">
                 {
-                    pressItems.map((item) => (
+                    pressItems.slice(1).map((item) => (
                         <a href={item.link} target="_blank" rel="noopener noreferrer" class="block w-full break-inside-avoid mb-16 group no-underline">
                             {/* Image */}
                             <img src={item.image} alt={item.title} class="w-full h-auto object-cover mb-4" loading="lazy" />

@@ -4,6 +4,7 @@ import StoreLocator from "../components/StoreLocator.astro";
 import PressTicker from "../components/PressTicker.astro";
 import CateringCTA from "../components/CateringCTA.astro";
 import InstagramFeed from "../components/InstagramFeed.astro";
+import TestimonialSlider from "../components/TestimonialSlider.astro";
 ---
 
 <BaseLayout>
@@ -19,36 +20,46 @@ import InstagramFeed from "../components/InstagramFeed.astro";
         <!-- Logo Animation Container - Centered on video -->
         <div id="logo_video" class="logo-container absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
             <div class="logo-inner">
-                <div class="logo-row logo-row-1 w-full max-w-[161px]">
+                <div class="logo-row logo-row-1 w-full max-w-[70px] mb-4">
                     <div class="logo-group logo-the"><img src="/video/The.svg" alt="The" class="w-full" /></div>
                 </div>
                 <div class="logo-row logo-row-2 w-full max-w-[823px] items-center justify-center gap-2">
-                    <div class="logo-group logo-20 w-full max-w-[63px]"><img src="/video/20.svg" alt="20" class="w-full" /></div>
-                    <div class="logo-group logo-taco w-full max-w-[486px]"><img src="/video/taco.svg" alt="TACO" class="w-full" /></div>
-                    <div class="logo-group logo-14 w-full max-w-[64px]"><img src="/video/14.svg" alt="14" class="w-full" /></div>
+                    <div class="logo-group logo-20 w-full max-w-7"><img src="/video/20.svg" alt="20" class="w-full" /></div>
+                    <div class="logo-group logo-taco w-full max-w-52"><img src="/video/taco.svg" alt="TACO" class="w-full" /></div>
+                    <div class="logo-group logo-14 w-full max-w-7"><img src="/video/14.svg" alt="14" class="w-full" /></div>
                 </div>
-                <div class="logo-row logo-row-3 w-full max-w-[823px]">
-                    <div class="logo-group logo-project w-full max-w-[823px]"><img src="/video/project.svg" alt="PROJECT" class="w-full" /></div>
+                <div class="logo-row logo-row-3 w-full max-w-[350px] mt-2.5 mb-6">
+                    <div class="logo-group logo-project w-full max-w-[350px]"><img src="/video/project.svg" alt="PROJECT" class="w-full" /></div>
                 </div>
-                <div class="logo-row logo-row-4 w-full max-w-[471px]">
-                    <div class="logo-group logo-made-by-friends w-full max-w-[471px]"><img src="/video/made-by-friends.svg" alt="Made by Friends" class="w-full" /></div>
+                <div class="logo-row logo-row-4 w-full max-w-52">
+                    <div class="logo-group logo-made-by-friends w-full max-w-52"><img src="/video/made-by-friends.svg" alt="Made by Friends" class="w-full" /></div>
                 </div>
-                <div class="logo-row logo-row-5 w-full max-w-[349px]">
-                    <div class="logo-group logo-for-friends w-full max-w-[349px]"><img src="/video/for-friends.svg" alt="For Friends" class="w-full" /></div>
+                <div class="logo-row logo-row-5 w-full max-w-40 mt-2.5">
+                    <div class="logo-group logo-for-friends w-full max-w-40"><img src="/video/for-friends.svg" alt="For Friends" class="w-full" /></div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container z-50 absolute bottom-12 left-1/2 transform -translate-x-1/2">
             <div class="flex gap-2 align-center justify-center">
-                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Order Online</a>
-                <a href="https://www.toasttab.com/catering/locations/dda922d3-35f1-4612-9446-bc35a1067a2c" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Order Catering</a>
+                <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Order Online
+                    <svg class="size-[13px]" aria-hidden="true">
+                        <use href="#icon-external-link"></use>
+                    </svg>
+                </a>
+                <a href="https://www.toasttab.com/catering/locations/dda922d3-35f1-4612-9446-bc35a1067a2c" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    Order Catering
+                    <svg class="size-[13px]" aria-hidden="true">
+                        <use href="#icon-external-link"></use>
+                    </svg>
+                </a>
             </div>
         </div>
 
         <style>
             .scanlines {
-                background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+                background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 2px);
             }
 
             /* Logo container layout */
@@ -138,9 +149,9 @@ import InstagramFeed from "../components/InstagramFeed.astro";
             <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
                 <h2 class="font-futura text-citrus text-[96px] font-[950] leading-[0.88] tracking-tight uppercase mb-14">Created for you</h2>
                 <img src="/creating-for-you-tn.webp" alt="Created for you" class="w-full h-auto" width="800" height="610" />
-                <p class="font-geist text-ink text-sm font-normal leading-[1.4]">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
+                <p class="font-geist text-ink text-sm font-normal leading-[1.4] mt-8">A simple idea between friends turned into a place where good food, good vibes, and good people come together. At The Taco Project, we serve tacos with soul. Every dish is thoughtfully made, always fresh, and never boring.</p>
 
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between mt-3">
                     <a href="/menu/" class="group flex items-center justify-between w-full gap-2">
                         <div class="font-futura text-citrus text-5xl md:text-[56px] leading-tight uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">menu</div>
                         <div class="flex items-center gap-2 text-citrus font-geist text-sm uppercase transition-all duration-500 pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
@@ -157,30 +168,9 @@ import InstagramFeed from "../components/InstagramFeed.astro";
         <div class="flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/created-you.webp')]"></div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="bg-hot-sauce py-[100px] px-5">
-        <div class="max-w-[760px] mx-auto flex flex-col items-start gap-[22px]">
-            <div class="flex gap-1">
-                <!-- 5 Stars -->
-                {
-                    [...Array(5)].map(() => (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-crema">
-                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
-                        </svg>
-                    ))
-                }
-            </div>
-            <p class="font-geist text-crema text-[24px] leading-[1.4] font-normal">
-                Had an amazing time at The Taco Project in Tarrytown! Everything was so good — from the Palomas and Mojitos to the Spicy Mango and Passion Fruit Margaritas. We loved the Buffalo Wings, Tuna Tostadas, and Nachos. The tacos were the best — Birria, El Pastor, and Shrimp, full of flavor. Finished with Flan and one of the best Tres Leches ever. Big thanks to Julian for being so friendly and helping us with the menu!
-            </p>
-            <p class="font-geist text-crema text-sm leading-[1.4] font-normal">— Anju Kapoor</p>
-        </div>
-    </section>
+    <TestimonialSlider />
 
     <StoreLocator />
-
-
-
 
     <section class="min-h-auto md:min-h-[80vh] bg-sky flex flex-col md:flex-row">
         <!-- Column 1: Image (remaining width) -->
@@ -194,8 +184,18 @@ import InstagramFeed from "../components/InstagramFeed.astro";
 
                     <p class="font-geist text-ink text-sm leading-[1.4] lowercase">Whether you're hosting a private party, corporate event, or special celebration, The Taco Project's brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>
                     <div class="flex flex-col gap-4">
-                        <a href="/food-truck/">About Our Truck <!-- right arrow --></a>
-                        <a href="#" target="_blank" rel="noopener nofollow noreferrer">Event Inquiry Form <!-- external link icon --></a>
+                        <a href="/food-truck/" class="flex items-center gap-2 font-geist text-sm uppercase text-ocean hover:text-ink transition-colors">
+                            About Our Truck
+                            <svg class="size-[13px]" aria-hidden="true">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener nofollow noreferrer" class="flex items-center gap-2 font-geist text-sm uppercase text-ocean hover:text-ink transition-colors">
+                            Event Inquiry Form
+                            <svg class="size-[13px]" aria-hidden="true">
+                                <use href="#icon-external-link"></use>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>

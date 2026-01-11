@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page Not Found | The Taco Project" description="Sorry, the page you requested could not be found.">
+    <section class="bg-crema relative flex flex-col md:flex-row min-h-[55vh]">
+
+        <div class="w-full md:w-[50vw] order-1 md:order-2 min-h-90 bg-[url('https://placehold.co/1400x800')] bg-cover bg-center"></div>
+        
+        <div class="flex flex-col order-2 md:order-1 w-full md:w-[50vw]">
+            <div class="py-9 px-6 md:px-12 w-full md:max-w-[calc(var(--max-content-width)*0.5)] h-full flex flex-col justify-between gap-12 md:gap-24">
+                <div class="flex flex-col gap-3.5">
+                    <p class="m-0 p-0 font-holiday text-ocean text-5xl rotate-[-4deg]">Uh oh . . .</p>
+                    <p class="font-futura text-hot-sauce text-9xl leading-none tracking-tight">404</p>
+                    <h1 class="font-futura text-ink text-10 md:text-6xl leading-none uppercase tracking-tight">
+                        Page Not Found
+                    </h1>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-col gap-8">
+                        <p class="font-geist text-ink text-sm text-3.5 leading-[1.4] text-balance">Looks like the page you are looking for has been eaten, or the taco truck took a wrong turn. Don't worry, there's plenty more deliciousness back on the homepage.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="/" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                                Back to Home
+                                <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+</BaseLayout>

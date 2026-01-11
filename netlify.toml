@@ -9,9 +9,195 @@
 # https://docs.netlify.com/routing/redirects/
 
 [[redirects]]
-  from = "/catering-menu"
+  from = "/catering-menu/"
   to = "/taco-project-catering-menu-03112025.pdf"
   status = 302  # Temporary redirect - easy to update when menu changes
+
+[[redirects]]
+  from = "/gallery/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/taco-truck/"
+  to = "/food-truck/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/yonkers-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/new-rochelle-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/tarrytown-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/pleasantville-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/bronxville-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/stamford-mexican-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/catering/tarrytown-corporate-catering/"
+  to = "/catering/"
+  status = 301
+
+[[redirects]]
+  from = "/brunch-menu/"
+  to = "/menu/#brunch"
+  status = 301
+
+[[redirects]]
+  from = "/our-menu/"
+  to = "/menu/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/yonkers/"
+  to = "/yonkers-ny/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/bronxville/"
+  to = "/bronxville-ny/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/tarrytown/"
+  to = "/tarrytown-ny/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/stamford/"
+  to = "/stamford-ct/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/pleasantville/"
+  to = "/pleasantville-ny/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/new-rochelle/"
+  to = "/new-rochelle-ny/"
+  status = 301
+
+# Press article redirects
+[[redirects]]
+  from = "/patch-the-taco-project-opens-first-ct-location-in-stamford/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/stamfordadvocate-the-taco-project-joins-stamfords-great-foodie-scene/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/ctbites-the-taco-project-opens-in-stamford-with-vibrant-mexican-fast-casual-fare/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/westchester-magazine-the-taco-project-in-tarrytown/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/the-examiner-news-dream-come-true-energy-optimism-accompany-new-pleasantville-businesses/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/ctinsider-from-tacos-to-pasta-connecticut-chefs-explore-the-versatility-of-pumpkin/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/stamford-magazine-wrap-it-up/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/dailyvoice-the-taco-project-offers-upscale-mexican-takeout-in-tarrytown/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/lohud-taco-project-in-tarrytown-dining-scene/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/ctinsider-7-new-ct-restaurants-to-check-out-this-may/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/greenwich-lifestyle-city-scene/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/maxexposure-stamford-launches-weekend-brunch-menu/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/ctbites-introducing-former-alinea-chef-as-culinary-director-stamford-location-launches-brunch/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/news-12-westchester-highlights-the-taco-projects-10th-anniversary-celebration/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/the-taco-projects-food-truck-steals-the-show-on-fox-5s-good-day-new-york/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/the-taco-projects-stamford-location-featured-on-pix11-morning-news/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/patch-the-taco-project-celebrates-10-years-of-their-mini-empire/"
+  to = "/press/"
+  status = 301
+
+[[redirects]]
+  from = "/news-12-westchester-covers-our-support-for-international-womens-day/"
+  to = "/press/"
+  status = 301
 
 # Security Headers
 # https://docs.netlify.com/routing/headers/

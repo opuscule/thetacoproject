@@ -9,9 +9,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <!-- Column 1: Content (md:80%, lg:60%) -->
         <div class="w-full md:max-w-[calc(var(--max-content-width)*0.8)] lg:max-w-[calc(var(--max-content-width)*0.6)] p-6 md:pt-8 md:pb-12 md:pl-12 md:pr-8">
             <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
-                <h1 class="text-hot-sauce font-futura text-14 md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">Vote Best Food Truck in NY</h1>
+                <h1 class="text-hot-sauce font-futura text-14 md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">Voted Best Food Truck in NY</h1>
                 <div class="flex flex-col md:flex-row gap-8">
-                    <img src="/food-truck-banner-tn.webp" class="shrink max-w-[240px] w-full h-auto object-contain" alt="The Taco Project Food Truck" width="350" height="353" loading="eager" />
+                    <img src="/food-truck-banner-tn.webp" class="shrink w-full md:max-w-[240px] h-auto object-contain" alt="The Taco Project Food Truck" width="350" height="353" loading="eager" />
                     <div class="flex flex-col gap-4">
                         <p class="font-geist text-ink text-sm leading-[1.4]">Starting from Pleasantville, NY, our truck is available to book for events within a 20-mile radius—and beyond. Get ready for a fun, fresh, and flavorful experience, with customizable menu options, self-serve stations, and a team dedicated to making your event unforgettable!</p>
 
@@ -74,7 +74,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <!-- Food Truck FAQs -->
     <section id="food-truck-faqs" class="bg-crema py-[100px] border-t border-ink/10">
-        <div class="container flex flex-col items-center">
+        <div class="max-w-[var(--max-content-width)] mx-auto px-0 md:px-6 flex flex-col items-center">
             <h2 class="font-futura text-ink text-[40px] leading-[0.92] tracking-[-2px] uppercase text-center mb-[54px]">We've Got Answers</h2>
 
             <div class="w-full max-w-[704px] border-t border-ink">
@@ -90,7 +90,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         },
                         {
                             q: "What is included in the food truck package?",
-                            a: "You’ll get an array of delicious options! Choose from our preset taco stations with various proteins (chicken, beef, shrimp, pork, and more) and sides like rice, beans, and churros.<br><br>Plus, we offer a self-serve toppings station, guacamole, and salsa with house-made chips.",
+                            a: "You'll get an array of delicious options! Choose from our preset taco stations with various proteins (chicken, beef, shrimp, pork, and more) and sides like rice, beans, and churros.<br><br>Plus, we offer a self-serve toppings station, guacamole, and salsa with house-made chips.",
                         },
                         {
                             q: "Can I customize the menu?",
@@ -112,12 +112,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         <div class="border-b border-ink">
                             <button class="faq-toggle flex items-center justify-between gap-4 py-5 px-10 text-left w-full hover:bg-black/5 transition-colors cursor-pointer group" aria-expanded="false" aria-controls={`ft-faq-${index}`}>
                                 <span class="font-geist text-ink text-[16px] leading-[1.4]">{faq.q}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-200 group-aria-expanded:rotate-180">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-ink shrink-0 transition-transform duration-300 ease-in-out group-aria-expanded:rotate-180">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
-                            <div id={`ft-faq-${index}`} class="hidden px-10 pb-5">
-                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80" set:html={faq.a} />
+                            <div id={`ft-faq-${index}`} class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" aria-hidden="true">
+                                <div class="overflow-hidden">
+                                    <p class="font-geist text-ink text-sm leading-[1.4] opacity-80 px-10 pb-5" set:html={faq.a} />
+                                </div>
                             </div>
                         </div>
                     ))
@@ -136,7 +138,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 if (answerId) {
                     const answer = document.getElementById(answerId);
                     if (answer) {
-                        answer.classList.toggle("hidden");
+                        if (isExpanded) {
+                            answer.classList.remove("grid-rows-[1fr]");
+                            answer.classList.add("grid-rows-[0fr]");
+                            answer.setAttribute("aria-hidden", "true");
+                        } else {
+                            answer.classList.remove("grid-rows-[0fr]");
+                            answer.classList.add("grid-rows-[1fr]");
+                            answer.setAttribute("aria-hidden", "false");
+                        }
                     }
                 }
             });
