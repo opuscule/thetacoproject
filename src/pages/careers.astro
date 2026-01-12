@@ -88,7 +88,7 @@ import StoreSlider from "../components/StoreSlider.astro";
                 <p class="font-geist font-normal text-sm leading-5">We are currently hiring for all positions.</p>
             </div>
 
-            <form name="careers" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="flex flex-col gap-[30px]">
+            <form id="careers-form" name="careers" method="POST" action="/careers/?success=true#apply" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="flex flex-col gap-[30px]">
                 <input type="hidden" name="form-name" value="careers" />
                 <p class="hidden">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -109,11 +109,34 @@ import StoreSlider from "../components/StoreSlider.astro";
                 <div class="flex flex-col lg:flex-row gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label for="phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number*</label>
-                        <input type="tel" id="phone" name="phone" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            required
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            pattern="^\\d{3}-\\d{3}-\\d{4}$"
+                            title="Please enter a 10-digit phone number (e.g., 914-555-1234)."
+                            maxlength="12"
+                            class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50"
+                        />
                     </div>
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label for="email" class="font-geist font-normal text-sm leading-5 text-ink">Email*</label>
-                        <input type="email" id="email" name="email" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            inputmode="email"
+                            autocomplete="email"
+                            spellcheck="false"
+                            autocapitalize="none"
+                            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                            title="Enter a valid email (e.g., you@example.com)."
+                            class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50"
+                        />
                     </div>
                 </div>
 
@@ -192,11 +215,11 @@ import StoreSlider from "../components/StoreSlider.astro";
 
                 <!-- Row 4: Resume -->
                 <div class="flex flex-col gap-3.5 w-full">
-                    <label class="font-geist font-normal text-sm leading-5 text-ink">Upload Resume*</label>
+                    <label class="font-geist font-normal text-sm leading-5 text-ink">Upload Resume* <span class="font-normal text-xs text-ink/60">(PDF, DOC, DOCX, Pages, RTF, TXT · Max. file size: 10 MB)</span></label>
                     <div class="relative">
-                        <input type="file" id="resume" name="resume" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                        <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx,.pages,.rtf,.txt" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                         <div class="bg-crema rounded-lg px-6 py-4 w-full flex justify-between items-center border border-dashed border-ink/20">
-                            <span class="font-geist text-ink/50 text-sm">Choose file...</span>
+                            <span class="font-geist text-ink/50 text-sm resume-filename">Choose file...</span>
                             <span class="font-geist text-ink text-sm underline">Browse</span>
                         </div>
                     </div>
@@ -206,9 +229,25 @@ import StoreSlider from "../components/StoreSlider.astro";
 
                 <!-- Submit Button -->
                 <div class="flex justify-end">
-                    <button type="submit" class="bg-hot-sauce text-crema rounded-lg px-5 py-2 font-geist font-normal text-sm leading-5 uppercase hover:opacity-90 transition-opacity">Submit Form</button>
+                    <button type="submit" class="bg-hot-sauce text-crema rounded-lg px-5 py-2 font-geist font-normal text-sm leading-5 uppercase hover:opacity-90 transition-opacity cursor-pointer">Submit Form</button>
                 </div>
             </form>
+
+            <div id="apply-success" role="status" aria-live="polite" class="hidden bg-crema border border-hot-sauce/40 rounded-2xl px-6 py-8 flex flex-col gap-4 shadow-md">
+                <p class="font-futura text-hot-sauce text-4xl leading-tight uppercase">Thank you for applying!</p>
+                <p class="font-geist text-ink text-sm leading-5">
+                    We received your application and a member of The Taco Project team will reach out if there's a fit. In the meantime, feel free to stop by one of our locations for tacos and good vibes.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                        Back to Home
+                        <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                            <use href="#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                    <a href="#working_with_us" class="font-geist text-sm uppercase text-hot-sauce underline-offset-4 underline hover:text-ink transition-colors">Why you'll love working with us →</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -261,5 +300,57 @@ import StoreSlider from "../components/StoreSlider.astro";
                 }
             });
         });
+
+        // Phone number masking (###-###-####)
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput instanceof HTMLInputElement) {
+            const formatPhone = (value) => {
+                const digits = value.replace(/\D/g, '').slice(0, 10);
+                const parts = [];
+                if (digits.length > 0) parts.push(digits.slice(0, Math.min(3, digits.length)));
+                if (digits.length > 3) parts.push(digits.slice(3, Math.min(6, digits.length)));
+                if (digits.length > 6) parts.push(digits.slice(6, 10));
+                return parts.join('-');
+            };
+
+            phoneInput.addEventListener('input', () => {
+                const formatted = formatPhone(phoneInput.value);
+                phoneInput.value = formatted;
+            });
+        }
+
+        // Email normalization
+        const emailInput = document.getElementById('email');
+        if (emailInput instanceof HTMLInputElement) {
+            const normalizeEmail = () => {
+                emailInput.value = emailInput.value.trim().toLowerCase();
+            };
+
+            emailInput.addEventListener('blur', normalizeEmail);
+            emailInput.addEventListener('change', normalizeEmail);
+        }
+
+        // Resume file name preview
+        const resumeInput = document.getElementById('resume');
+        const resumeLabel = document.querySelector('.resume-filename');
+        if (resumeInput instanceof HTMLInputElement && resumeLabel) {
+            resumeInput.addEventListener('change', () => {
+                const file = resumeInput.files && resumeInput.files[0];
+                resumeLabel.textContent = file ? file.name : 'Choose file...';
+                resumeLabel.classList.toggle('text-ink/50', !file);
+                resumeLabel.classList.toggle('text-ink', Boolean(file));
+            });
+        }
+
+        // Show Netlify success confirmation
+        const successBanner = document.getElementById('apply-success');
+        const careersForm = document.getElementById('careers-form');
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('success') === 'true' && successBanner && careersForm) {
+            successBanner.classList.remove('hidden');
+            successBanner.setAttribute('aria-live', 'polite');
+            careersForm.classList.add('hidden');
+            window.history.replaceState({}, '', window.location.pathname + window.location.hash);
+        }
     </script>
 </BaseLayout>
