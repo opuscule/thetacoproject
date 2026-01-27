@@ -57,31 +57,78 @@ const testimonials = [
             "reviewBody": t.quote
         }))
     })} />
-    <!-- Intro Section -->
-    <section>
-        <div class="flex">
-            <div class="w-[65%]">
-                <img src="/catering-taco-project.webp" alt="Catering" class="w-full h-auto object-cover" />
-            </div>
-            <div class="w-[35%] bg-sky">
-                <div class="px-6 py-16" style="width: calc(var(--max-content-width) * 0.35);">
-                    <h2 class="text-ocean font-futura text-[96px] font-[950] leading-[88%] tracking-[-4.8px] uppercase mb-8" style="text-wrap:balance;">We'll Come to You</h2>
-                    <div class="flex flex-col gap-4">
-                        <div class="text-ocean font-holiday text-[48px] font-normal leading-[130%] rotate-[-4deg]">We cater!</div>
-                        <p class="font-geist text-ink text-sm leading-[1.4]">Whether you're hosting a corporate event, birthday party, or family gathering, The Taco Project makes it easy. Choose from our curated catering packages or build your own taco bar. We provide everything you need—from fresh ingredients to serving utensils—so you can focus on enjoying delicious tacos with all the provided fixings.</p>
+
+
+
+
+
+    <header class="flex flex-col md:grid md:min-h-[calc(100vh-93px)] w-full md:grid-cols-[1fr_minmax(0,calc(var(--max-content-width)*0.6))_minmax(0,calc(var(--max-content-width)*0.4))_1fr] md:grid-rows-1 overflow-hidden">
+        <div class="hidden md:block col-start-1 col-end-3 row-start-1 bg-sky"></div>
+        <div class="hidden md:block col-start-3 col-end-5 row-start-1 bg-cover bg-center" style="background-image: url('/catering-taco-project.webp');"></div>
+
+        <div class="bg-sky md:bg-transparent md:col-start-2 md:row-start-1 z-10 flex flex-col justify-between px-5 py-6 md:p-8 md:py-16">
+            <h1 class="font-futura text-[56px] md:text-8xl font-black uppercase leading-[0.88] tracking-[-0.05em] text-ocean mb-6 md:mb-8">
+                Catering all the good stuff
+            </h1>
+
+            <div class="flex flex-col md:flex-row items-start md:items-end gap-8">
+                <div class="aspect-square w-full overflow-hidden max-w-full md:max-w-60">
+                    <img src="/catering-banner-tn-lg.webp" class="object-cover w-full h-full" alt="Taco Bowl" width="450" height="450" />
+                </div>
+
+                <div>
+                    <p class="font-geist text-sm leading-[1.4] text-ink max-w-full md:max-w-[340px] mb-4">
+                        Our Catering is offered per person in two packages which are designed to create a Taco Bar, allowing you and your guests to customize their own tacos with all the provided fixings.
+                    </p>
+
+
+
+                    <div class="flex items-center justify-between">
+                        <a href="/catering-menu/" class="group flex items-center justify-between w-full gap-2">
+                            <div class="font-futura text-ocean text-[40px] md:text-[56px] leading-none uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">
+                                Menu
+                            </div>
+                            <div class="flex items-center gap-2 text-ocean font-geist text-sm uppercase transition-all duration-500 pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                                View
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-[13px]">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="#locations-list" class="group flex items-center justify-between w-full gap-2">
+                            <div class="font-futura text-ocean text-[40px] md:text-[56px] leading-none uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">
+                                Locations
+                            </div>
+                            <div class="flex items-center gap-2 text-ocean font-geist text-sm uppercase transition-all duration-500 pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                                Order
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-[13px] rotate-90">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="hidden md:block col-start-3 row-start-1 z-10"></div>
+
+        <!-- Mobile Bottom Image -->
+        <div class="block md:hidden w-full h-[50vh] bg-cover bg-center" style="background-image: url('/catering-taco-project.webp');"></div>
+    </header>
+
+
+
+
 
     <!-- Event Types & How It Works -->
-    <section class="bg-crema py-[100px] px-5 overflow-hidden">
+    <section class="bg-crema py-7 md:py-24 px-5 overflow-hidden">
         <div class="max-w-[1150px] mx-auto relative">
-            <div class="flex flex-col lg:flex-row gap-20">
+            <div class="flex flex-col lg:flex-row gap-0.5 md:gap-20">
                 <!-- Left Content -->
                 <div class="flex-1 flex flex-col gap-8">
-                    <h2 class="font-futura text-citrus text-[64px] lg:text-[96px] leading-[0.88] uppercase tracking-tight">
+                    <h2 class="font-futura text-citrus text-[56px] md:text-8xl leading-[0.88] uppercase tracking-tight">
                         stress-free<br />catering
                     </h2>
                     <p class="font-geist text-ink text-sm leading-[1.4] max-w-[440px]">From our Build-Your-Own Taco Bar to boxed lunches to beverages, we've got you covered. Oh - and don't forget the guacamole. Contact us to customize your taco party packages for guests of all ages!</p>
@@ -89,29 +136,29 @@ const testimonials = [
 
                 <!-- Right Content - Event Types -->
                 <div class="flex-1 relative mt-10 lg:mt-0">
-                    <p class="font-holiday text-ink text-[40px] leading-none whitespace-nowrap -rotate-4 mb-4">We cater a variety of event types</p>
+                    <p class="font-holiday text-ink text-[40px] md:text-5xl leading-none whitespace-nowrap -rotate-3 mb-4">We cater a variety of event types</p>
 
                     <ul class="font-futura text-citrus text-[40px] leading-none tracking-tight list-none space-y-2">
-                        <li class="mb-0">Corporate Lunches</li>
-                        <li class="mb-0">Anniversary Parties</li>
-                        <li class="mb-0">Fundraiser Dinners</li>
-                        <li class="mb-0">Birthday Parties</li>
-                        <li class="mb-0">Game Night</li>
-                        <li class="mb-0">Company Picnics</li>
-                        <li class="mb-0">Holiday Gatherings</li>
-                        <li class="mb-0">Graduations</li>
+                        <li class="mb-0 tracking-tighter">Corporate Lunches</li>
+                        <li class="mb-0 tracking-tighter">Anniversary Parties</li>
+                        <li class="mb-0 tracking-tighter">Fundraiser Dinners</li>
+                        <li class="mb-0 tracking-tighter">Birthday Parties</li>
+                        <li class="mb-0 tracking-tighter">Game Night</li>
+                        <li class="mb-0 tracking-tighter">Company Picnics</li>
+                        <li class="mb-0 tracking-tighter">Holiday Gatherings</li>
+                        <li class="mb-0 tracking-tighter">Graduations</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="font-holiday text-citrus text-[64px] font-normal -rotate-4 ms-36 mt-16">How it Works</div>
+            <div class="font-holiday text-citrus text-[64px] font-normal -rotate-3 ms-0 md:ms-36 text-center md:text-left mt-16 leading-none">How it Works</div>
 
             <div class="max-w-[1150px] mx-auto mt-8">
                 <!-- Steps -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Step 1 -->
                     <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
+                        <div class="aspect-square w-full overflow-hidden">
                             <img src="/catering-guest-list.webp" alt="Prepare the Guest List" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Prepare the Guest List</h3>
@@ -119,7 +166,7 @@ const testimonials = [
                     </div>
                     <!-- Step 2 -->
                     <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
+                        <div class="aspect-square w-full overflow-hidden">
                             <img src="/catering-ordering.webp" alt="Order Online" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Order your Package</h3>
@@ -127,7 +174,7 @@ const testimonials = [
                     </div>
                     <!-- Step 3 -->
                     <div class="flex flex-col gap-4">
-                        <div class="aspect-[1/1] w-full overflow-hidden">
+                        <div class="aspect-square w-full overflow-hidden">
                             <img src="/catering-enjoy.webp" alt="Enjoy your delicious taco bar" class="w-full h-full object-cover" loading="lazy" decode="async" />
                         </div>
                         <h3 class="font-futura text-citrus text-[32px] leading-none tracking-tight">Enjoy!</h3>
@@ -139,9 +186,15 @@ const testimonials = [
     </section>
 
     <!-- Order from Locations -->
-    <section id="locations-list" class="bg-crema pb-0 lg:py-16 relative">
+    <section id="locations-list" class="bg-crema pb-0 py-8 md:py-16 relative">
         <div class="container">
-            <h2 class="font-futura text-citrus text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Order from any of our locations</h2>
+            <h2 class="font-futura text-hot-sauce text-[56px] md:text-8xl leading-[0.88] uppercase tracking-tight mb-8 md:mb-12">Order from any of our locations</h2>
+            <a href="/catering-menu/" class="btn btn-tertiary mb-6 md:mb-12 inline-flex">
+                View Catering Menu
+                <svg class="size-[13px]">
+                    <use href="#icon-external-link"></use>
+                </svg>
+            </a>
         </div>
 
         <div class="max-w-[var(--max-content-width)] mx-auto px-0 md:px-6">
@@ -171,7 +224,7 @@ const testimonials = [
 
                             <div class="flex items-center gap-3 mt-2">
                                 <a href="https://www.toasttab.com/catering/the-taco-project-bronxville-65-pondfield-rd" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="https://www.toasttab.com/invoice/lead?rx=3495d6d2-5fd6-441e-a747-94aa7ef0ec01&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=3495d6d2-5fd6-441e-a747-94aa7ef0ec01&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -206,7 +259,7 @@ const testimonials = [
 
                             <div class="flex items-center gap-3 mt-2">
                                 <a href="https://www.toasttab.com/catering/the-taco-project-tarrytown-18-main-street" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="https://www.toasttab.com/invoice/lead?rx=7aa5b760-6d6e-44e6-986a-8a6a2b3b3c6a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=7aa5b760-6d6e-44e6-986a-8a6a2b3b3c6a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -241,7 +294,7 @@ const testimonials = [
 
                             <div class="flex items-center gap-3 mt-2">
                                 <a href="https://www.toasttab.com/catering/taco-project-new-rochelle-596-north-ave" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="https://www.toasttab.com/invoice/lead?rx=fd0ffc15-d6df-481a-bb2e-a64a6056fa3a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=fd0ffc15-d6df-481a-bb2e-a64a6056fa3a&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -276,7 +329,7 @@ const testimonials = [
 
                             <div class="flex items-center gap-3 mt-2">
                                 <a href="https://www.toasttab.com/catering/the-taco-project-yonkers-1086-north-broadway" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="https://www.toasttab.com/invoice/lead?rx=05a4a592-5515-4108-9d68-b85203ab0342&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=05a4a592-5515-4108-9d68-b85203ab0342&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -311,7 +364,7 @@ const testimonials = [
 
                             <div class="flex items-center gap-3 mt-2">
                                 <a href="https://www.toasttab.com/catering/the-taco-project-stamford-1101-high-ridge-road/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
-                                <a href="https://www.toasttab.com/invoice/lead?rx=1b3af55d-3b10-4116-a447-e45f8c6bd678&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=1b3af55d-3b10-4116-a447-e45f8c6bd678&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -347,7 +400,7 @@ const testimonials = [
                             <div class="flex items-center gap-3 mt-2 flex-wrap">
                                 <a href="https://www.toasttab.com/catering/the-taco-project-pleasantville-smb-pos-465-bedford-road" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Catering</a>
                                 
-                                <a href="https://www.toasttab.com/invoice/lead?rx=ed431fc4-91a9-4c42-b9c6-7d10cbf63d18&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.toasttab.com/invoice/lead?rx=ed431fc4-91a9-4c42-b9c6-7d10cbf63d18&ot=cccc9c90-c445-457d-8b96-a1c767f6177a" class="flex flex-nowrap gap-2 font-geist text-hot-sauce leading-none uppercase whitespace-nowrap text-sm" target="_blank" rel="noopener noreferrer">
                                     Get a Quote
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" class="text-hot-sauce">
                                         <use href="#icon-external-link"></use>
@@ -364,9 +417,9 @@ const testimonials = [
     <!-- Catering FAQ Section -->
     <section class="flex flex-col md:flex-row">
         <!-- On Ordering -->
-        <div class="flex-1 bg-peach py-[80px] px-5 flex flex-col items-center gap-10 border-r border-ink/10">
+        <div class="flex-1 bg-peach pt-10 pb-0 md:py-20 px-0 md:px-5 flex flex-col items-center gap-10 border-r border-ink/10">
             <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Ordering</h2>
-            <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="ordering-faq">
+            <div class="w-full max-w-lg flex flex-col border-t border-ink" id="ordering-faq">
                 {
                     [
                         {
@@ -409,8 +462,12 @@ const testimonials = [
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
-                            <div id={`faq-answer-${index}`} class="hidden px-10 pb-5">
-                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
+                            <div id={`faq-answer-${index}`} class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <div class="px-10 pb-5">
+                                        <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))
@@ -419,9 +476,9 @@ const testimonials = [
         </div>
 
         <!-- On Delivery/Pickup -->
-        <div class="flex-1 bg-sky py-[80px] px-5 flex flex-col items-center gap-10">
+        <div class="flex-1 bg-sky pt-10 pb-0 md:py-20 px-0 md:px-5 flex flex-col items-center gap-10">
             <h2 class="font-futura text-ink text-[40px] uppercase tracking-[-2px] leading-[0.92]">on Delivery/Pickup</h2>
-            <div class="w-full max-w-[512px] flex flex-col border-t border-ink" id="delivery-faq">
+            <div class="w-full max-w-lg flex flex-col border-t border-ink" id="delivery-faq">
                 {
                     [
                         {
@@ -460,8 +517,12 @@ const testimonials = [
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
-                            <div id={`delivery-faq-answer-${index}`} class="hidden px-10 pb-5">
-                                <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
+                            <div id={`delivery-faq-answer-${index}`} class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out">
+                                <div class="overflow-hidden">
+                                    <div class="px-10 pb-5">
+                                        <p class="font-geist text-ink text-sm leading-[1.4] opacity-80">{faq.a}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))
@@ -471,7 +532,7 @@ const testimonials = [
     </section>
 
     <!-- Testimonial Slider -->
-    <section class="bg-hot-sauce py-24 px-5">
+    <section class="bg-hot-sauce py-11 md:py-24 px-5">
         <div class="max-w-3xl mx-auto">
             <div class="splide" aria-label="Customer Testimonials">
                 <div class="splide__track">
@@ -540,7 +601,29 @@ const testimonials = [
                 if (answerId) {
                     const answer = document.getElementById(answerId);
                     if (answer) {
-                        answer.classList.toggle("hidden");
+                        answer.classList.toggle("grid-rows-[0fr]");
+                        answer.classList.toggle("grid-rows-[1fr]");
+                    }
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 120;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
                     }
                 }
             });

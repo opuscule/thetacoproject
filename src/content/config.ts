@@ -27,7 +27,16 @@ const press = defineCollection({
   }),
 });
 
+const tacoOfTheMonth = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    image: z.string(),
+  }),
+});
+
 export const collections = {
   reviews,
   press,
+  'taco-of-the-month': tacoOfTheMonth,
 };

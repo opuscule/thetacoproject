@@ -7,9 +7,10 @@ interface Props {
     ogImage?: string;
     ogUrl?: string;
     ogType?: "website" | "article" | "restaurant";
+    schema?: Record<string, any>;
 }
 
-const { title = "The Taco Project", description = "Authentic tacos and Mexican cuisine in Westchester and Fairfield counties. Fresh ingredients, bold flavors, and unforgettable experiences.", ogImage = "/og-image.jpg", ogUrl = Astro.url.href, ogType = "website" } = Astro.props;
+const { title = "The Taco Project", description = "Authentic tacos and Mexican cuisine in Westchester and Fairfield counties. Fresh ingredients, bold flavors, and unforgettable experiences.", ogImage = "/og-image.jpg", ogUrl = Astro.url.href, ogType = "website", schema } = Astro.props;
 
 const siteName = "The Taco Project";
 ---
@@ -17,6 +18,7 @@ const siteName = "The Taco Project";
 <html lang="en">
     <head>
         <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/f089ace1b842e546749348ed/script.js"></script>
+        {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -380,36 +382,36 @@ const siteName = "The Taco Project";
                     <div class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between lg:justify-start">
                         <!-- Locations -->
                         <div>
-                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Locations</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/tarrytown-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Tarrytown, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/new-rochelle-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">New Rochelle, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/bronxville-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Bronxville, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/yonkers-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Yonkers, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/pleasantville-ny/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Pleasantville, NY</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/stamford-ct/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Stamford, CT</a></li>
-                                <li class="m-0 p-0 leading-none" style="color: #205350">Greenwich, CT</li>
-                                <li class="m-0 p-0 font-holiday text-tortilla capitalize text-2xl rotate-[-4deg] right-0 -mt-[24px]">Coming soon!</li>
+                            <h4 class="text-tortilla uppercase text-[40px] md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Locations</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-[40px] md:text-3xl tracking-tight leading-none">
+                                <li class="m-0 p-0 leading-none"><a href="/tarrytown-ny/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Tarrytown, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/new-rochelle-ny/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">New Rochelle, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/bronxville-ny/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Bronxville, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/yonkers-ny/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Yonkers, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/pleasantville-ny/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Pleasantville, NY</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/stamford-ct/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Stamford, CT</a></li>
+                                <li class="m-0 p-0 leading-none inline-block relative" style="color: #205350">Greenwich, CT<span class="absolute m-0 p-0 font-holiday text-tortilla capitalize text-3xl rotate-[-4deg] right-0 bottom-[-15px] text-right">Coming soon!</span></li>
+                                
                             </ul>
                         </div>
                         <!-- Menus -->
                         <div>
-                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Menus</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/menu/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Food &amp; Drink</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/menu/#happy-hour" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Happy Hour</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/menu/#brunch" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Brunch</a></li>
+                            <h4 class="text-tortilla uppercase text-[40px] md:text-3xl tracking-tight font-futura font-bold m-0 p-0">Menus</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-[40px] md:text-3xl tracking-tight leading-none">
+                                <li class="m-0 p-0 leading-none"><a href="/menu/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Food &amp; Drink</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/menu/#happy-hour" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Happy Hour</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/menu/#brunch" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Brunch</a></li>
                             </ul>
                         </div>
                         <!-- More -->
                         <div>
-                            <h4 class="text-tortilla uppercase text-4xl md:text-3xl tracking-tight font-futura font-bold m-0 p-0">More</h4>
-                            <ul class="list-none font-futura font-bold uppercase text-4xl md:text-3xl tracking-tight">
-                                <li class="m-0 p-0 leading-none"><a href="/food-truck/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">The Truck</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/catering/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Catering</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/careers/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Careers</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/press/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Press</a></li>
-                                <li class="m-0 p-0 leading-none"><a href="/contact/" class="text-ocean transition-colors duration-500 hover:text-sky focus:text-sky">Contact</a></li>
+                            <h4 class="text-tortilla uppercase text-[40px] md:text-3xl tracking-tight font-futura font-bold m-0 p-0">More</h4>
+                            <ul class="list-none font-futura font-bold uppercase text-[40px] md:text-3xl tracking-tight">
+                                <li class="m-0 p-0 leading-none"><a href="/food-truck/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">The Truck</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/catering/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Catering</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/careers/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Careers</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/press/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Press</a></li>
+                                <li class="m-0 p-0 leading-none"><a href="/contact/" class="text-ocean flex transition-colors duration-500 hover:text-sky focus:text-sky">Contact</a></li>
                             </ul>
                         </div>
                     </div>

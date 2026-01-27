@@ -5,9 +5,23 @@ import PressTicker from "../components/PressTicker.astro";
 import CateringCTA from "../components/CateringCTA.astro";
 import InstagramFeed from "../components/InstagramFeed.astro";
 import TestimonialSlider from "../components/TestimonialSlider.astro";
+import { getEntry } from 'astro:content';
+
+const tacoOfTheMonth = await getEntry('taco-of-the-month', 'index');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "The Taco Project",
+  "url": "https://thetacoproject.com",
+  "servesCuisine": "Mexican",
+  "priceRange": "$$",
+  "description": "The Taco Project promises to deliver foods of the highest quality from the freshest ingredients at reasonable prices.",
+  "image": "https://thetacoproject.com/og-image.jpg"
+};
 ---
 
-<BaseLayout>
+<BaseLayout title="Mexican Restaurant, Taco Catering, Taco Truck | Serving NY & CT" description="The Taco Project promises to deliver foods of the highest quality from the freshest ingredients at reasonable prices." schema={schema}>
     <section id="video_banner" class="relative w-full h-screen overflow-hidden">
         <!-- Background Video -->
         <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
@@ -215,15 +229,15 @@ import TestimonialSlider from "../components/TestimonialSlider.astro";
                 <div class="w-full md:max-w-[calc(var(--max-content-width)*0.5)] flex justify-center md:justify-end">
                     <div class="flex flex-col gap-[22px] items-center justify-center p-8">
                         <div class="bg-tortilla w-[412px] h-[384px] overflow-hidden">
-                            <img src="baha-shrimp-tacos-taco-project.webp" alt="Baja Shrimp Taco" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                            <img src={tacoOfTheMonth.data.image} alt={tacoOfTheMonth.data.name} class="w-full h-full object-cover" loading="lazy" decoding="async" />
                         </div>
                         <div class="flex flex-col items-center pb-[14px]">
                             <div class="flex items-center justify-center mb-[-14px]">
                                 <p class="font-holiday text-hot-sauce text-[48px] leading-[1.3] text-center -rotate-[4deg]">Taco of the Month</p>
                             </div>
-                            <h3 class="font-futura text-ocean text-[96px] leading-[0.88] tracking-[-4.8px] uppercase text-center">BAJA SHRIMP</h3>
+                            <h3 class="font-futura text-ocean text-[96px] leading-[0.88] tracking-[-4.8px] uppercase text-center">{tacoOfTheMonth.data.name}</h3>
                         </div>
-                        <a href="#" class="btn btn-primary">Order now</a>
+                        <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" class="btn btn-primary" target="_blank" rel="noopener nofollow noreferrer" title="Order the Taco of the Month">Order now</a>
                     </div>
                 </div>
             </div>

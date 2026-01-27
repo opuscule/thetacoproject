@@ -48,17 +48,13 @@
 
 body {
     line-height: 1.6;
-    color: #333;
-}
-
-h1 {
-    margin-bottom: 1rem;
+    color: var(--color-ink);
 }
 
 .btn {
     display: flex;
     height: 44px;
-    padding: 8px 20px;
+    padding: 10px 20px 8px;
     align-items: center;
     gap: 8.877px;
     font-family: var(--font-geist);
@@ -73,12 +69,12 @@ h1 {
     border: none;
     width: fit-content;
     white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
     color: var(--color-crema);
     background: var(--color-hot-sauce);
-    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover,
@@ -89,6 +85,20 @@ h1 {
 .btn-secondary {
     color: var(--color-hot-sauce);
     background: var(--color-crema);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: var(--color-ink);
+    color: var(--color-crema);
+}
+.btn-tertiary {
+    color: var(--color-crema);
+    background: var(--color-ocean);
+}
+.btn-tertiary:hover,
+.btn-tertiary:focus {
+    background: var(--color-ink);
+    color: var(--color-crema);
 }
 
 /* Hide scrollbar but keep functionality */
@@ -103,8 +113,14 @@ h1 {
 .text-pretty {
     text-wrap: pretty;
 }
+.text-menuitem {
+    font-size: clamp(1.75rem, 1.3837rem + 1.3953vw, 2.5rem);
+}
 @media (max-width: 48rem) {
     .text-14 {
         font-size: 3.5rem;
+    }
+    .text-40 {
+        font-size: 2.5rem;
     }
 }

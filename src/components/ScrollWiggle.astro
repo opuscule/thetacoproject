@@ -1,0 +1,107 @@
+---
+interface Props {
+    /** Path to the SVG file (e.g., "/icons/star.svg") */
+    icon: string;
+    /** Tailwind/CSS classes for positioning (e.g., "absolute top-10 left-20") */
+    class?: string;
+    /** Counterclockwise rotation in degrees (negative direction). If omitted, randomizes 5-15. */
+    rotateLeft?: number;
+    /** Clockwise rotation in degrees (positive direction). If omitted, randomizes 12-25. */
+    rotateRight?: number;
+    /** Transition duration in seconds. If omitted, randomizes between 0.1-0.25. */
+    transitionSpeed?: number;
+    /** Width of the icon (e.g., "80px", "4rem"). Default: 80px */
+    size?: string;
+    /** Alt text for accessibility (set empty string for decorative) */
+    alt?: string;
+}
+
+const {
+    icon,
+    class: className = "",
+    rotateLeft,
+    rotateRight,
+    transitionSpeed,
+    size = "80px",
+    alt = "",
+} = Astro.props;
+
+// Generate random asymmetric values if not provided (FULL maraca mode 🌶️)
+const left = rotateLeft ?? Math.floor(Math.random() * 25) + 15;   // 15-40 degrees
+const right = rotateRight ?? Math.floor(Math.random() * 30) + 35; // 35-65 degrees
+const speed = transitionSpeed ?? +(Math.random() * 0.06 + 0.05).toFixed(2); // 0.05-0.11s (lightning fast)
+---
+
+<div
+    class:list={["scroll-wiggle", className]}
+    data-scroll-wiggle
+    data-rotate-left={left}
+    data-rotate-right={right}
+    data-transition-speed={speed}
+    style={`width: ${size}; height: ${size}; transition: transform ${speed}s ease-out;`}
+    aria-hidden={alt === "" ? "true" : undefined}
+>
+    <img src={icon} alt={alt} class="w-full h-full object-contain" loading="lazy" decoding="async" />
+</div>
+
+<style>
+    .scroll-wiggle {
+        transform-origin: center;
+        will-change: transform;
+    }
+</style>
+
+<script>
+    // Shared scroll-wiggle handler (runs once, handles all instances)
+    const initScrollWiggle = () => {
+        const wiggleElements = document.querySelectorAll('[data-scroll-wiggle]');
+        if (!wiggleElements.length) return;
+
+        let ticking = false;
+
+        const updateRotations = () => {
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            wiggleElements.forEach((el) => {
+                if (!(el instanceof HTMLElement)) return;
+
+                const rotateLeft = parseFloat(el.dataset.rotateLeft || '10');
+                const rotateRight = parseFloat(el.dataset.rotateRight || '20');
+                const rect = el.getBoundingClientRect();
+                const centerY = rect.top + rect.height / 2;
+
+                // Normalize position: -1 at top of viewport, +1 at bottom
+                const normalized = ((centerY / viewportHeight) - 0.5) * 2;
+                const clamped = Math.max(-1, Math.min(1, normalized));
+
+                // Asymmetric rotation: negative values use rotateLeft, positive use rotateRight
+                const rotation = clamped < 0
+                    ? clamped * rotateLeft   // counterclockwise (top of viewport)
+                    : clamped * rotateRight; // clockwise (bottom of viewport)
+
+                el.style.transform = `rotate(${rotation}deg)`;
+            });
+
+            ticking = false;
+        };
+
+        const requestTick = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateRotations);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', requestTick, { passive: true });
+        window.addEventListener('resize', requestTick);
+        updateRotations(); // Initial call
+    };
+
+    // Run on page load and after Astro view transitions
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollWiggle);
+    } else {
+        initScrollWiggle();
+    }
+    document.addEventListener('astro:after-swap', initScrollWiggle);
+</script>

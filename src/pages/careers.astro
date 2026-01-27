@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoreSlider from "../components/StoreSlider.astro";
+import ScrollWiggle from "../components/ScrollWiggle.astro";
 ---
 
 <BaseLayout title="Join Our Team - Now Hiring at The Taco Project | NY, CT" description="We're currently hiring front of house and back of house staff. Please fill out the application and we'll reach out to you if it's a fit!">
@@ -40,7 +41,7 @@ import StoreSlider from "../components/StoreSlider.astro";
     </section>
 
 
-    <section id="working_with_us" class="bg-crema flex flex-col">
+    <section id="working_with_us" class="bg-crema flex flex-col pb-20">
         <div class="container">
             <div class="flex mb-12">
                 <h2 class="font-holiday text-citrus text-6xl leading-[1.3] -rotate-2">Why you&lsquo;ll love working with us</h2>
@@ -49,36 +50,42 @@ import StoreSlider from "../components/StoreSlider.astro";
             <div class="flex flex-col md:flex-row gap-6 justify-center items-start">
                 <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
-                        <img src="/careers-grid-1.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" />
+                        <img src="/careers-grid-1.webp" alt="Careers at The Taco Project" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Good energy, every shift</h3>
+                        <h3 class="font-futura text-citrus text-[32px] tracking-tight">Good energy, every shift</h3>
                         <p class="font-geist text-ink text-sm leading-5">Work in a place where the vibes are high, the playlists are good, and the people actually like being here.</p>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
-                        <img src="/careers-grid-2.webp" alt="Flexible Schedule at The Taco Project" class="w-full h-full object-cover" />
+                        <img src="/careers-grid-2.webp" alt="Flexible Schedule at The Taco Project" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Fuel for your future</h3>
+                        <h3 class="font-futura text-citrus text-[32px] tracking-tight">Fuel for your future</h3>
                         <p class="font-geist text-ink text-sm leading-5">Competitive pay, flexible schedules, and room to grow, because your goals matter.</p>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3.5 w-full">
                     <div class="w-full overflow-hidden relative">
-                        <img src="/careers-grid-3.webp" alt="Feels like fam at The Taco Project" class="w-full h-full object-cover" />
+                        <img src="/careers-grid-3.webp" alt="Feels like fam at The Taco Project" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h3 class="font-futura text-citrus text-3xl leading-none tracking-[-1.6px] lowercase">Feels like fam</h3>
+                        <h3 class="font-futura text-citrus text-[32px] tracking-tight">Feels like fam</h3>
                         <p class="font-geist text-ink text-sm leading-5">We've built something real: a crew that's supportive, collaborative, and always up for a post-shift taco (or two).</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Example: multiple scroll-wiggle icons with randomized settings -->
+    <div class="relative">
+        <ScrollWiggle icon="/icons/star.svg" class="absolute top-4 left-8" size="60px" />
+        <ScrollWiggle icon="/icons/taco.svg" class="absolute top-12 right-16" size="80px" />
+    </div>
 
     <!-- Careers Form -->
     <section id="apply" class="bg-sky py-16">
@@ -164,7 +171,7 @@ import StoreSlider from "../components/StoreSlider.astro";
                         <label for="location" class="font-geist font-normal text-sm leading-5 text-ink">Location Preference*</label>
                         <div class="relative" data-dropdown="location">
                             <button type="button" class="bg-crema rounded-lg px-6 py-4 w-full font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition cursor-pointer flex justify-between items-center" aria-haspopup="listbox" aria-expanded="false">
-                                <span class="dropdown-label text-ink/50">Choose location(s)</span>
+                                <span class="dropdown-label text-ink/50">Select location preferences</span>
                                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300">
                                     <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
@@ -203,19 +210,14 @@ import StoreSlider from "../components/StoreSlider.astro";
                     </div>
                 </div>
 
-
-                <!-- Row 4: great team member -->
                 <div class="flex flex-col gap-3.5 w-full">
                     <label for="cover_letter" class="font-geist font-normal text-sm leading-5 text-ink">Why would you make a great teammate?</label>
                     <textarea id="cover_letter" name="cover_letter" rows="4" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
                 </div>
 
 
-
-
-                <!-- Row 4: Resume -->
-                <div class="flex flex-col gap-3.5 w-full">
-                    <label class="font-geist font-normal text-sm leading-5 text-ink">Upload Resume* <span class="font-normal text-xs text-ink/60">(PDF, DOC, DOCX, Pages, RTF, TXT · Max. file size: 10 MB)</span></label>
+                <div class="flex flex-col gap-3.5 w-full max-w-md">
+                    <label for="resume" class="font-geist font-normal text-sm leading-5 text-ink">Upload Resume* <span class="font-normal text-xs text-ink/60">(Max. file size: 10 MB)</span></label>
                     <div class="relative">
                         <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx,.pages,.rtf,.txt" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                         <div class="bg-crema rounded-lg px-6 py-4 w-full flex justify-between items-center border border-dashed border-ink/20">
@@ -233,19 +235,20 @@ import StoreSlider from "../components/StoreSlider.astro";
                 </div>
             </form>
 
-            <div id="apply-success" role="status" aria-live="polite" class="hidden bg-crema border border-hot-sauce/40 rounded-2xl px-6 py-8 flex flex-col gap-4 shadow-md">
-                <p class="font-futura text-hot-sauce text-4xl leading-tight uppercase">Thank you for applying!</p>
-                <p class="font-geist text-ink text-sm leading-5">
-                    We received your application and a member of The Taco Project team will reach out if there's a fit. In the meantime, feel free to stop by one of our locations for tacos and good vibes.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="/" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
-                        Back to Home
-                        <svg class="w-4 h-4" aria-hidden="true" focusable="false">
-                            <use href="#icon-arrow-right"></use>
-                        </svg>
-                    </a>
-                    <a href="#working_with_us" class="font-geist text-sm uppercase text-hot-sauce underline-offset-4 underline hover:text-ink transition-colors">Why you'll love working with us →</a>
+            <div id="apply-success" role="status" aria-live="polite" class="hidden flex justify-center">
+                <div class="max-w-2xl bg-crema border border-hot-sauce/40 rounded-2xl px-6 py-8 flex flex-col gap-4 shadow-md">
+                    <p class="font-futura text-hot-sauce text-4xl leading-tight uppercase">Thank you for applying!</p>
+                    <p class="font-geist text-ink text-sm leading-5">
+                        We received your application and a member of The Taco Project team will reach out if there's a fit. In the meantime, feel free to stop by one of our locations for tacos and good vibes.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                            Back to Home
+                            <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -341,6 +344,8 @@ import StoreSlider from "../components/StoreSlider.astro";
                 resumeLabel.classList.toggle('text-ink', Boolean(file));
             });
         }
+
+        // Scroll-synced rotation now handled by ScrollWiggle component
 
         // Show Netlify success confirmation
         const successBanner = document.getElementById('apply-success');
