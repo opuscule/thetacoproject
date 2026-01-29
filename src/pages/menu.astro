@@ -3,7 +3,10 @@ import CateringCTA from "../components/CateringCTA.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Menu | The Taco Project">
+<BaseLayout 
+    title="Our Menu | The Taco Project - Tacos, Burritos, Brunch & Happy Hour" 
+    description="Explore The Taco Project's menu featuring authentic Mexican street food: tacos, burritos, quesadillas, and house-made salsas. Join us for Weekend Brunch and Happy Hour in NY & CT."
+>
 
 
     <section id="page_nav" class="bg-crema pt-4">
@@ -143,31 +146,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
             </div>
 
+            <div class="mb-12 bg-tortilla px-6 pt-4 pb-8">
+                <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2">Birria</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    <li class="flex flex-col gap-1 mb-4">
+                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Tacos</p>
+                        <p class="font-geist text-citrus text-sm leading-5 lowercase">3 tacos, slow cooked beef brisket, with melted oaxaca cheese, white onion, and cilantro, served on corn tortillas dipped in consommé and grilled pressed</p>
+                    </li>
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-citrus text-menuitem text-3xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Burrito</p>
+                    </li>
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Bowl</p>
+                    </li>
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Quesadilla</p>
+                    </li>
+                </ul>
+            </div>
 
 
 
             <!-- Birria, burritos -->
             <div class="mb-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16">
-                    <div class="bg-tortilla px-6 pt-4 pb-8">
-                        <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2">Birria</p>
-                        <ul class="flex flex-col mb-4 md:mb-0">
-                            <li class="flex flex-col gap-1 mb-4">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Tacos</p>
-                                <p class="font-geist text-citrus text-sm leading-5 lowercase">3 tacos, slow cooked beef brisket, with melted oaxaca cheese, white onion, and cilantro, served on corn tortillas dipped in consommé and grilled pressed</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem text-3xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Burrito</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Bowl</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Quesadilla</p>
-                            </li>
-                        </ul>
-                    </div>
-                    
                     <div class="">
                         <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Burritos</p>
                         <ul class="flex flex-col mb-4 md:mb-0">
@@ -193,7 +195,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Burrito Bowls</p>
                         <ul class="flex flex-col mb-4 md:mb-0">
                             <li class="flex flex-col gap-1 mb-4">
-                                <p class="font-geist text-citrus text-sm leading-5 lowercase">All burrito bowls are filled to order, and served with Rice, Beans, Cotija Cheese, Sour Cream, and your Favorite Protein.</p>
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase">All Bowls are filled to order, in a Flour Tortilla Shell, and served with Rice, Beans, Queso Fresco Cheese, Sour Cream, Radish, Cilantro, and your Favorite Protein.</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Chicken</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Battered Shrimp</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Vegetable</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="">
+                        <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Quesadillas</p>
+                        <ul class="flex flex-col mb-4 md:mb-0">
+                            <li class="flex flex-col gap-1 mb-4">
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase">flour tortillas with cheese with side of sour cream and pico de gallo</p>
                             </li>
                             <li class="flex flex-col gap-1">
                                 <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
@@ -231,20 +254,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 <p class="font-geist text-citrus text-sm leading-5 lowercase">romaine greens with house-made caesar dressing, croutons, pickled jalapeños, and shaved cheese</p>
                             </li>
                         </ul>
-                        <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Quesadillas</p>
-                        <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">flour tortillas with cheese with side of sour cream and pico de gallo</p>
-                        <li class="flex flex-col gap-1">
-                            <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
-                        </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Chicken</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Battered Shrimp</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Vegetable</p>
-                            </li>
                     </div>
                     <div>
                         <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Kids Meal Boxes</p>
@@ -272,255 +281,264 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
 
 
-            
-            <hr />
 
 
-
-                    
-
-                        Quesadillas
-                        flour tortillas with cheese with side of sour cream and pico de gallo
-                        Cheese
-                        Chipotle Chicken
-                        Grilled Chicken
-                        Steak
-                        Battered Shrimp
-                        Vegetable
-
-
-
-                        
-
-
-
-
-
-                        ## Dessert
-
-                        Caramel Flan
-                        house-made caramel custard flan, whipped cream, caramel sauce
-
-                        Coconut Tres Leches Cake
-                        house-made with caramel sauce, toasted coconut, and homemade whipped cream
-
-                        Churros
-                        house-made fried churros rolled in cinnamon sugar served with chocolate mole and caramel dipping sauce
-
-                    
-                    
-                </div>
-            </div>
-
-          
-          
-            <div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-                    <div>
-                        <div class="flex flex-col gap-1 justify-start">
-                            <p class="font-holiday text-citrus text-5xl leading-[1.3] rotate-358">Kids Meal Boxes</p>
-                            <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">Includes choice of Water Bottle, Aqua Fresca (12oz), or Honest Kids drink. (No Substitutes)</p>
-                        </div>
-                        <ul class="flex flex-col gap-y-4">
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Taco Box</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">One Beef or Chicken Taco with Rice, Beans, and Sidewinder Fries.</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Miniature Burrito Box</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">Beef, Chicken, or Plain, with Rice, Beans, and Salad with Tomatoes.</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Miniature Quesadilla Box</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">With Rice, Beans, and Sidewinder Fries.</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p class="font-holiday text-citrus text-5xl leading-[1.3] text-left rotate-358">Salads</p>
-                        <ul class="flex flex-col gap-y-4">
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Smoked Corn and Field Green Salad</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">Smoked Corn, Queso Fresco, Grape Tomatoes in a Jalapeño Cilantro Vinaigrette, Served with Tortilla Crisps. Add Chicken, Steak, or Battered Shrimp.</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Mexican Caesar Salad</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">Romaine Greens with house-made Caesar Dressing (contains anchovies, eggs) Topped with Croutons, pickled jalapeños, and shaved cheese. Add Grilled Chicken or Grilled Shrimp.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <p class="font-holiday text-citrus text-5xl leading-[1.3] text-left rotate-358">Dessert</p>
-            <div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-                    <div>
-                        <ul class="flex flex-col gap-y-4">
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-4xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Churros</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">House-Made Fried Churros Rolled in Cinnamon Sugar served with Chocolate Mole and Caramel Dipping Sauce</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-4xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Flan</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">House-Made Flan Caramel Custard Cake</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-y-4">
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-4xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Coconut Tres Leches</p>
-                                <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">House-Made with Caramel Sauce, Toasted Coconut, and Homemade Whipped Cream</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <p class="font-holiday text-citrus text-5xl leading-[1.3] text-left rotate-358">Beverages</p>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-                <div>
-                    <p class="font-futura text-citrus text-4xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Non-Alcoholic</p>
-                    <ul class="font-geist text-citrus text-sm leading-[1.4] lowercase">
-                        <li>Mexican Coke</li>
-                        <li>Mexican Sprite</li>
-                        <li>Coke</li>
-                        <li>Diet Coke</li>
-                        <li>Ginger Ale</li>
-                        <li>Iced Tea</li>
-                        <li>Poland Springs</li>
-                        <li>Honest Kids drink</li>
-                        <li>Jarritos (Choose from: Mango, Mandarin, Lime, Pineapple, Fruit Punch, Sparkling Water)</li>
+            <!-- Desserts -->
+            <div class="mb-12">
+                <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Desserts</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+                    <ul class="flex flex-col gap-y-3 mb-4 md:mb-0">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Churros</p>
+                            <p class="font-geist text-citrus text-sm leading-5 lowercase">house-made fried churros rolled in cinnamon sugar served with chocolate mole and caramel dipping sauce</p>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Caramel Flan</p>
+                            <p class="font-geist text-citrus text-sm leading-5 lowercase">house-made caramel custard flan, whipped cream, caramel sauce</p>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-col gap-y-3">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Coconut Tres Leches Cake</p>
+                            <p class="font-geist text-citrus text-sm leading-5 lowercase">house-made with caramel sauce, toasted coconut, and homemade whipped cream</p>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+
+            <!-- Beverages -->
+            <div class="mb-12 mt-12 md:mt-4">
+                <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Beverages</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+                    <ul class="flex flex-col gap-y-3 mb-4 md:mb-0">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Non-Alcoholic</p>
+                            <ul class="font-geist text-citrus text-sm leading-5 lowercase">
+                                <li>Mexican Coke</li>
+                                <li>Mexican Sprite</li>
+                                <li>Coke</li>
+                                <li>Diet Coke</li>
+                                <li>Ginger Ale</li>
+                                <li>Iced Tea</li>
+                                <li>Poland Springs</li>
+                                <li>Honest Kids drink</li>
+                                <li class="text-balance">Jarritos (Choose from: Mango, Mandarin, Lime, Pineapple, Fruit Punch, Sparkling Water)</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Aguas Frescas</p>
+                            <p class="font-geist text-citrus text-sm leading-5 lowercase text-balance">House Made Mexican Fresh Juices (choose from Hibiscus, Lemonade, and Horchata)</p>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Margaritas</p>
+                            <ul class="font-geist text-citrus text-sm leading-5 lowercase">
+                                <li>Classic</li>
+                                <li>Mango</li>
+                                <li>Pineapple</li>
+                                <li>Pomegranate</li>
+                                <li>Hibiscus</li>
+                                <li>Spicy</li>
+                                <li>Watermelon</li>
+                                <li>Cadillac</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-col gap-y-3">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Taco Project Sangria</p>
+                            <p class="font-geist text-citrus text-sm leading-5 lowercase text-balance">House Made Fruity and Flavorful Wine Sangria by the Glass, Half-Pitcher, or Pitcher</p>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Beer</p>
+                            <ul class="font-geist text-citrus text-sm leading-5 lowercase">
+                                <li>Corona</li>
+                                <li>Corona Light</li>
+                                <li>Negra Modelo</li>
+                                <li>Pacifico</li>
+                                <li>Modelo Especial</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Cocktails</p>
+                            <ul class="font-geist text-citrus text-sm leading-5 lowercase">
+                                <li>Paloma (Cantarito)</li>
+                                <li>Mezcalita</li>
+                                <li>Michelada</li>
+                                <li>Moscow Mule</li>
+                                <li>Mojito</li>
+                                <li>Titos &amp; Club</li>
+                                <li>Cuba Libre (Rum &amp; Coke)</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Wine</p>
+                            <ul class="font-geist text-citrus text-sm leading-5 lowercase">
+                                <li>Malbec</li>
+                                <li>Rose</li>
+                                <li>Pinot Grigio</li>
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+          
+
     </section>
+
+
+
+
 
     <!-- Brunch -->
     <section id="brunch" class="bg-sky py-16 relative">
         <div class="container">
-            <h2 class="font-futura text-ocean text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Brunch</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 mb-12">
-                <!-- Avocado Toast -->
-                <div class="flex flex-col gap-1">
-                    <p class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Avocado Toast</p>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Served with Smashed Avocado, citrus, served on a buttered locally sourced artisan slice and topped with cherry tomatoes, onion, pickled jalapeño, cilantro, balsamic glaze.</p>
-                </div>
-
-                <!-- Breakfast Burrito -->
-                <div class="flex flex-col gap-1">
-                    <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Breakfast Burrito</h3>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Scrambled eggs, chorizo, black beans, cheese, avocado, pico de gallo, wrapped in a flour tortilla.</p>
-                </div>
-
-                <!-- Huevos Rancheros -->
-                <div class="flex flex-col gap-1">
-                    <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Huevos Rancheros</h3>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Two fried eggs on corn tortillas, topped with ranchero sauce, black beans, avocado, queso fresco, cilantro.</p>
-                </div>
-
-                <!-- Chilaquiles -->
-                <div class="flex flex-col gap-1">
-                    <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Chilaquiles</h3>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Crispy tortilla chips tossed in salsa verde or roja, topped with fried eggs, crema, queso fresco, onion, cilantro.</p>
-                </div>
-
-                <!-- Breakfast Tacos -->
-                <div class="flex flex-col gap-1">
-                    <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Breakfast Tacos</h3>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Three soft tacos with scrambled eggs, choice of bacon, chorizo, or potato, topped with cheese, pico de gallo, avocado.</p>
-                </div>
-
-                <!-- Churro French Toast -->
-                <div class="flex flex-col gap-1">
-                    <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Churro French Toast</h3>
-                    <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">Thick-cut brioche dipped in cinnamon sugar batter, served with dulce de leche, fresh berries, whipped cream.</p>
+            <div class="flex flex-col md:flex-row md:gap-16 md:items-center mb-8 md:mb-12">
+                <h2 class="font-futura text-ocean text-[56px] md:text-7xl lg:text-[104px] uppercase tracking-tight leading-none">Brunch</h2>
+                <div>
+                    <p class="font-holiday text-ocean text-5xl -rotate-2 leading-none">Saturdays &amp; Sundays 11am to 3pm</p>
                 </div>
             </div>
 
-            <!-- brunch beverages -->
-            <div class="mb-8">
-                <div class="flex items-center justify-start mb-6">
-                    <p class="font-holiday text-ocean text-5xl leading-[1.3] rotate-358">Beverages</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
 
-                <!-- two columns -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8">
-                    <!-- Non-Alcoholic -->
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Non-Alcoholic</h3>
-                        <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">
-                            Mexican Coke<br />
-                            Jarritos (Lime, Tamarind, Mandarin)<br />
-                            Fresh Squeezed Orange Juice<br />
-                            Horchata<br />
-                            Jamaica (Hibiscus Tea)<br />
-                            Coffee<br />
-                            Hot Chocolate
-                        </p>
-                    </div>
+                <ul class="flex flex-col gap-y-3 mb-4 md:mb-0">
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Avocado Toast</p>
+                        <p class="font-geist text-ocean text-sm leading-5 lowercase">Served with Smashed Avocado, citrus, served on a buttered locally sourced artisan slice and topped with cherry tomatoes, onion, pickled jalapeño, cilantro, balsamic glaze.</p>
+                    </li>
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Breakfast Burrito</p>
+                        <p class="font-geist text-ocean text-sm leading-5 lowercase">Scrambled eggs, chorizo, black beans, cheese, avocado, pico de gallo, wrapped in a flour tortilla.</p>
+                    </li>
+                </ul>
+                <ul class="flex flex-col gap-y-3">
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Chicken Enchiladas</p>
+                        <p class="font-geist text-ocean text-sm leading-5 lowercase">Three Chicken Enchiladas rolled in Organic Yellow Corn Tortillas and served with Homemade Salsa Verde and Salsa Roja, then topped with Queso Fresco, Sour Cream, and Julienne Onions (GF)</p>
+                    </li>
+                    <li class="flex flex-col gap-1">
+                        <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Taco Project Caesar Salad</p>
+                        <p class="font-geist text-ocean text-sm leading-5 lowercase">Romaine Greens with house-made Caesar Dressing (contains anchovies, eggs) Topped with croutons, pickled jalapeños, and shaved cheese.</p>
+                    </li>
+                </ul>
 
-                    <!-- Mimosas -->
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Mimosas</h3>
-                        <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">
-                            Classic Orange<br />
-                            Mango<br />
-                            Passion Fruit<br />
-                            Strawberry ƒ
-                        </p>
-                    </div>
-
-                    <!-- Bloody Marys -->
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Bloody Marys</h3>
-                        <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">
-                            Classic<br />
-                            Spicy Jalapeño<br />
-                            Michelada Style
-                        </p>
-                    </div>
-
-                    <!-- Wine -->
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-futura text-ocean text-[40px] leading-none tracking-[-2px]">Wine</h3>
-                        <p class="font-geist text-ocean text-sm leading-[1.4] lowercase">
-                            Malbec<br />
-                            Rose<br />
-                            Pinot Grigio
-                        </p>
-                    </div>
-                </div>
             </div>
 
-            <!-- Hours -->
-            <div class="flex justify-center mt-16">
-                <p class="font-holiday text-ocean text-5xl leading-[1.3] rotate-[359deg] whitespace-nowrap">Saturdays & Sundays 11am to 3pm</p>
+
+
+            <!-- Beverages -->
+            <div class="mb-12 mt-12 md:mt-4">
+                <p class="font-holiday text-ocean text-5xl leading-tight -rotate-2 mb-4">Beverages</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+                    <ul class="flex flex-col gap-y-3 mb-4 md:mb-0">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Non-Alcoholic</p>
+                            <ul class="font-geist text-ocean text-sm leading-5 lowercase">
+                                <li>Mexican Coke</li>
+                                <li>Mexican Sprite</li>
+                                <li>Coke</li>
+                                <li>Diet Coke</li>
+                                <li>Ginger Ale</li>
+                                <li>Iced Tea</li>
+                                <li>Poland Springs</li>
+                                <li>Honest Kids drink</li>
+                                <li class="text-balance">Jarritos (Choose from: Mango, Mandarin, Lime, Pineapple, Fruit Punch, Sparkling Water)</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Aguas Frescas</p>
+                            <p class="font-geist text-ocean text-sm leading-5 lowercase text-balance">House Made Mexican Fresh Juices (choose from Hibiscus, Lemonade, and Horchata)</p>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Margaritas</p>
+                            <ul class="font-geist text-ocean text-sm leading-5 lowercase">
+                                <li>Classic</li>
+                                <li>Mango</li>
+                                <li>Pineapple</li>
+                                <li>Pomegranate</li>
+                                <li>Hibiscus</li>
+                                <li>Spicy</li>
+                                <li>Watermelon</li>
+                                <li>Cadillac</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-col gap-y-3">
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Taco Project Sangria</p>
+                            <p class="font-geist text-ocean text-sm leading-5 lowercase text-balance">House Made Fruity and Flavorful Wine Sangria by the Glass, Half-Pitcher, or Pitcher</p>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Beer</p>
+                            <ul class="font-geist text-ocean text-sm leading-5 lowercase">
+                                <li>Corona</li>
+                                <li>Corona Light</li>
+                                <li>Negra Modelo</li>
+                                <li>Pacifico</li>
+                                <li>Modelo Especial</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Cocktails</p>
+                            <ul class="font-geist text-ocean text-sm leading-5 lowercase">
+                                <li>Paloma (Cantarito)</li>
+                                <li>Mezcalita</li>
+                                <li>Michelada</li>
+                                <li>Moscow Mule</li>
+                                <li>Mojito</li>
+                                <li>Titos &amp; Club</li>
+                                <li>Cuba Libre (Rum &amp; Coke)</li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <p class="font-futura text-ocean text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Wine</p>
+                            <ul class="font-geist text-ocean text-sm leading-5 lowercase">
+                                <li>Malbec</li>
+                                <li>Rose</li>
+                                <li>Pinot Grigio</li>
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+                </div>
             </div>
+                
+
+                
+               
+            </div>
+
         </div>
     </section>
 
-    <section class="bg-crema py-16 relative">
-        <div class="container">
-            <div class="flex justify-start gap-8">
-                <h2 class="font-futura text-hot-sauce text-[64px] lg:text-[104px] leading-[0.88] uppercase tracking-[-5px] mb-12">Happy Hour</h2>
-                <p class="font-holiday text-hot-sauce text-5xl leading-[1.3]">Weekdays 3:30 to 5:30pm</p>
-            </div>
 
+
+
+    <!-- Happy Hour -->
+    <section id="happy-hour" class="bg-crema py-16 relative">
+        <div class="container">
+            <div class="flex flex-col md:flex-row md:gap-16 md:items-center mb-8 md:mb-12">
+                <h2 class="font-futura text-hot-sauce text-[56px] md:text-7xl lg:text-[104px] uppercase tracking-tight leading-none">Happy Hour</h2>
+                <div>
+                    <p class="font-holiday text-hot-sauce text-5xl -rotate-2 leading-none">Weekdays 3:30 to 5:30pm</p>
+                </div>
+            </div>
+            
             <!-- HOUSE STARTERS -->
             <div class="mb-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
                     <div>
-                        <p class="font-holiday text-hot-sauce text-5xl leading-[1.3] rotate-358">Drinks</p>
-                        <ul class="flex flex-col gap-y-4">
+                        <p class="font-holiday text-hot-sauce text-5xl leading-[1.3] -rotate-2">Drinks</p>
+                        <ul class="flex flex-col gap-y-2">
                             <li class="flex gap-4 items-baseline">
                                 <p class="font-futura text-hot-sauce text-4xl tracking-tight leading-10">Margarita</p>
                                 <p class="font-geist text-hot-sauce text-sm leading-5 lowercase">$8</p>
@@ -544,9 +562,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         </ul>
                     </div>
 
-                    <div>
-                        <p class="font-holiday text-hot-sauce text-5xl leading-[1.3] rotate-358">Food</p>
-                        <ul class="flex flex-col gap-y-1">
+                    <div class="mt-8 md:mt-0">
+                        <p class="font-holiday text-hot-sauce text-5xl leading-[1.3] -rotate-2">Food</p>
+                        <ul class="flex flex-col gap-y-2">
                             <li class="flex gap-2 items-baseline">
                                 <p class="font-futura text-hot-sauce text-4xl tracking-tight leading-10">Mexican Corn</p>
                                 <p class="font-geist text-hot-sauce text-sm leading-5 lowercase">$6</p>
@@ -581,4 +599,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <CateringCTA />
+
+    <script>
+        document.querySelectorAll('#page_nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const offset = 120;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
 </BaseLayout>
