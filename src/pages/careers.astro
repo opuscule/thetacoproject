@@ -6,45 +6,55 @@ import ScrollWiggle from "../components/ScrollWiggle.astro";
 
 <BaseLayout title="Join Our Team - Now Hiring at The Taco Project | NY, CT" description="We're currently hiring front of house and back of house staff. Please fill out the application and we'll reach out to you if it's a fit!">
 
-    <section class="min-h-auto md:min-h-[80vh] bg-crema flex flex-col md:flex-row justify-between">
-        
-        <!-- Column 1: Content (md:80%, lg:60%) -->
-        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.8)] lg:max-w-[calc(var(--max-content-width)*0.6)] p-6 md:pt-8 md:pb-12 md:pl-12 md:pr-8">
-            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
-                <h1 class="text-citrus font-futura text-14 md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">Join the Taco Project Team</h1>
-                <div class="flex flex-col md:flex-row gap-8">
-                    <img src="/careers-banner-tn.webp" class="shrink max-w-[240px] w-full h-auto object-contain" alt="Work at The Taco Project" width="350" height="353" loading="eager" />
-                    <div class="flex flex-col gap-4">
-                        <p class="font-geist text-ink text-sm leading-5 text-pretty">The Taco Project restaurants are Mexican-inspired, polished casual / quick service taquerias, located in Westchester County, NY, and Fairfield County, CT. If you've got a passion for food and love working alongside vibrant, growth-minded humans, you'll fit right in.</p>
+
+    <header class="flex flex-col md:grid md:min-h-[calc(100vh-93px)] w-full md:grid-cols-[1fr_minmax(0,calc(var(--max-content-width)*0.6))_minmax(0,calc(var(--max-content-width)*0.4))_1fr] md:grid-rows-1 overflow-hidden">
+        <div class="hidden md:block col-start-1 col-end-3 row-start-1 bg-crema"></div>
+        <div class="hidden md:block col-start-3 col-end-5 row-start-1 bg-cover bg-center" style="background-image: url('/careers-banner-v2.webp');"></div>
+
+        <div class="bg-crema md:bg-transparent md:col-start-2 md:row-start-1 z-10 flex flex-col justify-between px-5 py-6 md:p-8 md:py-16">
+            <h1 class="font-futura text-[56px] md:text-8xl font-black uppercase leading-[0.88] tracking-[-0.05em] text-citrus mb-6 md:mb-8">
+                Join the Taco Project Team
+            </h1>
+
+            <div class="flex flex-col md:flex-row items-start md:items-end gap-8">
+                <div class="aspect-square w-full overflow-hidden max-w-full md:max-w-60">
+                    <img src="/careers-banner-tn.webp" class="object-cover w-full h-full" alt="Employee at The Taco Project" width="450" height="450" />
+                </div>
+
+                <div>
+                    <p class="font-geist text-sm leading-[1.4] text-ink max-w-full md:max-w-[340px] mb-4">
+                        The Taco Project restaurants are Mexican-inspired, polished casual / quick service taquerias, located in Westchester County, NY, and Fairfield County, CT. If you've got a passion for food and love working alongside vibrant, growth-minded humans, you'll fit right in.
+                    </p>
 
 
-
-                        <div class="flex items-center justify-between">
-                            <a href="#apply" class="group flex items-center justify-between w-full gap-2">
-                                <div class="font-futura text-hot-sauce text-5xl md:text-14 leading-tight uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">Join Us</div>
-                                <div class="flex items-center gap-2 text-hot-sauce font-geist text-sm uppercase transition-all duration-500 pr-0 md:pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
-                                    Apply Today
-                                    <svg class="w-4 h-4 rotate-90" aria-hidden="true" focusable="false">
-                                        <use href="#icon-arrow-right"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-
-
+                    <div class="flex items-center justify-between">
+                        <a href="#apply" class="group flex items-center justify-between w-full gap-2">
+                            <div class="font-futura text-citrus text-[40px] md:text-[56px] leading-none uppercase tracking-tight pb-1.5 transition-colors duration-500 group-hover:text-ink group-focus:text-ink">
+                                Join Us
+                            </div>
+                            <div class="flex items-center gap-2 text-citrus font-geist text-sm uppercase transition-all duration-500 pr-4 group-hover:pr-0 group-hover:text-ink group-focus:pr-0 group-focus:text-ink">
+                                Apply Today
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" class="size-[13px] rotate-90">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Column 2: Image (md:20%, lg:40%) -->
-        <div class="w-full md:max-w-[calc(var(--max-content-width)*0.2)] lg:max-w-[calc(var(--max-content-width)*0.4)] min-h-96 bg-cover bg-center bg-[url('/careers-banner-v2.webp')]"></div>
-    </section>
+        <div class="hidden md:block col-start-3 row-start-1 z-10"></div>
+
+        <!-- Mobile Bottom Image -->
+        <div class="block md:hidden w-full h-[50vh] bg-cover bg-center" style="background-image: url('/careers-banner-v2.webp');"></div>
+    </header>
 
 
-    <section id="working_with_us" class="bg-crema flex flex-col pb-20">
+
+    <section id="working_with_us" class="bg-crema flex flex-col pb-20 pt-10">
         <div class="container">
             <div class="flex mb-12">
-                <h2 class="font-holiday text-citrus text-6xl leading-[1.3] -rotate-2">Why you&lsquo;ll love working with us</h2>
+                <h2 class="font-holiday text-citrus text-6xl leading-none -rotate-2">Why you&lsquo;ll love working with us</h2>
             </div>
 
             <div class="flex flex-col md:flex-row gap-6 justify-center items-start">
@@ -80,12 +90,6 @@ import ScrollWiggle from "../components/ScrollWiggle.astro";
             </div>
         </div>
     </section>
-
-    <!-- Example: multiple scroll-wiggle icons with randomized settings -->
-    <div class="relative">
-        <ScrollWiggle icon="/icons/star.svg" class="absolute top-4 left-8" size="60px" />
-        <ScrollWiggle icon="/icons/taco.svg" class="absolute top-12 right-16" size="80px" />
-    </div>
 
     <!-- Careers Form -->
     <section id="apply" class="bg-sky py-16">
@@ -346,6 +350,25 @@ import ScrollWiggle from "../components/ScrollWiggle.astro";
         }
 
         // Scroll-synced rotation now handled by ScrollWiggle component
+
+        // Smooth scroll with 120px offset for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const offset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
 
         // Show Netlify success confirmation
         const successBanner = document.getElementById('apply-success');
