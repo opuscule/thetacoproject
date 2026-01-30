@@ -30,6 +30,7 @@ const {
 const left = rotateLeft ?? Math.floor(Math.random() * 25) + 15;   // 15-40 degrees
 const right = rotateRight ?? Math.floor(Math.random() * 30) + 35; // 35-65 degrees
 const speed = transitionSpeed ?? +(Math.random() * 0.06 + 0.05).toFixed(2); // 0.05-0.11s (lightning fast)
+const direction = Math.random() < 0.5 ? 1 : -1; // Randomize rotation direction
 ---
 
 <div
@@ -38,7 +39,8 @@ const speed = transitionSpeed ?? +(Math.random() * 0.06 + 0.05).toFixed(2); // 0
     data-rotate-left={left}
     data-rotate-right={right}
     data-transition-speed={speed}
-    style={`width: ${size}; height: ${size}; transition: transform ${speed}s ease-out;`}
+    data-direction={direction}
+    style={`width: ${size}; height: ${size};`}
     aria-hidden={alt === "" ? "true" : undefined}
 >
     <img src={icon} alt={alt} class="w-full h-full object-contain" loading="lazy" decoding="async" />
@@ -67,6 +69,7 @@ const speed = transitionSpeed ?? +(Math.random() * 0.06 + 0.05).toFixed(2); // 0
 
                 const rotateLeft = parseFloat(el.dataset.rotateLeft || '10');
                 const rotateRight = parseFloat(el.dataset.rotateRight || '20');
+                const direction = parseFloat(el.dataset.direction || '1');
                 const rect = el.getBoundingClientRect();
                 const centerY = rect.top + rect.height / 2;
 
@@ -75,9 +78,15 @@ const speed = transitionSpeed ?? +(Math.random() * 0.06 + 0.05).toFixed(2); // 0
                 const clamped = Math.max(-1, Math.min(1, normalized));
 
                 // Asymmetric rotation: negative values use rotateLeft, positive use rotateRight
-                const rotation = clamped < 0
+                let rotation = clamped < 0
                     ? clamped * rotateLeft   // counterclockwise (top of viewport)
                     : clamped * rotateRight; // clockwise (bottom of viewport)
+
+                // Snap to 5-degree increments for aggressive "jittery" effect
+                rotation = Math.round(rotation / 10) * 10;
+
+                // Apply random direction (some icons rotate opposite)
+                rotation *= direction;
 
                 el.style.transform = `rotate(${rotation}deg)`;
             });

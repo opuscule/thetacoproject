@@ -49,9 +49,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- FOOD & DRINK -->
-    <section class="bg-crema py-16 relative" id="food-drink">
+    <section class="bg-crema py-4 md:py-16 relative" id="food-drink">
         <div class="container">
-            <h2 class="font-futura text-citrus text-[56px] md:text-7xl lg:text-[104px] leading-[0.88] uppercase tracking-tight mb-12">Food &amp; Drink</h2>
+            <h2 class="font-futura text-citrus text-[56px] md:text-7xl lg:text-[104px] leading-[0.88] uppercase tracking-tight mb-4 md:mb-12 mt-8 md:mt-0">Food &amp; Drink</h2>
 
             <!-- HOUSE STARTERS -->
             <div class="mb-12">
@@ -434,7 +434,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
             <!-- Beverages -->
-            <div class="mb-12 mt-12 md:mt-4">
+            <div class="mb-4 md:mb-12 mt-12 md:mt-4">
                 <p class="font-holiday text-ocean text-5xl leading-tight -rotate-2 mb-4">Beverages</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
                     <ul class="flex flex-col gap-y-3 mb-4 md:mb-0">
@@ -607,7 +607,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    const offset = 120;
+                    const offset = 110;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.scrollY - offset;
     
