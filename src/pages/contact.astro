@@ -7,17 +7,21 @@ import InstagramFeed from "../components/InstagramFeed.astro";
 <BaseLayout title="Contact Us | The Taco Project">
     <section class="bg-sky py-16 relative">
         <div class="container">
-            <div class="flex flex-col">
-                <h1 class="font-futura text-[104px] leading-[0.88] tracking-[-5px] uppercase text-ink">Contact Us</h1>
-                <p class="font-geist font-normal text-sm leading-[1.4]">
-                    For PR/Marketing inquiries please contact <a href="mailto:Marketing@thetacoproject.com" class="underline decoration-solid">Marketing@thetacoproject.com</a>.
-                </p>
+            <div class="flex flex-col gap-5 items-start text-ink mb-[52px]">
+                <h1 class="font-futura text-6xl md:text-[104px] leading-none tracking-tight uppercase text-ink">Contact Us</h1>
+                <p class="font-geist font-normal text-sm leading-5 mt-2">For PR/Marketing inquiries please contact <a href="mailto:Marketing@thetacoproject.com" class="underline decoration-solid">Marketing@thetacoproject.com</a>.</p>
             </div>
-            <form class="mx-auto flex flex-col gap-[30px]">
 
+
+
+            <form id="contact-form" name="contact" method="POST" action="/contact/?success=true" data-netlify="true" netlify-honeypot="bot-field" class="mx-auto flex flex-col gap-[30px]">
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
 
                 <!-- First Name, Last Name -->
-                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                <div class="flex flex-col md:flex-row gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label for="first_name" class="font-geist font-normal text-sm leading-5 text-ink">First Name*</label>
                         <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
@@ -29,7 +33,7 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                 </div>
 
                 <!-- Company or Organization, Email -->
-                <div class="flex flex-col lg:flex-row gap-6 w-full">
+                <div class="flex flex-col md:flex-row gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label for="company" class="font-geist font-normal text-sm leading-5 text-ink">Company or Organization</label>
                         <input type="text" id="company" name="company" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
@@ -47,35 +51,78 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                         <input type="tel" id="phone" name="phone" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="store_location" class="font-geist font-normal text-sm leading-5 text-ink">Related Store Location (if any)</label>
-                        <select
-                            id="store_location"
-                            name="store_location"
-                            class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%23202020%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:20px] bg-[right_20px_center] bg-no-repeat pr-10">
-                            <option value="">Choose a location...</option>
-                            <option value="bronxville">Bronxville, NY</option>
-                            <option value="new_rochelle">New Rochelle, NY</option>
-                            <option value="pleasantville">Pleasantville, NY</option>
-                            <option value="stamford">Stamford, CT</option>
-                            <option value="tarrytown">Tarrytown, NY</option>
-                            <option value="yonkers">Yonkers, NY</option>
-                        </select>
+                        <label class="font-geist font-normal text-sm leading-5 text-ink">Related Store Location (if any)</label>
+                        <div class="relative" data-dropdown="store_location">
+                            <button type="button" class="bg-crema rounded-lg px-6 py-4 w-full font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition cursor-pointer flex justify-between items-center" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="dropdown-label text-ink/50">Choose a location...</span>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <input type="hidden" name="store_location" id="store_location" />
+                            <div class="dropdown-menu absolute left-0 right-0 top-full mt-1 bg-crema rounded-lg shadow-lg z-20 hidden overflow-hidden">
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="Bronxville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Bronxville, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="New Rochelle, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">New Rochelle, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="Pleasantville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Pleasantville, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="Stamford, CT" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Stamford, CT</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="Tarrytown, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Tarrytown, NY</span>
+                                </label>
+                                <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
+                                    <input type="radio" name="store_location_radio" value="Yonkers, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <span class="font-geist text-sm text-ink">Yonkers, NY</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
            
 
-            <!-- Fourth Row: Message -->
-            <div class="flex flex-col gap-3.5 w-full">
-                <label for="message" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Message</label>
-                <textarea id="message" name="message" required rows="6" class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                <!-- Fourth Row: Message -->
+                <div class="flex flex-col gap-3.5 w-full">
+                    <label for="message" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Message</label>
+                    <textarea id="message" name="message" required rows="6" class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-start">
+                    <button type="submit" class="bg-hot-sauce text-crema rounded-lg px-5 py-2 font-geist font-normal text-sm leading-5 uppercase hover:opacity-90 transition-opacity cursor-pointer">Submit Form</button>
+                </div>
+            </form>
+
+
+            <div id="contact-success" role="status" aria-live="polite" class="hidden flex">
+                <div class="max-w-2xl bg-crema border border-hot-sauce/40 rounded-2xl px-6 py-8 flex flex-col gap-4 shadow-md">
+                    <p class="font-futura text-hot-sauce text-4xl leading-tight uppercase">Got it!</p>
+                    <p class="font-geist text-ink text-sm leading-5">
+                        Thank you for contacting us! We've received your message and someone from our team will be in touch soon.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/" class="btn btn-primary inline-flex items-center gap-2 bg-hot-sauce text-crema font-geist text-sm uppercase px-6 py-3 hover:opacity-90 transition-opacity w-fit">
+                            Back to Home
+                            <svg class="w-4 h-4" aria-hidden="true" focusable="false">
+                                <use href="#icon-arrow-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <!-- Submit Button -->
-            <div class="flex justify-start">
-                <button type="submit" class="bg-hot-sauce btn btn-primary text-crema rounded-[8px] px-[20px] py-[8px] h-[44px] flex items-center gap-[8.877px] font-geist font-normal text-[14.203px] leading-[1.4] uppercase hover:opacity-90 transition-opacity">submit form</button>
-            </div>
-        </form>
+
         </div>
 
     </section>
@@ -83,3 +130,49 @@ import InstagramFeed from "../components/InstagramFeed.astro";
     <StoreLocator />
     <InstagramFeed />
 </BaseLayout>
+
+<script>
+    // Show success message if form was submitted
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        document.getElementById('contact-form')?.classList.add('hidden');
+        document.getElementById('contact-success')?.classList.remove('hidden');
+    }
+
+    // Store Location dropdown
+    document.querySelectorAll('[data-dropdown="store_location"]').forEach((dropdown) => {
+        const button = dropdown.querySelector('button');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const label = dropdown.querySelector('.dropdown-label');
+        const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+        const radios = dropdown.querySelectorAll('input[type="radio"]');
+        const chevron = button?.querySelector('svg');
+
+        button?.addEventListener('click', () => {
+            const isOpen = menu?.classList.contains('hidden') === false;
+            menu?.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', String(!isOpen));
+            chevron?.classList.toggle('rotate-180', !isOpen);
+        });
+
+        radios.forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (label && hiddenInput) {
+                    label.textContent = radio.value;
+                    label.classList.remove('text-ink/50');
+                    label.classList.add('text-ink');
+                    hiddenInput.value = radio.value;
+                }
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                menu?.classList.add('hidden');
+                button?.setAttribute('aria-expanded', 'false');
+                chevron?.classList.remove('rotate-180');
+            }
+        });
+    });
+</script>
