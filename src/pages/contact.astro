@@ -48,7 +48,17 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                 <div class="flex gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label for="phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            pattern="^\d{3}-\d{3}-\d{4}$"
+                            title="Please enter a 10-digit phone number (e.g., 914-555-1234)."
+                            maxlength="12"
+                            class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50"
+                        />
                     </div>
                     <div class="flex-1 flex flex-col gap-3.5">
                         <label class="font-geist font-normal text-sm leading-5 text-ink">Related Store Location (if any)</label>
@@ -62,27 +72,27 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                             <input type="hidden" name="store_location" id="store_location" />
                             <div class="dropdown-menu absolute left-0 right-0 top-full mt-1 bg-crema rounded-lg shadow-lg z-20 hidden overflow-hidden">
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="Bronxville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="Bronxville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">Bronxville, NY</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="New Rochelle, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="New Rochelle, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">New Rochelle, NY</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="Pleasantville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="Pleasantville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">Pleasantville, NY</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="Stamford, CT" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="Stamford, CT" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">Stamford, CT</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="Tarrytown, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="Tarrytown, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">Tarrytown, NY</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
-                                    <input type="radio" name="store_location_radio" value="Yonkers, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="radio" name="store_location_ui" value="Yonkers, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">Yonkers, NY</span>
                                 </label>
                             </div>
@@ -94,8 +104,8 @@ import InstagramFeed from "../components/InstagramFeed.astro";
 
                 <!-- Fourth Row: Message -->
                 <div class="flex flex-col gap-3.5 w-full">
-                    <label for="message" class="font-geist font-normal text-sm leading-[1.4] uppercase text-ink">Message</label>
-                    <textarea id="message" name="message" required rows="6" class="bg-crema rounded-[8px] px-[20px] py-[12px] font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                    <label for="message" class="font-geist font-normal text-sm leading-[1.4] text-ink">Comments</label>
+                    <textarea id="message" name="message" required rows="6" class="bg-crema rounded-lg px-5 py-3 font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
                 </div>
 
                 <!-- Submit Button -->
@@ -175,4 +185,33 @@ import InstagramFeed from "../components/InstagramFeed.astro";
             }
         });
     });
+
+    // Phone number masking (###-###-####)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput instanceof HTMLInputElement) {
+        const formatPhone = (value) => {
+            const digits = value.replace(/\D/g, '').slice(0, 10);
+            const parts = [];
+            if (digits.length > 0) parts.push(digits.slice(0, Math.min(3, digits.length)));
+            if (digits.length > 3) parts.push(digits.slice(3, Math.min(6, digits.length)));
+            if (digits.length > 6) parts.push(digits.slice(6, 10));
+            return parts.join('-');
+        };
+
+        phoneInput.addEventListener('input', () => {
+            const formatted = formatPhone(phoneInput.value);
+            phoneInput.value = formatted;
+        });
+    }
+
+    // Email normalization
+    const emailInput = document.getElementById('email');
+    if (emailInput instanceof HTMLInputElement) {
+        const normalizeEmail = () => {
+            emailInput.value = emailInput.value.trim().toLowerCase();
+        };
+
+        emailInput.addEventListener('blur', normalizeEmail);
+        emailInput.addEventListener('change', normalizeEmail);
+    }
 </script>

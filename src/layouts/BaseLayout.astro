@@ -11,7 +11,7 @@ interface Props {
     schema?: Record<string, any>;
 }
 
-const { title = "The Taco Project", description = "Authentic tacos and Mexican cuisine in Westchester and Fairfield counties. Fresh ingredients, bold flavors, and unforgettable experiences.", ogImage = "/og-image.jpg", ogUrl = Astro.url.href, ogType = "website", schema } = Astro.props;
+const { title = "The Taco Project", description = "Authentic tacos and Mexican cuisine in Westchester and Fairfield counties. Fresh ingredients, bold flavors, and unforgettable experiences.", ogImage = "/the-taco-project-social-share.jpg", ogUrl = Astro.url.href, ogType = "website", schema } = Astro.props;
 
 const siteName = "The Taco Project";
 ---
@@ -68,7 +68,7 @@ const siteName = "The Taco Project";
         <!-- Header with Mega Menu -->
         <header class="bg-ink sticky top-0 z-50" id="site-header">
             <!-- Top Nav Bar -->
-            <div class="py-[24px] border-b border-white/10">
+            <div class="py-6 border-b border-white/10">
                 <div class="flex justify-between items-center px-9 md:px-12">
                     <!-- Logo -->
                     <a href="/" class="text-crema font-futura font-black text-3xl lg:text-4xl tracking-tighter uppercase leading-none">
@@ -119,22 +119,22 @@ const siteName = "The Taco Project";
             </div>
 
             <!-- Desktop Mega Menu - Locations -->
-            <div id="mega-menu-locations" class="mega-menu-panel hidden absolute left-0 right-0 overflow-hidden transition-all duration-300 ease-out" data-menu="locations">
+            <div id="mega-menu-locations" class="mega-menu-panel absolute left-0 right-0 overflow-hidden z-50" data-menu="locations">
                 <div class="bg-ink border-t border-white/10">
                     <div class="flex">
                         <!-- Image Column -->
-                        <div class="w-1/2 bg-crema">
+                        <div class="w-1/2">
                             <img src="/locations-megamenu.webp" alt="The Taco Project Locations" class="w-full object-cover max-w-2xs" loading="lazy" decoding="async" />
                         </div>
                         <!-- Links Column -->
                         <div class="w-1/2 py-10 px-12">
                             <ul class="list-none flex flex-col gap-1">
-                                <li><a href="/tarrytown-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">TARRYTOWN, NY</a></li>
-                                <li><a href="/yonkers-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">YONKERS, NY</a></li>
-                                <li><a href="/pleasantville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">PLEASANTVILLE, NY</a></li>
-                                <li><a href="/bronxville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">BRONXVILLE, NY</a></li>
-                                <li><a href="/new-rochelle-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">NEW ROCHELLE, NY</a></li>
-                                <li><a href="/stamford-ct/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] text-3xl uppercase tracking-tight leading-[1.1] transition-colors">STAMFORD, CT</a></li>
+                                <li><a href="/tarrytown-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors text-">TARRYTOWN, NY</a></li>
+                                <li><a href="/yonkers-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">YONKERS, NY</a></li>
+                                <li><a href="/pleasantville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">PLEASANTVILLE, NY</a></li>
+                                <li><a href="/bronxville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">BRONXVILLE, NY</a></li>
+                                <li><a href="/new-rochelle-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">NEW ROCHELLE, NY</a></li>
+                                <li><a href="/stamford-ct/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">STAMFORD, CT</a></li>
                             </ul>
                         </div>
                     </div>
@@ -142,10 +142,10 @@ const siteName = "The Taco Project";
             </div>
 
             <!-- Mobile Menu Panel -->
-            <div id="mobile-menu-panel" class="lg:hidden hidden">
-                <div class="bg-ink border-t border-white/10 px-9 py-8">
-                    <nav class="flex flex-col gap-4">
-                        <a href="/menu" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] uppercase tracking-tight leading-[0.96] transition-colors">Our Menu</a>
+            <div id="mobile-menu-panel" class="mobile-menu-panel lg:hidden">
+                <div class="bg-ink border-t border-white/10 px-9">
+                    <nav class="flex flex-col gap-3.5 py-8">
+                        <a href="/menu" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[0.96] transition-colors">Our Menu</a>
 
                         <!-- Mobile Locations Dropdown -->
                         <div class="mobile-dropdown">
@@ -155,18 +155,20 @@ const siteName = "The Taco Project";
                                     <path d="M4.5 6L8 9.5L11.5 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
                             </button>
-                            <div id="mobile-locations" class="mobile-dropdown-content hidden pl-4 pt-2 flex flex-col gap-1">
-                                <a href="/tarrytown-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">TARRYTOWN, NY</a>
-                                <a href="/yonkers-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">YONKERS, NY</a>
-                                <a href="/pleasantville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">PLEASANTVILLE, NY</a>
-                                <a href="/bronxville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">BRONXVILLE, NY</a>
-                                <a href="/new-rochelle-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">NEW ROCHELLE, NY</a>
-                                <a href="/stamford-ct/" class="text-crema hover:text-hot-sauce font-futura font-black text-[24px] uppercase tracking-tight leading-[1.2] transition-colors">STAMFORD, CT</a>
+                            <div id="mobile-locations" class="mobile-dropdown-content">
+                                <div class="mobile-dropdown-inner pl-4 flex flex-col gap-1">
+                                    <a href="/tarrytown-ny/" class="text-crema pt-2 hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">TARRYTOWN, NY</a>
+                                    <a href="/yonkers-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">YONKERS, NY</a>
+                                    <a href="/pleasantville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">PLEASANTVILLE, NY</a>
+                                    <a href="/bronxville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">BRONXVILLE, NY</a>
+                                    <a href="/new-rochelle-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">NEW ROCHELLE, NY</a>
+                                    <a href="/stamford-ct/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[1.2] transition-colors">STAMFORD, CT</a>
+                                </div>
                             </div>
                         </div>
-                        <a href="/catering/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] uppercase tracking-tight leading-[0.96] transition-colors">Catering</a>
-                        <a href="/food-truck/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] uppercase tracking-tight leading-[0.96] transition-colors">The Truck</a>
-                        <a href="/contact/" class="text-crema hover:text-hot-sauce font-futura font-black text-[32px] uppercase tracking-tight leading-[0.96] transition-colors">Contact</a>
+                        <a href="/catering/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[0.96] transition-colors">Catering</a>
+                        <a href="/food-truck/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[0.96] transition-colors">The Truck</a>
+                        <a href="/contact/" class="text-crema hover:text-hot-sauce font-futura font-black text-3xl uppercase tracking-tight leading-[0.96] transition-colors">Contact</a>
 
                         <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn flex items-center text-white gap-2 mt-4 w-fit" style="background-color: var(--color-ocean);">
                             Order Online
@@ -181,6 +183,41 @@ const siteName = "The Taco Project";
 
         <!-- Mega Menu Styles and Scripts -->
         <style>
+            /* Mega menu slide animation */
+            .mega-menu-panel {
+                display: grid;
+                grid-template-rows: 0fr;
+                opacity: 0;
+                visibility: hidden;
+                transition: grid-template-rows 0.3s ease-out, opacity 0.25s ease-out, visibility 0.3s;
+                z-index: 100;
+            }
+            .mega-menu-panel.is-open {
+                grid-template-rows: 1fr;
+                opacity: 1;
+                visibility: visible;
+            }
+            .mega-menu-panel > div {
+                overflow: hidden;
+            }
+
+            /* Mobile menu panel slide animation */
+            .mobile-menu-panel {
+                display: grid;
+                grid-template-rows: 0fr;
+                opacity: 0;
+                visibility: hidden;
+                transition: grid-template-rows 0.3s ease-out, opacity 0.25s ease-out, visibility 0.3s;
+            }
+            .mobile-menu-panel.is-open {
+                grid-template-rows: 1fr;
+                opacity: 1;
+                visibility: visible;
+            }
+            .mobile-menu-panel > div {
+                overflow: hidden;
+            }
+
             /* Arrow rotation when menu is open */
             .mega-menu-trigger[aria-expanded="true"] .mega-menu-arrow {
                 transform: rotate(180deg);
@@ -196,6 +233,19 @@ const siteName = "The Taco Project";
             .mobile-dropdown-trigger[aria-expanded="true"] {
                 color: var(--color-hot-sauce);
             }
+
+            /* Mobile dropdown slide animation */
+            .mobile-dropdown-content {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.3s ease-out;
+            }
+            .mobile-dropdown-content.is-open {
+                grid-template-rows: 1fr;
+            }
+            .mobile-dropdown-content > .mobile-dropdown-inner {
+                overflow: hidden;
+            }
         </style>
 
         <script>
@@ -210,7 +260,7 @@ const siteName = "The Taco Project";
                     // Close all other menus first
                     panels.forEach((panel) => {
                         if (panel.getAttribute("data-menu") !== menuId) {
-                            panel.classList.add("hidden");
+                            panel.classList.remove("is-open");
                         }
                     });
                     triggers.forEach((trigger) => {
@@ -223,7 +273,7 @@ const siteName = "The Taco Project";
                     const panel = document.getElementById(`mega-menu-${menuId}`);
                     const trigger = document.querySelector(`.mega-menu-trigger[data-menu="${menuId}"]`);
                     if (panel && trigger) {
-                        panel.classList.remove("hidden");
+                        panel.classList.add("is-open");
                         trigger.setAttribute("aria-expanded", "true");
                         activeMenu = menuId;
                     }
@@ -233,7 +283,7 @@ const siteName = "The Taco Project";
                     const panel = document.getElementById(`mega-menu-${menuId}`);
                     const trigger = document.querySelector(`.mega-menu-trigger[data-menu="${menuId}"]`);
                     if (panel && trigger) {
-                        panel.classList.add("hidden");
+                        panel.classList.remove("is-open");
                         trigger.setAttribute("aria-expanded", "false");
                         if (activeMenu === menuId) {
                             activeMenu = null;
@@ -242,7 +292,7 @@ const siteName = "The Taco Project";
                 }
 
                 function closeAllMenus() {
-                    panels.forEach((panel) => panel.classList.add("hidden"));
+                    panels.forEach((panel) => panel.classList.remove("is-open"));
                     triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
                     activeMenu = null;
                 }
@@ -313,7 +363,7 @@ const siteName = "The Taco Project";
                 mobileToggle?.addEventListener("click", () => {
                     const isOpen = mobileToggle.getAttribute("aria-expanded") === "true";
                     mobileToggle.setAttribute("aria-expanded", (!isOpen).toString());
-                    mobilePanel?.classList.toggle("hidden");
+                    mobilePanel?.classList.toggle("is-open");
                     hamburgerIcon?.classList.toggle("hidden");
                     closeIcon?.classList.toggle("hidden");
                 });
@@ -327,8 +377,66 @@ const siteName = "The Taco Project";
                         const isOpen = trigger.getAttribute("aria-expanded") === "true";
 
                         trigger.setAttribute("aria-expanded", (!isOpen).toString());
-                        dropdown?.classList.toggle("hidden");
+                        dropdown?.classList.toggle("is-open");
                     });
+                });
+
+                // Newsletter Form AJAX Submission
+                const newsletterForm = document.getElementById("sib-form") as HTMLFormElement;
+                const submitBtn = document.getElementById("submit-btn");
+                const formError = document.getElementById("form-error");
+                const formSuccess = document.getElementById("form-success");
+
+                newsletterForm?.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(newsletterForm);
+                    const emailInput = document.getElementById("EMAIL") as HTMLInputElement;
+                    
+                    // Check honeypot field (spam protection)
+                    if (formData.get("email_address_check")) {
+                        return;
+                    }
+
+                    // Disable button and show loading state
+                    if (submitBtn) {
+                        submitBtn.textContent = "Sending...";
+                        submitBtn.setAttribute("disabled", "true");
+                        submitBtn.classList.add("opacity-50");
+                    }
+
+                    // Hide any previous errors
+                    formError?.classList.add("hidden");
+
+                    try {
+                        const response = await fetch(newsletterForm.action, {
+                            method: "POST",
+                            body: formData,
+                            mode: "no-cors" // Brevo doesn't support CORS, so we use no-cors
+                        });
+
+                        // With no-cors mode, we can't read the response, but the request goes through
+                        // Hide the form and show success message
+                        newsletterForm.classList.add("hidden");
+                        formSuccess?.classList.remove("hidden");
+                        
+                        // Clear the input
+                        if (emailInput) emailInput.value = "";
+
+                    } catch (error) {
+                        // Show error message
+                        if (formError) {
+                            formError.textContent = "Something went wrong. Please try again.";
+                            formError.classList.remove("hidden");
+                        }
+                        
+                        // Reset button
+                        if (submitBtn) {
+                            submitBtn.textContent = "Submit";
+                            submitBtn.removeAttribute("disabled");
+                            submitBtn.classList.remove("opacity-50");
+                        }
+                    }
                 });
             });
         </script>
@@ -381,20 +489,29 @@ const siteName = "The Taco Project";
                     </div>
                     <div class="flex flex-col gap-4 w-full lg:max-w-96 order-first lg:order-0 justify-between">
                         <!-- subscribe to email list -->
-                        <div class="flex flex-col gap-4 w-full">
-                            <h5 class="font-holiday text-tortilla text-2xl tracking-tight">Join the project</h5>
+                        <div class="flex flex-col gap-2 w-full" id="newsletter-container">
+                            <h5 class="font-holiday text-tortilla text-4xl tracking-normal font-light -rotate-4 mb-3 md:mb-2">Join the project</h5>
                             <form class="flex flex-col gap-2" id="sib-form" method="POST" action="https://c4ded333.sibforms.com/serve/MUIFAI-bIopcgdPu_2EJ1UQlO5kBLqMTig4ank1tduZbMD-quKmFlH9hJbx5pBBB4HFOuLFtDmIxfMHjVXCyk1EIEqTO2owa0ZXmURSvsDdp_DZhvBQz6z5anWsEqljJVTW49j4Z5Z4_lG0nTN4ENriOZCzFHUj33m_gCMsZqQK0cKgCt6KX5EDT5wGIrTS1F89wtWdztP9QR6CN">
                                 <!-- email input -->
-                                <input class="input bg-tortilla rounded-lg py-2.5 px-4 font-geist font-normal text-sm leading-normal tracking-normal align-middle" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                                <input class="input bg-tortilla rounded-lg py-2.5 px-5 font-geist font-normal text-sm leading-normal tracking-normal align-middle" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="EMAIL" data-required="true" required />
                                 <!-- error message -->
-                                <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
+                                <div id="form-error" class="hidden text-sm font-geist text-hot-sauce"></div>
 
                                 <input type="text" name="email_address_check" value="" class="input--hidden hidden" />
                                 <input type="hidden" name="locale" value="en" />
                                 <input type="hidden" name="html_type" value="simple" />
 
-                                <button type="submit" form="sib-form" class="bg-ocean rounded-lg py-2 px-5 font-geist font-normal text-sm leading-[140%] uppercase text-crema">Submit</button>
+                                <button type="submit" id="submit-btn" class="bg-ocean rounded-lg py-2 px-5 font-geist font-normal text-sm leading-[140%] uppercase text-crema transition-opacity flex items-center justify-between min-h-10 cursor-pointer">
+                                    Submit
+                                    <svg class="w-3 h-3" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#icon-arrow-right"></use>
+                                    </svg>
+                                </button>
                             </form>
+                            <!-- Success message (hidden by default) -->
+                            <div id="form-success" class="hidden bg-tortilla text-ink font-geist text-sm tracking-tight px-3 py-2">
+                                Thanks! Check your inbox for a confirmation 🌮
+                            </div>
                         </div>
                         <!-- social media icons -->
                         <div class="flex gap-4 justify-end">

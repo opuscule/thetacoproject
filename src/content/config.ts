@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const reviews = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.number(),
+    list_title: z.string(),
     created_at: z.string(),
     display: z.boolean(),
     name: z.string(),

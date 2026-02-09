@@ -99,7 +99,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
             <!-- Tacos -->
-            <div class="mb-12">
+            <div class="mb-16 md:mb-22">
                 <p class="font-holiday text-citrus text-5xl leading-tight -rotate-2 mb-4">Tacos</p>
                 <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">all tacos are two-to-an-order, and served on yellow corn tortillas</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
@@ -146,35 +146,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
             </div>
 
-            <div class="mb-12 bg-tortilla px-6 pt-4 pb-8">
-                <p class="font-holiday text-citrus text-5xl leading-none mb-4 -rotate-2">Birria</p>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                    <li class="flex flex-col gap-1 mb-4">
-                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Tacos</p>
-                        <p class="font-geist text-citrus text-sm leading-5 lowercase">3 tacos, slow cooked beef brisket, with melted oaxaca cheese, white onion, and cilantro, served on corn tortillas dipped in consommé and grilled pressed</p>
-                    </li>
-                    <li class="flex flex-col gap-1">
-                        <p class="font-futura text-citrus text-menuitem text-3xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Burrito</p>
-                    </li>
-                    <li class="flex flex-col gap-1">
-                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Bowl</p>
-                    </li>
-                    <li class="flex flex-col gap-1">
-                        <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Quesadilla</p>
-                    </li>
-                </ul>
-            </div>
-
-
-
-            <!-- Birria, burritos -->
             <div class="mb-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
                     <div class="">
                         <p class="font-holiday text-citrus text-5xl leading-none -rotate-2 mb-4">Burritos</p>
                         <ul class="flex flex-col mb-4 md:mb-0">
                             <li class="flex flex-col gap-1 mb-4">
-                                <p class="font-geist text-citrus text-sm leading-5 lowercase">All Burritos are filled to order, in a Flour Tortilla, and served with Rice, Beans, Cotija Cheese, Sour Cream, and your Favorite Protein.</p>
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase text-pretty">All Burritos are filled to order, in a Flour Tortilla, and served with Rice, Beans, Cotija Cheese, Sour Cream, and your Favorite Protein.</p>
                             </li>
                             <li class="flex flex-col gap-1">
                                 <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
@@ -191,32 +169,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         </ul>
                     </div>
 
-                    <div class="">
+                    <div class="mt-12 md:mt-0">
                         <p class="font-holiday text-citrus text-5xl leading-none -rotate-2 mb-4">Burrito Bowls</p>
                         <ul class="flex flex-col mb-4 md:mb-0">
                             <li class="flex flex-col gap-1 mb-4">
-                                <p class="font-geist text-citrus text-sm leading-5 lowercase">All Bowls are filled to order, in a Flour Tortilla Shell, and served with Rice, Beans, Queso Fresco Cheese, Sour Cream, Radish, Cilantro, and your Favorite Protein.</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Chicken</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Battered Shrimp</p>
-                            </li>
-                            <li class="flex flex-col gap-1">
-                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Vegetable</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="">
-                        <p class="font-holiday text-citrus text-5xl leading-none -rotate-2 mb-4">Quesadillas</p>
-                        <ul class="flex flex-col mb-4 md:mb-0">
-                            <li class="flex flex-col gap-1 mb-4">
-                                <p class="font-geist text-citrus text-sm leading-5 lowercase">flour tortillas with cheese with side of sour cream and pico de gallo</p>
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase text-pretty">All Bowls are filled to order, in a Flour Tortilla Shell, and served with Rice, Beans, Queso Fresco Cheese, Sour Cream, Radish, Cilantro, and your Favorite Protein.</p>
                             </li>
                             <li class="flex flex-col gap-1">
                                 <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
@@ -236,6 +193,55 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
 
 
+            <div class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+                    <div class="bg-tortilla px-6 pt-4 pb-8">
+                        <p class="font-holiday text-citrus text-5xl leading-none mb-4 -rotate-2">Birria</p>
+                        <ul class="">
+                            <li class="flex flex-col gap-1 mb-4">
+                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Tacos</p>
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase text-pretty">3 tacos, slow cooked beef brisket, with melted oaxaca cheese, white onion, and cilantro, served on corn tortillas dipped in consommé and grilled pressed</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-menuitem text-3xl tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Burrito</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Bowl</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-menuitem tracking-tight leading-none md:leading-10 mb-0 md:mb-1">Birria Quesadilla</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-12 md:mt-0">
+                        <p class="font-holiday text-citrus text-5xl leading-none -rotate-2 mb-4">Quesadillas</p>
+                        <ul class="flex flex-col mb-4 md:mb-0">
+                            <li class="flex flex-col gap-1 mb-4">
+                                <p class="font-geist text-citrus text-sm leading-5 lowercase text-pretty">flour tortillas with cheese with side of sour cream and pico de gallo</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Steak</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Chicken</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Battered Shrimp</p>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <p class="font-futura text-citrus text-3xl tracking-tight leading-none md:leading-10">Vegetable</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            
 
 
             <!-- salads, kids -->
@@ -255,7 +261,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="mt-12 md:mt-0">
                         <p class="font-holiday text-citrus text-5xl leading-none -rotate-2 mb-4">Kids Meal Boxes</p>
                         <p class="font-geist text-citrus text-sm leading-[1.4] lowercase">Includes choice of Water Bottle, Aqua Fresca (12oz), or Honest Kids drink. (No Substitutes)</p>
                         <ul class="flex flex-col gap-y-3">
@@ -588,7 +594,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         <p class="font-holiday text-hot-sauce text-5xl leading-none rotate-358 mt-10 md:mt-1">8 to 10pm</p>
                         <ul class="flex flex-col gap-y-4">
                             <li class="flex flex-col gap-4">
-                                <p class="font-futura text-hot-sauce text-4xl tracking-tight leading-10">Half-Priced Pitchers</p>
+                                <li class="flex gap-3 items-baseline">
+                                    <p class="font-futura text-hot-sauce text-4xl tracking-tight leading-10">Half-Priced Pitchers</p>
+                                        <p class="font-geist text-hot-sauce text-sm leading-5 lowercase">$30</p>
+                                    </li>
                                 <p class="font-geist text-hot-sauce text-sm leading-5 lowercase">any flavor margarita, sangria, or our house beers</p>
                             </li>
                         </ul>

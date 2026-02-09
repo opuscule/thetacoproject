@@ -1,11 +1,11 @@
 {
-  "id": 34,
-  "created_at": "2025-12-30 16:45:16.849258+00",
+  "list_title": "Restaurant - Stamford - David C.",
+  "created_at": "2025-12-30",
   "display": true,
-  "name": "Placeholder4",
-  "quote": "Aliquam consectetur, enim a tincidunt scelerisque, erat nibh mattis quam, quis convallis elit ipsum sed urna. Integer rhoncus tristique nulla, eget varius dolor laoreet vitae.",
+  "name": "David C.",
+  "quote": "Delicious and reliable food always a good time whenever I come in with friends or on my lunch break. Staff is awesome and the atmosphere is great. A nice spot to eat and grab a drink, highly recommend the grilled chicken bowl and the Flan",
   "platform": "Google",
-  "link": "https://www.google.com",
+  "link": "https://maps.app.goo.gl/d5Dj2ohNP8j2RYAx8",
   "location": "Stamford",
   "type": "Restaurant"
 }

@@ -1,11 +1,11 @@
 {
-  "id": 30,
-  "created_at": "2025-12-30 16:45:16.849258+00",
+  "list_title": "Restaurant - Pleasantville - Kyri A.",
+  "created_at": "2025-12-30",
   "display": true,
-  "name": "Placeholder4",
-  "quote": "Aliquam consectetur, enim a tincidunt scelerisque, erat nibh mattis quam, quis convallis elit ipsum sed urna. Integer rhoncus tristique nulla, eget varius dolor laoreet vitae.",
+  "name": "Kyri A.",
+  "quote": "Best tacos I’ve had outside LA!! Such a cute little hidden gem with great vibes. Highly recommend the Mexican corn and ask for a spicy margarita with pineapple if that’s your thing!",
   "platform": "Google",
-  "link": "https://www.google.com",
+  "link": "https://maps.app.goo.gl/zTyJsZspD59XP3u1A",
   "location": "Pleasantville",
   "type": "Restaurant"
 }

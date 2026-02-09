@@ -1,11 +1,11 @@
 {
-  "id": 28,
-  "created_at": "2025-12-30 16:44:06.493684+00",
+  "list_title": "Restaurant - Pleasantville - Rudy D.",
+  "created_at": "2025-12-30",
   "display": true,
-  "name": "Placeholder2",
-  "quote": "Fusce vel augue quis sem varius maximus sodales vel metus. Quisque bibendum urna a euismod lobortis. Donec suscipit eros a nibh facilisis rhoncus.",
+  "name": "Rudy D.",
+  "quote": "My lady and I had such an amazing experience here today! Lily, our server was so friendly and thorough and made us super delicious margaritas! The food was fresh and plated beautifully! Thank you Lily for making our experience extraordinary! We will be back to see her!",
   "platform": "Google",
-  "link": "https://www.google.com/",
+  "link": "https://maps.app.goo.gl/aoEt9ASZpV76JUvG6",
   "location": "Pleasantville",
   "type": "Restaurant"
 }

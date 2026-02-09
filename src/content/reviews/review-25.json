@@ -1,11 +1,11 @@
 {
-  "id": 25,
-  "created_at": "2025-12-30 16:44:44.230405+00",
+  "list_title": "Restaurant - New Rochelle - M.D.",
+  "created_at": "2025-12-30",
   "display": true,
-  "name": "Placeholder3",
-  "quote": "Nunc sit amet pellentesque purus. Vestibulum in commodo purus, in ultricies justo.",
-  "platform": "Google",
-  "link": "https://www.google.com",
+  "name": "M.D.",
+  "quote": "This has to be my favorite spot to go to when I don't know what to eat. The food is amazing, the servers are too. Melany was my first server there, she was so kind and fast. She wasn't bothered whenever I asked a lot of questions, and she even recommended me a delicious drink. Props to her! I will be coming over more often.",
+  "platform": "Yelp",
+  "link": "https://www.yelp.com/biz/the-taco-project-new-rochelle?hrid=cM4OrgCmwIslfWezn9kFdA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
   "location": "New Rochelle",
   "type": "Restaurant"
 }

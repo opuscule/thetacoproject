@@ -5,6 +5,7 @@ import PressTicker from "../components/PressTicker.astro";
 import CateringCTA from "../components/CateringCTA.astro";
 import InstagramFeed from "../components/InstagramFeed.astro";
 import TestimonialSlider from "../components/TestimonialSlider.astro";
+import ScrollWiggle from "../components/ScrollWiggle.astro";
 import { getEntry } from 'astro:content';
 
 const tacoOfTheMonth = await getEntry('taco-of-the-month', 'index');
@@ -54,7 +55,7 @@ const schema = {
             </div>
         </div>
 
-        <div class="container z-50 absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <div class="container z-40 absolute bottom-12 left-1/2 transform -translate-x-1/2">
             <div class="flex gap-2 align-center justify-center">
                 <a href="https://order.toasttab.com/online/locations/dda922d3-35f1-4612-9446-bc35a1067a2c/50800ece-71d9-4702-84df-812f4cc7d767" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     Order Online
@@ -179,7 +180,10 @@ const schema = {
             </div>
         </div>
         <!-- Column 2: Image -->
-        <div class="flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/created-you.webp')]"></div>
+        <div class="relative flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/interior-home.webp')]">
+
+            <ScrollWiggle icon="/icon-skull-crema.svg" class="absolute max-w-32 top-1/2 left-2/5 transform -translate-x-4 -translate-y-1/2" size="120px" />
+        </div>
     </section>
 
     <TestimonialSlider />
@@ -191,9 +195,11 @@ const schema = {
         <div class="flex-1 min-h-96 md:min-h-auto bg-cover bg-center bg-[url('/mexican-food-truck-my.webp')]"></div>
         <!-- Column 2: Content (max-width 35%) -->
         <div class="w-full md:max-w-[calc(var(--max-content-width)*0.35)] p-6">
-            <div class="flex flex-col justify-between h-full gap-8 md:gap-0">
-                <h2 class="text-ocean font-futura text-6xl md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance">The Taco Truck</h2>
-                <div class="flex flex-col gap-4">
+            <div class="flex flex-col justify-between h-full gap-8 md:gap-0 relative">
+                <ScrollWiggle icon="/icon-truck-ocean.svg" class="absolute max-w-[150px] right-[5%] top-[30%] hidden md:inline-block" size="150px" />
+                <h2 class="text-ocean font-futura text-6xl md:text-[96px] font-[950] leading-[88%] tracking-tight uppercase text-balance mb-24 md:mb-56">The Taco Truck</h2>
+                <div class="flex flex-col gap-4">                    
+
                     <div class="text-ocean font-holiday text-5xl font-normal leading-14 rotate-[-4deg]">Let's book your event!</div>
 
                     <p class="font-geist text-ink text-sm leading-[1.4] lowercase">Whether you're hosting a private party, corporate event, or special celebration, The Taco Project's brand-new food truck brings our authentic, Mexican-inspired flavors directly to you.</p>

@@ -144,8 +144,6 @@ import ScrollWiggle from "../components/ScrollWiggle.astro";
                             autocomplete="email"
                             spellcheck="false"
                             autocapitalize="none"
-                            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-                            title="Enter a valid email (e.g., you@example.com)."
                             class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50"
                         />
                     </div>
@@ -224,7 +222,7 @@ import ScrollWiggle from "../components/ScrollWiggle.astro";
                                     <span class="font-geist text-sm text-ink">New Rochelle, NY</span>
                                 </label>
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors border-t border-ink/10">
-                                    <input type="checkbox" name="location[]" value="No Preference" class="w-4 h-4 accent-ocean cursor-pointer" />
+                                    <input type="checkbox" name="location[]" value="no_preference" class="w-4 h-4 accent-ocean cursor-pointer" />
                                     <span class="font-geist text-sm text-ink">No Preference</span>
                                 </label>
                             </div>
