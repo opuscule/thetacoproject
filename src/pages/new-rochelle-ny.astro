@@ -4,6 +4,7 @@ import StoreSlider from "../components/StoreSlider.astro";
 import CateringCTA from "../components/CateringCTA.astro";
 import TestimonialSlider from "../components/TestimonialSlider.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollWiggle from "../components/ScrollWiggle.astro";
 import { getCollection } from "astro:content";
 
 // Fetch reviews for schema markup (separate from slider which handles its own fetch)
@@ -38,7 +39,7 @@ const aggregateRating = {
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "The Taco Project - New Rochelle",
-        "image": "https://thetacoproject.com/new-rochelle_banner.jpg",
+        "image": "https://thetacoproject.com/new-rochelle/mexican-restaurant-new-rochelle.webp",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "596 North Ave",
@@ -73,7 +74,7 @@ const aggregateRating = {
 
     <!-- Banner Section -->
     <section class="bg-crema relative flex flex-col md:flex-row min-h-[55vh]">
-        <div class="w-full md:w-[50vw] order-2 md:order-1 min-h-90 bg-[url('https://placehold.co/1400x800')] bg-cover bg-center"></div>
+        <div class="w-full md:w-[50vw] order-2 md:order-1 min-h-90 bg-[url('/new-rochelle/mexican-restaurant-new-rochelle.webp')] bg-cover bg-center"></div>
 
         <!-- Right Column: Text Content -->
         <div class="flex flex-col order-1 md:order-2">
@@ -130,7 +131,11 @@ const aggregateRating = {
 
 
     <!-- location details -->
-    <section id="store_details" class="bg-tortilla pt-10 md:pt-16">
+    <section id="store_details" class="bg-tortilla pt-10 md:pt-16 relative">
+
+        <ScrollWiggle icon="/icon-lighter-crema.svg" class="absolute hidden sm:block md:max-w-full top-[20%] md:top-[7%] right-[20%] md:right-[22%] z-0" size="114px" />
+        <ScrollWiggle icon="/icon-scorpion-ocean.svg" class="absolute md:max-w-full top-[35%] md:top-[12%] right-[50%] md:right-[10%] z-0" size="124px" />
+
         <div class="px-6">
             <div class="flex flex-col gap-9 max-w-lg">
                 <p class="font-geist text-ink text-sm leading-[1.4]">At The Taco Project in New Rochelle, we're committed to providing our customers with an authentic and memorable dining experience. That's why we pride ourselves on our friendly service, cozy atmosphere, and vibrant flavors. From our colorful decor to our festive music, we're dedicated to bringing the energy and excitement of Mexico to every meal.</p>
@@ -140,11 +145,12 @@ const aggregateRating = {
         <div class="px-6 md:px-8 lg:px-12 overflow-x-auto py-12">
             <!-- Photo Layout -->
             <div class="flex gap-4 w-max items-end">
-                <img src="https://placehold.co/600x400?text=Placeholder-1" alt="Placeholder 1" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
-                <img src="https://placehold.co/600x900?text=Placeholder-2" alt="Placeholder 2" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
-                <img src="https://placehold.co/600x600?text=Placeholder-3" alt="Placeholder 3" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
-                <img src="https://placehold.co/600x350?text=Placeholder-4" alt="Placeholder 4" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
-                <img src="https://placehold.co/600x800?text=Placeholder-5" alt="Placeholder 5" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" />
+                <img src="/new-rochelle/dining-room-taco-project-new-rochelle.webp" alt="Dining Room at The Taco Project New Rochelle" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="750" height="1236" />
+                <img src="/elote-the-taco-project.webp" alt="Elote at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="1600" height="1067" />
+                <img src="/checkout-the-taco-project.webp" alt="Checkout Counter at The Taco Project" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="800" height="1199" />
+                <img src="/new-rochelle/the-taco-project-new-rochelle.webp" alt="The Taco Project New Rochelle" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="750" height="950" />
+                <img src="/new-rochelle/design-taco-project-new-rochelle.webp" alt="Design at The Taco Project New Rochelle" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="750" height="1157" />
+                
             </div>
         </div>
     </section>
