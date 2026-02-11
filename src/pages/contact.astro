@@ -23,35 +23,35 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                 <!-- First Name, Last Name -->
                 <div class="flex flex-col md:flex-row gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="first_name" class="font-geist font-normal text-sm leading-5 text-ink">First Name*</label>
-                        <input type="text" id="first_name" name="first_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <label for="contact_first_name" class="font-geist font-normal text-sm leading-5 text-ink">First Name*</label>
+                        <input type="text" id="contact_first_name" name="contact_first_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="last_name" class="font-geist font-normal text-sm leading-5 text-ink">Last Name*</label>
-                        <input type="text" id="last_name" name="last_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <label for="contact_last_name" class="font-geist font-normal text-sm leading-5 text-ink">Last Name*</label>
+                        <input type="text" id="contact_last_name" name="contact_last_name" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                 </div>
 
                 <!-- Company or Organization, Email -->
                 <div class="flex flex-col md:flex-row gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="company" class="font-geist font-normal text-sm leading-5 text-ink">Company or Organization</label>
-                        <input type="text" id="company" name="company" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <label for="contact_company" class="font-geist font-normal text-sm leading-5 text-ink">Company or Organization</label>
+                        <input type="text" id="contact_company" name="contact_company" class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="email" class="font-geist font-normal text-sm leading-5 text-ink">Email*</label>
-                        <input type="email" id="email" name="email" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
+                        <label for="contact_email" class="font-geist font-normal text-sm leading-5 text-ink">Email*</label>
+                        <input type="email" id="contact_email" name="contact_email" required class="bg-crema rounded-lg px-6 py-4 font-geist text-sm leading-5 text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition placeholder:text-ink/50" />
                     </div>
                 </div>
 
                 <!-- Phone Number, Related Store Location (if any) -->
                 <div class="flex gap-6 w-full">
                     <div class="flex-1 flex flex-col gap-3.5">
-                        <label for="phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number</label>
+                        <label for="contact_phone" class="font-geist font-normal text-sm leading-5 text-ink">Phone Number</label>
                         <input
                             type="tel"
-                            id="phone"
-                            name="phone"
+                            id="contact_phone"
+                            name="contact_phone"
                             inputmode="numeric"
                             autocomplete="tel"
                             pattern="^\d{3}-\d{3}-\d{4}$"
@@ -69,7 +69,7 @@ import InstagramFeed from "../components/InstagramFeed.astro";
                                     <path d="M1 1.5L6 6.5L11 1.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
                             </button>
-                            <input type="hidden" name="store_location" id="store_location" />
+                            <input type="hidden" name="contact_store_location" id="contact_store_location" />
                             <div class="dropdown-menu absolute left-0 right-0 top-full mt-1 bg-crema rounded-lg shadow-lg z-20 hidden overflow-hidden">
                                 <label class="flex items-center gap-3 px-6 py-3 hover:bg-tortilla cursor-pointer transition-colors">
                                     <input type="radio" name="store_location_ui" value="Bronxville, NY" class="w-4 h-4 accent-ocean cursor-pointer" />
@@ -104,8 +104,8 @@ import InstagramFeed from "../components/InstagramFeed.astro";
 
                 <!-- Fourth Row: Message -->
                 <div class="flex flex-col gap-3.5 w-full">
-                    <label for="message" class="font-geist font-normal text-sm leading-[1.4] text-ink">Comments</label>
-                    <textarea id="message" name="message" required rows="6" class="bg-crema rounded-lg px-5 py-3 font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
+                    <label for="contact_message" class="font-geist font-normal text-sm leading-[1.4] text-ink">Comments</label>
+                    <textarea id="contact_message" name="contact_message" required rows="6" class="bg-crema rounded-lg px-5 py-3 font-geist text-sm leading-[1.4] text-ink border-none outline-none focus:ring-2 focus:ring-ocean transition resize-none"></textarea>
                 </div>
 
                 <!-- Submit Button -->
@@ -187,7 +187,7 @@ import InstagramFeed from "../components/InstagramFeed.astro";
     });
 
     // Phone number masking (###-###-####)
-    const phoneInput = document.getElementById('phone');
+    const phoneInput = document.getElementById('contact_phone');
     if (phoneInput instanceof HTMLInputElement) {
         const formatPhone = (value) => {
             const digits = value.replace(/\D/g, '').slice(0, 10);
@@ -205,7 +205,7 @@ import InstagramFeed from "../components/InstagramFeed.astro";
     }
 
     // Email normalization
-    const emailInput = document.getElementById('email');
+    const emailInput = document.getElementById('contact_email');
     if (emailInput instanceof HTMLInputElement) {
         const normalizeEmail = () => {
             emailInput.value = emailInput.value.trim().toLowerCase();
