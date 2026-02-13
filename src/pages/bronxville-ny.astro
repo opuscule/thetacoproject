@@ -4,6 +4,7 @@ import InstagramFeed from "../components/InstagramFeed.astro";
 import StoreSlider from "../components/StoreSlider.astro";
 import TestimonialSlider from "../components/TestimonialSlider.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollWiggle from "../components/ScrollWiggle.astro";
 import { getCollection } from "astro:content";
 
 // Fetch reviews for schema markup (separate from slider which handles its own fetch)
@@ -76,7 +77,7 @@ const aggregateRating = {
         <div class="w-full md:w-[50vw] order-2 md:order-1 min-h-90 bg-[url('/bronxville/the-taco-project-bronxville-ny.webp')] bg-cover bg-center"></div>
 
         <!-- Right Column: Text Content -->
-        <div class="flex flex-col order-1 md:order-2">
+        <div class="flex flex-col order-1 md:order-2 relative">
             <div class="py-9 px-6 md:px-12 w-full md:max-w-[calc(var(--max-content-width)*0.5)] h-full flex flex-col justify-between gap-12 md:gap-24">
                 <h1 class="font-futura text-ink text-14 md:text-8xl leading-[0.88] uppercase tracking-tight">
                     Bronxville,<br />New York
@@ -129,14 +130,18 @@ const aggregateRating = {
 
 
     <!-- location details -->
-    <section id="store_details" class="bg-tortilla pt-10 md:pt-16">
-        <div class="px-6">
+    <section id="store_details" class="bg-tortilla pt-10 md:pt-16 relative">
+
+        <ScrollWiggle icon="/icon-rose-hot-sauce.svg" class="absolute hidden lg:block md:max-w-full top-[24%] md:top-[10%] lg:right-[22%] z-0" size="90px" />
+        <ScrollWiggle icon="/icon-avocado-ocean.svg" class="absolute md:max-w-full top-[40%] md:top-[14%] right-[16%] md:right-[12%] z-0" size="98px" />
+
+        <div class="px-6 z-10">
             <div class="flex flex-col gap-9 max-w-lg">
                 <p class="font-geist text-ink text-sm leading-[1.4]">At The Taco Project in Bronxville, we're committed to providing our customers with an authentic and memorable dining experience. That's why we pride ourselves on our friendly service, cozy atmosphere, and vibrant flavors. From our colorful decor to our festive music, we're dedicated to bringing the energy and excitement of Mexico to every meal.</p>
             </div>
         </div>
 
-        <div class="px-6 md:px-8 lg:px-12 overflow-x-auto py-12">
+        <div class="px-6 md:px-8 lg:px-12 mt-28 md:mt-0 overflow-x-auto py-12">
             <div class="flex gap-4 w-max items-end">
                 <img src="/bronxville/taco-project-in-bronxville.webp" alt="Seating in the Taco Project in Bronxville" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="750" height="875" />
                 <img src="/bronxville/bronxville-taco-project.webp" alt="In Front of The Taco Project in Bronxville" class="w-[57vw] md:w-[40vw] lg:w-[28vw]" loading="lazy" decoding="async" width="750" height="500" />

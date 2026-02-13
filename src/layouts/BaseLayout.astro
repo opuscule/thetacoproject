@@ -82,7 +82,7 @@ const siteName = "The Taco Project";
                     </a>
 
                     <!-- Desktop Navigation -->
-                    <nav class="hidden lg:flex items-center gap-[52px]">
+                    <nav id="desktop_nav" class="hidden lg:flex items-center gap-[52px]">
                         <div class="flex items-center gap-10">
                             <a href="/menu/" class="group flex items-center gap-[5px] text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[0.96] transition-colors">Our Menu</a>
                             <button type="button" class="mega-menu-trigger group flex items-center gap-[5px] text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[0.96] transition-colors cursor-pointer bg-transparent border-none" data-menu="locations" aria-expanded="false" aria-controls="mega-menu-locations">
@@ -121,15 +121,15 @@ const siteName = "The Taco Project";
             <!-- Desktop Mega Menu - Locations -->
             <div id="mega-menu-locations" class="mega-menu-panel absolute left-0 right-0 overflow-hidden z-50" data-menu="locations">
                 <div class="bg-ink border-t border-white/10">
-                    <div class="flex">
+                    <div class="flex px-12">
                         <!-- Image Column -->
-                        <div class="w-1/2">
-                            <img src="/locations-megamenu.webp" alt="The Taco Project Locations" class="w-full object-cover max-w-2xs" loading="lazy" decoding="async" />
+                        <div class="py-6">
+                            <img src="/ttp-menu-dropdown.webp" alt="The Taco Project Locations" class="w-full object-cover max-w-72" loading="lazy" decoding="async" />
                         </div>
-                        <!-- Links Column -->
-                        <div class="w-1/2 py-10 px-12">
+                        <!-- Links Column - positioned dynamically via JS -->
+                        <div id="mega-menu-links" class="py-6">
                             <ul class="list-none flex flex-col gap-1">
-                                <li><a href="/tarrytown-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors text-">TARRYTOWN, NY</a></li>
+                                <li><a href="/tarrytown-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">TARRYTOWN, NY</a></li>
                                 <li><a href="/yonkers-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">YONKERS, NY</a></li>
                                 <li><a href="/pleasantville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">PLEASANTVILLE, NY</a></li>
                                 <li><a href="/bronxville-ny/" class="text-crema hover:text-hot-sauce font-futura font-black text-[18px] uppercase tracking-tight leading-[1.1] transition-colors">BRONXVILLE, NY</a></li>
@@ -255,6 +255,25 @@ const siteName = "The Taco Project";
                 const panels = document.querySelectorAll(".mega-menu-panel");
                 let hoverTimeout: ReturnType<typeof setTimeout> | null = null;
                 let activeMenu: string | null = null;
+
+                // Align mega menu links column with the Locations trigger button
+                function alignMegaMenuLinks() {
+                    const locationsTrigger = document.querySelector('.mega-menu-trigger[data-menu="locations"]') as HTMLElement;
+                    const megaMenuLinks = document.getElementById('mega-menu-links');
+                    const imageColumn = megaMenuLinks?.previousElementSibling as HTMLElement;
+                    
+                    if (locationsTrigger && megaMenuLinks && imageColumn) {
+                        const triggerRect = locationsTrigger.getBoundingClientRect();
+                        const imageRect = imageColumn.getBoundingClientRect();
+                        // Calculate left margin: trigger's left position minus the image column's right edge
+                        const marginLeft = triggerRect.left - imageRect.right;
+                        megaMenuLinks.style.marginLeft = `${Math.max(0, marginLeft)}px`;
+                    }
+                }
+
+                // Run on load and resize
+                alignMegaMenuLinks();
+                window.addEventListener('resize', alignMegaMenuLinks);
 
                 function openMenu(menuId: string) {
                     // Close all other menus first
