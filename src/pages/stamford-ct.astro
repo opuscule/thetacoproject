@@ -50,6 +50,29 @@ const aggregateRating = {
         "telephone": "+1-203-703-9495",
         "servesCuisine": "Mexican",
         "priceRange": "$$",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday"
+                ],
+                "opens": "10:30",
+                "closes": "21:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "10:30",
+                "closes": "22:00"
+            }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": aggregateRating.ratingValue,
@@ -85,8 +108,8 @@ const aggregateRating = {
                     <div class="flex flex-col gap-3.5">
                         <p class="font-geist text-ink text-sm text-3.5 leading-[1.4]">1111 High Ridge Rd. Stamford, CT 06905</p>
                         <p class="font-geist text-ink text-sm leading-[1.4]">
-                            Sunday to Thursday - 10:30am - 9pm<br />
-                            Friday &amp; Saturday - 10:30am - 10pm
+                            10:30am-9pm Sunday to Thursday<br />
+                            10:30am-10pm Friday &amp; Saturday
                         </p>
                         <div class="flex items-center gap-2">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

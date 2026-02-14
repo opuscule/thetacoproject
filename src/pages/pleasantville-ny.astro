@@ -50,6 +50,22 @@ const aggregateRating = {
         "telephone": "+1-914-422-8111",
         "servesCuisine": "Mexican",
         "priceRange": "$$",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "10:30",
+                "closes": "22:00"
+            }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": aggregateRating.ratingValue,

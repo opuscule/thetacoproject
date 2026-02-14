@@ -50,6 +50,29 @@ const aggregateRating = {
         "telephone": "+1-914-375-4000",
         "servesCuisine": "Mexican",
         "priceRange": "$$",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "08:00",
+                "closes": "22:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "10:30",
+                "closes": "22:00"
+            }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": aggregateRating.ratingValue,
@@ -85,8 +108,8 @@ const aggregateRating = {
                     <div class="flex flex-col gap-3.5">
                         <p class="font-geist text-ink text-sm text-3.5 leading-[1.4]">1086 N Broadway, Yonkers, NY 10701</p>
                         <p class="font-geist text-ink text-sm leading-[1.4]">
-                            11am-9pm Sunday-Thursday<br />
-                            11am-10pm Friday &amp; Saturday
+                            8am-10pm Monday to Friday<br />
+                            10:30am-10pm Saturday &amp; Sunday
                         </p>
                         <div class="flex items-center gap-2">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
