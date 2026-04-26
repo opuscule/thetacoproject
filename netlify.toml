@@ -9,6 +9,12 @@
 # https://docs.netlify.com/routing/redirects/
 
 [[redirects]]
+  from = "https://thetacoproject.netlify.app/*"
+  to = "https://thetacoproject.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/catering-menu/"
   to = "/taco-project-catering-menu-jan-2026.pdf"
   status = 302  # Temporary redirect - easy to update when menu changes
